@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- Person names, e.g. "Terra", "Embra 'Cinder' Vulka" -->
+	<RulePackDef>
+		<defName>NamerPersonElemental</defName>
+		<rulePack>
+			<rulesStrings>
+				<li>r_name(p=2)->[firstName]</li>
+				<li>r_name(p=3)->[firstName] [lastName]</li>
+				<li>r_name->[firstName] '[nickName]' [lastName]</li>
+
+				<li>firstName(p=2)->[syl][sylEnd]</li>
+				<li>firstName->[syl][syl][sylEnd]</li>
+
+				<li>lastName(p=2)->[syl][sylEnd]</li>
+				<li>lastName->[syl][syl][sylEnd]</li>
+
+				<li>nickName->[elementNick]</li>
+
+				<li>syl->Ter</li>
+				<li>syl->Ra</li>
+				<li>syl->Gno</li>
+				<li>syl->Em</li>
+				<li>syl->Bra</li>
+				<li>syl->Py</li>
+				<li>syl->Ig</li>
+				<li>syl->Aer</li>
+				<li>syl->Zeph</li>
+				<li>syl->Sy</li>
+				<li>syl->Gus</li>
+				<li>syl->Au</li>
+				<li>syl->Rill</li>
+				<li>syl->Und</li>
+				<li>syl->Mar</li>
+				<li>syl->Lak</li>
+				<li>syl->Casc</li>
+
+				<li>sylEnd->ra</li>
+				<li>sylEnd->na</li>
+				<li>sylEnd->la</li>
+				<li>sylEnd->is</li>
+				<li>sylEnd->ine</li>
+				<li>sylEnd->elle</li>
+				<li>sylEnd->ia</li>
+				<li>sylEnd->a</li>
+				<li>sylEnd->ith</li>
+				<li>sylEnd->ys</li>
+				<li>sylEnd->mira</li>
+				<li>sylEnd->dra</li>
+
+				<li>elementNick->Pebble</li>
+				<li>elementNick->Terra</li>
+				<li>elementNick->Ember</li>
+				<li>elementNick->Cinder</li>
+				<li>elementNick->Spark</li>
+				<li>elementNick->Breeze</li>
+				<li>elementNick->Gale</li>
+				<li>elementNick->Zephyr</li>
+				<li>elementNick->Brook</li>
+				<li>elementNick->Ripple</li>
+				<li>elementNick->Mist</li>
+				<li>elementNick->Cascade</li>
+			</rulesStrings>
+		</rulePack>
+	</RulePackDef>
+
+</Defs>

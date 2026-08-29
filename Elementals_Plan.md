@@ -216,7 +216,7 @@ physiology backstory patch can pin per-kind (§5.3):
 - `PMM_GnomeAdult` — earth-tender; +Mining, +Plants (gardens stone and soil).
 - `PMM_IgnisAdult` — flame-keeper; +Melee, +Cooking (fire's two faces).
 - `PMM_SylphAdult` — sky-wanderer; +Intellectual, +Social (a collector of rumors).
-- `PMM_UndineAdult` — spring-keeper; +Animals, +Medical (gentle caretaker, fishing
+- `PMM_UndineAdult` — spring-keeper; +Animals, +Medicine (gentle caretaker, fishing
   waters — sea-slime adulthood precedent).
 
 ### 4.4 `Defs/RulePackDefs/RulePacks_Namers_Elemental.xml`

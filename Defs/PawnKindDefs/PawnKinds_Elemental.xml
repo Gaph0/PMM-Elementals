@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--
+		The four wild elemental pawn kinds. Variety comes entirely from the xenotype and
+		race pinned to each kind — one kind per element, one element per kind.
+
+		Elementals spawn with NO weapons and NO apparel: gear generation only runs when
+		weaponTags/weaponMoney/apparelTags/apparelMoney/apparelRequired are set
+		(same approach as the naked, unarmed vanilla WildMan pawn kind).
+
+		fixedGender Female: elementals are always women (the wiki lore; the Momo gene
+		enforces it anyway, but pin it like the nureonago for clean generation).
+
+		Backstory filters: each kind gets the shared PMM_ElementalSpawn category (the
+		childhood) plus its own per-element category (the adulthood), the exact
+		sea-slime pattern (PMM_SlimeSpawn + PMM_SlimeSeaSpawn). The generation postfix
+		in the assembly re-forces both slots after generation anyway.
+	-->
+
+	<!-- Gnome: wanders in only on maps with caves (PMM_GnomeWandersIn incident). -->
+	<PawnKindDef>
+		<defName>PMM_GnomeWild</defName>
+		<label>gnome</label>
+		<race>PMM_Race_GnomeMomo</race>
+		<fixedGender>Female</fixedGender>
+		<maxGenerationAge>60</maxGenerationAge>
+		<chemicalAddictionChance>0</chemicalAddictionChance>
+		<apparelIgnorePollution>true</apparelIgnorePollution>
+		<combatPower>45</combatPower>
+		<initialWillRange>0~4</initialWillRange>
+		<initialResistanceRange>4~17</initialResistanceRange>
+		<backstoryFilters>
+			<li>
+				<categories>
+					<li>PMM_ElementalSpawn</li>
+					<li>PMM_GnomeSpawn</li>
+				</categories>
+			</li>
+		</backstoryFilters>
+		<xenotypeSet>
+			<xenotypeChances>
+				<PMM_ElementalGnome>100</PMM_ElementalGnome>
+			</xenotypeChances>
+		</xenotypeSet>
+	</PawnKindDef>
+
+	<!-- Ignis: wanders in only on hot maps (PMM_IgnisWandersIn incident). -->
+	<PawnKindDef>
+		<defName>PMM_IgnisWild</defName>
+		<label>ignis</label>
+		<race>PMM_Race_IgnisMomo</race>
+		<fixedGender>Female</fixedGender>
+		<maxGenerationAge>60</maxGenerationAge>
+		<chemicalAddictionChance>0</chemicalAddictionChance>
+		<apparelIgnorePollution>true</apparelIgnorePollution>
+		<combatPower>45</combatPower>
+		<initialWillRange>0~4</initialWillRange>
+		<initialResistanceRange>4~17</initialResistanceRange>
+		<backstoryFilters>
+			<li>
+				<categories>
+					<li>PMM_ElementalSpawn</li>
+					<li>PMM_IgnisSpawn</li>
+				</categories>
+			</li>
+		</backstoryFilters>
+		<xenotypeSet>
+			<xenotypeChances>
+				<PMM_ElementalIgnis>100</PMM_ElementalIgnis>
+			</xenotypeChances>
+		</xenotypeSet>
+	</PawnKindDef>
+
+	<!-- Sylph: wanders in only on high-elevation tiles (PMM_SylphWandersIn incident). -->
+	<PawnKindDef>
+		<defName>PMM_SylphWild</defName>
+		<label>sylph</label>
+		<race>PMM_Race_SylphMomo</race>
+		<fixedGender>Female</fixedGender>
+		<maxGenerationAge>60</maxGenerationAge>
+		<chemicalAddictionChance>0</chemicalAddictionChance>
+		<apparelIgnorePollution>true</apparelIgnorePollution>
+		<combatPower>45</combatPower>
+		<initialWillRange>0~4</initialWillRange>
+		<initialResistanceRange>4~17</initialResistanceRange>
+		<backstoryFilters>
+			<li>
+				<categories>
+					<li>PMM_ElementalSpawn</li>
+					<li>PMM_SylphSpawn</li>
+				</categories>
+			</li>
+		</backstoryFilters>
+		<xenotypeSet>
+			<xenotypeChances>
+				<PMM_ElementalSylph>100</PMM_ElementalSylph>
+			</xenotypeChances>
+		</xenotypeSet>
+	</PawnKindDef>
+
+	<!--
+		Undine: wanders in only on tiles with water (PMM_UndineWandersIn incident).
+		The Water terrain move-speed factor gives her the undine's glide through water
+		(sea-slime precedent: vanilla coastal animals use 2.0; she gets 2.5). Read by
+		the vanilla StatPart_TerrainMoveSpeed on the MoveSpeed stat.
+	-->
+	<PawnKindDef>
+		<defName>PMM_UndineWild</defName>
+		<label>undine</label>
+		<race>PMM_Race_UndineMomo</race>
+		<fixedGender>Female</fixedGender>
+		<maxGenerationAge>60</maxGenerationAge>
+		<chemicalAddictionChance>0</chemicalAddictionChance>
+		<apparelIgnorePollution>true</apparelIgnorePollution>
+		<combatPower>45</combatPower>
+		<initialWillRange>0~4</initialWillRange>
+		<initialResistanceRange>4~17</initialResistanceRange>
+		<backstoryFilters>
+			<li>
+				<categories>
+					<li>PMM_ElementalSpawn</li>
+					<li>PMM_UndineSpawn</li>
+				</categories>
+			</li>
+		</backstoryFilters>
+		<moveSpeedFactorByTerrainTag>
+			<li>
+				<key>Water</key>
+				<value>2.5</value>
+			</li>
+		</moveSpeedFactorByTerrainTag>
+		<xenotypeSet>
+			<xenotypeChances>
+				<PMM_ElementalUndine>100</PMM_ElementalUndine>
+			</xenotypeChances>
+		</xenotypeSet>
+	</PawnKindDef>
+
+</Defs>

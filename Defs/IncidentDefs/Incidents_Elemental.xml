@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--
+		The four elemental wander-ins, modelled on the vanilla WildManWandersIn incident;
+		each custom worker adds its own environment gate (see ElementalWandersIn.cs).
+
+		CRITICAL: none of these defs set <allowedBiomes>. That storyteller-level gate
+		would hard-block the Ignis temperature clause (a 33 °C TropicalRainforest tile
+		must still be eligible) and the Sylph elevation / Undine river clauses — all
+		gating lives in the C# ClimateAcceptable overrides, like the bubble/taisui/sea
+		slimes. baseChance 1.0 flat for all four (locked D7): each elemental is the only
+		spawn in her environment; tune after play-testing.
+	-->
+
+	<!-- A gnome wanders in. Fires only on maps with caves (overhead mountain) — the
+	     caves and mines earth elementals call home. No biome or climate gate: gnomes
+	     are not tied to surface weather, only to caves. -->
+	<IncidentDef>
+		<defName>PMM_GnomeWandersIn</defName>
+		<label>gnome wanders in</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>PMM_Elementals.IncidentWorker_GnomeWandersIn</workerClass>
+		<baseChance>1.0</baseChance>
+		<populationEffect>IncreaseMedium</populationEffect>
+		<letterLabel>{0} wanders in</letterLabel>
+		<letterText>A {0} has risen from the deep caves and wandered into the area, her earthen body leaving faint trails of loam. {PAWN_pronoun}'s called {PAWN_nameDef}.\n\nYou can attempt to tame {PAWN_objective}.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+	</IncidentDef>
+
+	<!-- An ignis wanders in. Fires only on hot maps: the Desert, ExtremeDesert or
+	     LavaField biomes, or any tile with an average temperature over 30 °C. -->
+	<IncidentDef>
+		<defName>PMM_IgnisWandersIn</defName>
+		<label>ignis wanders in</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>PMM_Elementals.IncidentWorker_IgnisWandersIn</workerClass>
+		<baseChance>1.0</baseChance>
+		<populationEffect>IncreaseMedium</populationEffect>
+		<letterLabel>{0} wanders in</letterLabel>
+		<letterText>A {0} has strode out of the shimmering heat haze into the area, flames licking harmlessly along her skin. {PAWN_pronoun}'s called {PAWN_nameDef}.\n\nYou can attempt to tame {PAWN_objective}.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+	</IncidentDef>
+
+	<!-- A sylph wanders in. Fires only on tiles over 1000 m elevation — the high
+	     country where the mountain winds blow. -->
+	<IncidentDef>
+		<defName>PMM_SylphWandersIn</defName>
+		<label>sylph wanders in</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>PMM_Elementals.IncidentWorker_SylphWandersIn</workerClass>
+		<baseChance>1.0</baseChance>
+		<populationEffect>IncreaseMedium</populationEffect>
+		<letterLabel>{0} wanders in</letterLabel>
+		<letterText>A {0} has descended from the high winds into the area, alighting as if on a whim. {PAWN_pronoun}'s called {PAWN_nameDef}.\n\nYou can attempt to tame {PAWN_objective}.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+	</IncidentDef>
+
+	<!-- An undine wanders in. Fires only on tiles with water: coastal tiles bordering
+	     an ocean, tiles on a river, or the Lake biome (locked D1). -->
+	<IncidentDef>
+		<defName>PMM_UndineWandersIn</defName>
+		<label>undine wanders in</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>PMM_Elementals.IncidentWorker_UndineWandersIn</workerClass>
+		<baseChance>1.0</baseChance>
+		<populationEffect>IncreaseMedium</populationEffect>
+		<letterLabel>{0} wanders in</letterLabel>
+		<letterText>A {0} has risen from the waters and wandered into the area, her translucent body glistening. {PAWN_pronoun}'s called {PAWN_nameDef}.\n\nYou can attempt to tame {PAWN_objective}.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+	</IncidentDef>
+
+</Defs>

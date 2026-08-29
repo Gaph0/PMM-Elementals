@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--
+		Elemental momo races. Inherit everything from Human via XML deep merge (body,
+		tools, think tree, stat bases, ...), so elementals remain fully humanlike.
+
+		D2 locked: custom races, one per element. They exist for identity (the race
+		label on the info card), future comps (the phase-3 Ignis flame aura / Gnome
+		living-stone hooks go on these races) and slime-family parity. v1 keeps HUMAN
+		butcher yields: no specificMeatDef, leather untouched — so no C# race setup is
+		needed (the slime NullLeather/specificMeatDef dance was jelly-specific).
+		Elemental-flavoured butcher drops (motes/cores) are a phase-3 option.
+
+		Abstract base below is the only valid ParentName target for the concrete races
+		(a concrete def cannot be a ParentName — the slime race file documents that
+		"Could not find parent node" failure).
+	-->
+	<ThingDef Name="PMM_ElementalMomoRaceBase" ParentName="Human" Abstract="True">
+	</ThingDef>
+
+	<!-- Gnome momo: an earth elemental in a woman's form. -->
+	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
+		<defName>PMM_Race_GnomeMomo</defName>
+		<label>gnome momo</label>
+		<description>An earth elemental momo. Her full, quiet body is the soil given a woman's form - patient, grounding, and slow to anger.</description>
+	</ThingDef>
+
+	<!-- Ignis momo: a fire elemental in a woman's form. -->
+	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
+		<defName>PMM_Race_IgnisMomo</defName>
+		<label>ignis momo</label>
+		<description>A fire elemental momo. Flames lick harmlessly along her skin, burning only when she wills it - a raging fire given a woman's form.</description>
+	</ThingDef>
+
+	<!-- Sylph momo: a wind elemental in a woman's form. -->
+	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
+		<defName>PMM_Race_SylphMomo</defName>
+		<label>sylph momo</label>
+		<description>A wind elemental momo. The wind is always swirling inside her - capricious, free-spirited, and impossible to pin down.</description>
+	</ThingDef>
+
+	<!-- Undine momo: a water elemental in a woman's form. -->
+	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
+		<defName>PMM_Race_UndineMomo</defName>
+		<label>undine momo</label>
+		<description>A water elemental momo. Her translucent body is water given a woman's form - pure, gentle, and quietly devoted.</description>
+	</ThingDef>
+
+</Defs>

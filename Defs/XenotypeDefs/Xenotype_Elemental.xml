@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!-- All gene defNames verified against Biotech 1.6 GeneDefs. No exclusion-tag conflicts in these minimal sets. -->
+
+	<!--
+		Locked gene ruling (D4/D5, applied to all four for consistency): v1 xenotypes
+		carry ONLY ProjectMomo_Momo + one Biotech skin-colour gene. The thematic kits
+		(fire immunity, dark vision, wind speed, ...) are phase-3 candidates — see
+		Elementals_Plan.md §6. v1 flavour rides on descriptions, backstories and letters.
+
+		Shared block on every xenotype:
+		- inheritable, so elemental children inherit the xenotype;
+		- factionlessGenerationWeight 0: never appear as refugees, wanderers, crash-pod
+		  survivors etc. — elementals only enter the map through their four gated
+		  wander-in incidents;
+		- the shared NamerPersonElemental name maker;
+		- ProjectMomo_Momo: elementals ARE momos (mana need, tease melee, bond-capable).
+	-->
+
+	<!-- Gnome: an earth elemental born of corrupted earth elements. Calm, quiet, voluptuous. -->
+	<XenotypeDef>
+		<defName>PMM_ElementalGnome</defName>
+		<label>gnome</label>
+		<combatPowerFactor>1.5</combatPowerFactor>
+		<description>An earth elemental, born from concentrated earth elements that were corrupted by mamono mana and became a monsterized elemental. She is a quiet, carefree monster with a full, voluptuous body, as if to symbolize the earth itself, and she dwells in lands rich in earth like caves and mines.\n\nMost of the time she hardly speaks, silently cuddling with whomever she fancies - though occasionally, delirious with passion, she will throw herself at a man, seeking to make love slowly over a long time: she the soil, and he the plant taking root.</description>
+		<descriptionShort>An earth elemental with a quiet, carefree disposition and a full, earth-like body. She dwells in caves and mines, mostly silent - until passion takes root.</descriptionShort>
+		<!-- Placeholder icon reusing a vanilla texture. Replace with your own art in Textures/UI/Icons/Xenotypes/ and update this path. -->
+		<iconPath>UI/Icons/Xenotypes/Dirtmole</iconPath>
+		<inheritable>true</inheritable>
+		<factionlessGenerationWeight>0</factionlessGenerationWeight>
+		<nameMaker>NamerPersonElemental</nameMaker>
+		<nameMakerFemale>NamerPersonElemental</nameMakerFemale>
+		<chanceToUseNameMaker>1</chanceToUseNameMaker>
+		<genes>
+			<li>Skin_SlateGray</li>
+			<li>ProjectMomo_Momo</li>
+		</genes>
+	</XenotypeDef>
+
+	<!-- Ignis: a fire elemental born of corrupted fire elements. Strong-willed, passionate. -->
+	<XenotypeDef>
+		<defName>PMM_ElementalIgnis</defName>
+		<label>ignis</label>
+		<combatPowerFactor>1.8</combatPowerFactor>
+		<description>A fire elemental, born from concentrated fire elements that were corrupted by mamono mana and became a monsterized elemental. She is violent like a raging flame, with an unfussy disposition and little regard for minor details, wandering places of high temperature in search of human men as her lust smolders within.\n\nAs long as she does not will it, the flames that cover her body will not burn those who touch them - but being enveloped by them makes a body flush and hot-headed, burning with desire.</description>
+		<descriptionShort>A fire elemental, violent like a raging flame and unfussy in disposition. The flames covering her body burn only when she wills it - but they still set desire alight.</descriptionShort>
+		<!-- Placeholder icon reusing a vanilla texture. Replace with your own art and update this path. -->
+		<iconPath>UI/Icons/Xenotypes/Impid</iconPath>
+		<inheritable>true</inheritable>
+		<factionlessGenerationWeight>0</factionlessGenerationWeight>
+		<nameMaker>NamerPersonElemental</nameMaker>
+		<nameMakerFemale>NamerPersonElemental</nameMakerFemale>
+		<chanceToUseNameMaker>1</chanceToUseNameMaker>
+		<genes>
+			<li>Skin_Orange</li>
+			<li>ProjectMomo_Momo</li>
+		</genes>
+	</XenotypeDef>
+
+	<!-- Sylph: a wind elemental born of corrupted wind elements. Capricious, free-spirited. -->
+	<XenotypeDef>
+		<defName>PMM_ElementalSylph</defName>
+		<label>sylph</label>
+		<combatPowerFactor>1.2</combatPowerFactor>
+		<description>A wind elemental, born from concentrated wind elements that were corrupted by mamono mana and became a monsterized elemental. She is capricious and free-spirited, like the wind; ordinarily she hides herself and flies around the sky with the wind, looking for human men, though she often descends and reveals herself on a whim.\n\nRumours carried on the wind have made her deeply fascinated with the romance between men and women, and when she finds a man she likes, she seeks intercourse almost the same way a child begs to be played with.</description>
+		<descriptionShort>A capricious, free-spirited wind elemental who flies hidden in the sky, descending on a whim. Endlessly curious about romance, she begs for affection like a child begs for play.</descriptionShort>
+		<!-- Placeholder icon reusing a vanilla texture. Replace with your own art and update this path. -->
+		<iconPath>UI/Icons/Xenotypes/Genie</iconPath>
+		<inheritable>true</inheritable>
+		<factionlessGenerationWeight>0</factionlessGenerationWeight>
+		<nameMaker>NamerPersonElemental</nameMaker>
+		<nameMakerFemale>NamerPersonElemental</nameMakerFemale>
+		<chanceToUseNameMaker>1</chanceToUseNameMaker>
+		<genes>
+			<li>Skin_LightGray</li>
+			<li>ProjectMomo_Momo</li>
+		</genes>
+	</XenotypeDef>
+
+	<!-- Undine: a water elemental born of corrupted water elements. Pure, kind, gentle. -->
+	<XenotypeDef>
+		<defName>PMM_ElementalUndine</defName>
+		<label>undine</label>
+		<combatPowerFactor>1.4</combatPowerFactor>
+		<description>A water elemental, born from concentrated water elements that were corrupted by mamono mana and became a monsterized elemental. Her beautiful body is translucent like the water she is made of, and she has a pure, kind heart with a gentle disposition, dwelling near sources of water like lakes and springs.\n\nShe seldom attacks humans - but she is always seeking a human man to share love with, and if one strikes her fancy, she will actively seduce him, her strong yearning converted by mamono mana into powerful desire.</description>
+		<descriptionShort>A pure-hearted, gentle water elemental with a translucent body, dwelling by lakes and springs. She seldom attacks - but when a man strikes her fancy, she seduces with quiet devotion.</descriptionShort>
+		<!-- Placeholder icon reusing a vanilla texture. Replace with your own art and update this path. -->
+		<iconPath>UI/Icons/Xenotypes/Highmate</iconPath>
+		<inheritable>true</inheritable>
+		<factionlessGenerationWeight>0</factionlessGenerationWeight>
+		<nameMaker>NamerPersonElemental</nameMaker>
+		<nameMakerFemale>NamerPersonElemental</nameMakerFemale>
+		<chanceToUseNameMaker>1</chanceToUseNameMaker>
+		<genes>
+			<li>Skin_SheerWhite</li>
+			<li>ProjectMomo_Momo</li>
+		</genes>
+	</XenotypeDef>
+
+</Defs>

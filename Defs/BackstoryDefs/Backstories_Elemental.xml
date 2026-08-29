@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--
+		Every elemental shares one childhood (the PMM_ElementalSpawn category) and one
+		per-element adulthood (its own spawn category), so backstory generation has
+		nothing else to pick — the same forced single-story pattern as the slimes. The
+		generation postfix in the assembly re-forces both slots after generation, so no
+		caller can produce a different story.
+	-->
+	<BackstoryDef>
+		<defName>PMM_ElementalChild</defName>
+		<title>nascent spirit</title>
+		<titleShort>spirit</titleShort>
+		<description>{PAWN_nameDef} condensed out of drifting elemental essence, corrupted by mamono mana into a woman's form, and spent {PAWN_possessive} early days adrift on the currents of {PAWN_possessive} element, learning the shape of the world.</description>
+		<slot>Childhood</slot>
+		<spawnCategories>
+			<li>PMM_ElementalSpawn</li>
+		</spawnCategories>
+		<bodyTypeGlobal>Child</bodyTypeGlobal>
+		<skillGains>
+			<Melee>2</Melee>
+		</skillGains>
+	</BackstoryDef>
+
+	<!-- Gnome adulthood: the earth-tender. Mining from living in caves and mines,
+	     Plants from her soil-and-roots lore. -->
+	<BackstoryDef>
+		<defName>PMM_GnomeAdult</defName>
+		<title>earth-tender gnome</title>
+		<titleShort>gnome</titleShort>
+		<description>{PAWN_nameDef} grew into a quiet tender of the deep earth, tending veins of ore like roots in the soil, and searching the caves for a man to root herself to.</description>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+			<li>PMM_GnomeSpawn</li>
+		</spawnCategories>
+		<bodyTypeGlobal>Female</bodyTypeGlobal>
+		<skillGains>
+			<Mining>4</Mining>
+			<Plants>2</Plants>
+		</skillGains>
+	</BackstoryDef>
+
+	<!-- Ignis adulthood: the flame-keeper. Melee from her raging temper, Cooking from
+	     a lifetime of working an open flame. -->
+	<BackstoryDef>
+		<defName>PMM_IgnisAdult</defName>
+		<title>flame-keeper ignis</title>
+		<titleShort>ignis</titleShort>
+		<description>{PAWN_nameDef} grew into a keeper of the open flame, stoking fires and tempers alike, and wandering the hot lands for a man to set alight.</description>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+			<li>PMM_IgnisSpawn</li>
+		</spawnCategories>
+		<bodyTypeGlobal>Female</bodyTypeGlobal>
+		<skillGains>
+			<Melee>3</Melee>
+			<Cooking>3</Cooking>
+		</skillGains>
+	</BackstoryDef>
+
+	<!-- Sylph adulthood: the sky-wanderer. Intellectual from a lifetime of collecting
+	     rumours on the wind, Social from being a busybody of the skies. -->
+	<BackstoryDef>
+		<defName>PMM_SylphAdult</defName>
+		<title>sky-wandering sylph</title>
+		<titleShort>sylph</titleShort>
+		<description>{PAWN_nameDef} grew into a wanderer of the high winds, collecting rumours of romance from every corner of the sky, and swooping down on a whim after any man who caught her fancy.</description>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+			<li>PMM_SylphSpawn</li>
+		</spawnCategories>
+		<bodyTypeGlobal>Female</bodyTypeGlobal>
+		<skillGains>
+			<Intellectual>3</Intellectual>
+			<Social>3</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<!-- Undine adulthood: the spring-keeper. Animals from the waters she tends (the
+	     sea-slime precedent: Animals drives the Odyssey fishing stats), Medicine from
+	     her gentle caretaker nature. -->
+	<BackstoryDef>
+		<defName>PMM_UndineAdult</defName>
+		<title>spring-keeper undine</title>
+		<titleShort>undine</titleShort>
+		<description>{PAWN_nameDef} grew into a keeper of lakes and springs, drawing a steady catch from the water and mending what the current brought her, dreaming of a man to devote herself to.</description>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+			<li>PMM_UndineSpawn</li>
+		</spawnCategories>
+		<bodyTypeGlobal>Female</bodyTypeGlobal>
+		<skillGains>
+			<Animals>4</Animals>
+			<Medicine>2</Medicine>
+		</skillGains>
+	</BackstoryDef>
+
+</Defs>
