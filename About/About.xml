@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ModMetaData>
+	<name>Project Momo Elementals</name>
+	<author>Gapho</author>
+	<supportedVersions>
+		<li>1.6</li>
+	</supportedVersions>
+	<packageId>PMM.Elementals</packageId>
+	<description>
+Adds wild elementals for Project Momo: spirit-folk born of earth, fire, wind and water who wander the wild places of the rim.
+
+Elementals only appear in the wild, wandering onto your map like wild men - and like wild men, they can be tamed or captured and convinced to join. Each seeks out her own element: gnomes surface from caves, ignis walk out of scorching deserts and lava fields, sylphs ride the mountain winds, and undines rise where rivers meet the sea.
+
+Requires the Biotech and Odyssey expansions, and Harmony.
+	</description>
+	<modDependencies>
+		<li>
+			<packageId>brrainz.harmony</packageId>
+			<displayName>Harmony</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=2009463077</steamWorkshopUrl>
+			<downloadUrl>https://github.com/pardeike/HarmonyRimWorld/releases/latest</downloadUrl>
+		</li>
+		<li>
+			<packageId>Ludeon.RimWorld.Biotech</packageId>
+			<displayName>Biotech</displayName>
+		</li>
+		<li>
+			<packageId>Ludeon.RimWorld.Odyssey</packageId>
+			<displayName>Odyssey</displayName>
+		</li>
+		<li>
+			<packageId>PMM.Core</packageId>
+			<displayName>Project Momo</displayName>
+			<steamWorkshopUrl>https://steamcommunity.com/sharedfiles/filedetails/?id=3786764047</steamWorkshopUrl>
+		</li>
+	</modDependencies>
+	<loadAfter>
+		<li>brrainz.harmony</li>
+		<li>Ludeon.RimWorld.Biotech</li>
+		<li>Ludeon.RimWorld.Odyssey</li>
+		<li>PMM.Core</li>
+		<li>VanillaExpanded.VPsycastsE</li>
+	</loadAfter>
+</ModMetaData>
