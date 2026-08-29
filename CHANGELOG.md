@@ -7,3 +7,6 @@
   undine, undine with Water speed 2.5), shared elemental childhood + four adulthoods,
   four gated wander-in incidents (no allowedBiomes; gates live in C#), elemental
   name generator
+- 2026-08-30: feat: custom undine/sylph skin genes - PMM_Skin_UndineBlue (watery
+  blues) and PMM_Skin_SylphGreen (light greens), parented on Biotech
+  GeneSkinColorOverride so randomBrightnessFactor varies the shade per pawn

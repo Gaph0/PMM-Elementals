@@ -134,10 +134,14 @@ refugees/wanderers — incident-only, like slimes), shared name maker
 Icons are vanilla placeholders (phase 4 replaces them, slime `Impid` precedent).
 
 **Locked gene ruling (D4/D5, applied to ALL four for consistency):** v1 xenotypes
-carry only `ProjectMomo_Momo` + one Biotech skin-colour gene each. Every thematic
-gene from the draft kits (FireResistant/FireSpew, DarkVision, move-speed,
-mood/aptitude) is deferred to phase 3 (§6) — v1 flavour rides on descriptions,
-backstories and letters. All skin gene defNames verified against Biotech 1.6.
+carry only `ProjectMomo_Momo` + one skin-colour gene each. Gnome/Ignis reuse Biotech
+skin genes (`Skin_SlateGray` / `Skin_Orange`); Undine/Sylph use custom
+`PMM_Skin_UndineBlue` / `PMM_Skin_SylphGreen` genes (`Defs/GeneDefs/Genes_ElementalSkin.xml`,
+parented on Biotech's `GeneSkinColorOverride` whose `randomBrightnessFactor 0.18`
+yields varied blue/green shades per pawn). Every thematic gene from the draft kits
+(FireResistant/FireSpew, DarkVision, move-speed, mood/aptitude) is deferred to phase 3
+(§6) — v1 flavour rides on descriptions, backstories and letters. All skin gene
+defNames verified against Biotech 1.6.
 
 **`PMM_ElementalGnome`** — earth. Label `gnome`. `combatPowerFactor 1.5`.
 Icon placeholder `UI/Icons/Xenotypes/Dirtmole`.

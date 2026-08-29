@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--
+		Custom elemental skin colours. Both parent off Biotech's GeneSkinColorOverride
+		(the same abstract base the slime PMM_Skin_SeaFoam used), which carries
+		<randomBrightnessFactor>0.18</randomBrightnessFactor>: each carrier's skin is
+		randomly brightened/darkened by up to ±18% at generation, so ONE mid-shade base
+		colour yields a range of shades across pawns — "various shades of blue/green"
+		without needing multiple genes. Biotech-only, like every skin-colour gene.
+	-->
+
+	<!-- Undine: a range of watery blues. Mid-base (110, 165, 210) spans roughly
+	     (90,135,172) deep water to (130,195,248) pale shallows after the ±18% roll. -->
+	<GeneDef ParentName="GeneSkinColorOverride" MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PMM_Skin_UndineBlue</defName>
+		<label>undine skin</label>
+		<labelShortAdj>undine</labelShortAdj>
+		<description>Carriers of this gene have skin in shifting shades of watery blue, from deep-water teal to the pale blue of sunlit shallows.</description>
+		<skinColorOverride>(110, 165, 210)</skinColorOverride>
+		<displayOrderInCategory>88</displayOrderInCategory>
+	</GeneDef>
+
+	<!-- Sylph: a range of light, airy greens. Mid-base (150, 200, 130) spans roughly
+	     (123,164,107) leaf to (177,236,153) pale new-growth after the ±18% roll. -->
+	<GeneDef ParentName="GeneSkinColorOverride" MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PMM_Skin_SylphGreen</defName>
+		<label>sylph skin</label>
+		<labelShortAdj>sylph</labelShortAdj>
+		<description>Carriers of this gene have skin in shifting shades of light green, from fresh leaf to the pale green of a high sky.</description>
+		<skinColorOverride>(150, 200, 130)</skinColorOverride>
+		<displayOrderInCategory>88</displayOrderInCategory>
+	</GeneDef>
+
+</Defs>
