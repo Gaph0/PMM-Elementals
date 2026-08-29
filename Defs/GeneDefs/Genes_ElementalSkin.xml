@@ -32,4 +32,26 @@
 		<displayOrderInCategory>88</displayOrderInCategory>
 	</GeneDef>
 
+	<!-- Gnome: a range of dirt browns. Mid-base (130, 95, 65) spans roughly
+	     (107,78,53) dark loam to (153,112,77) pale dry earth after the ±18% roll. -->
+	<GeneDef ParentName="GeneSkinColorOverride" MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PMM_Skin_GnomeBrown</defName>
+		<label>gnome skin</label>
+		<labelShortAdj>gnome</labelShortAdj>
+		<description>Carriers of this gene have skin in shifting shades of earthen brown, from dark loam to pale dry soil.</description>
+		<skinColorOverride>(130, 95, 65)</skinColorOverride>
+		<displayOrderInCategory>88</displayOrderInCategory>
+	</GeneDef>
+
+	<!-- Ignis: a range of flame oranges. Mid-base (235, 130, 50) spans roughly
+	     (193,107,41) ember to (255,153,59) bright flame after the ±18% roll. -->
+	<GeneDef ParentName="GeneSkinColorOverride" MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PMM_Skin_IgnisOrange</defName>
+		<label>ignis skin</label>
+		<labelShortAdj>ignis</labelShortAdj>
+		<description>Carriers of this gene have skin in shifting shades of flame orange, from smouldering ember to bright blaze.</description>
+		<skinColorOverride>(235, 130, 50)</skinColorOverride>
+		<displayOrderInCategory>88</displayOrderInCategory>
+	</GeneDef>
+
 </Defs>

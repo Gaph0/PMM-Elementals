@@ -5,13 +5,13 @@
 
 	<!--
 		Locked gene ruling (D4/D5, applied to all four for consistency): v1 xenotypes
-		carry ONLY ProjectMomo_Momo + one skin-colour gene. Gnome and Ignis reuse
-		Biotech skin genes (Skin_SlateGray / Skin_Orange); Undine and Sylph use custom
-		PMM_Skin_UndineBlue / PMM_Skin_SylphGreen genes (Genes_ElementalSkin.xml) whose
-		randomBrightnessFactor yields varied blue/green shades per pawn. The thematic
-		kits (fire immunity, dark vision, wind speed, ...) are phase-3 candidates —
-		see Elementals_Plan.md §6. v1 flavour rides on descriptions, backstories and
-		letters.
+		carry ONLY ProjectMomo_Momo + one custom PMM_Skin_* gene
+		(Genes_ElementalSkin.xml): Gnome PMM_Skin_GnomeBrown, Ignis PMM_Skin_IgnisOrange,
+		Sylph PMM_Skin_SylphGreen, Undine PMM_Skin_UndineBlue. Each is parented on
+		Biotech's GeneSkinColorOverride whose randomBrightnessFactor yields varied
+		shades per pawn. The thematic kits (fire immunity, dark vision, wind speed,
+		...) are phase-3 candidates — see Elementals_Plan.md §6. v1 flavour rides on
+		descriptions, backstories and letters.
 
 		Shared block on every xenotype:
 		- inheritable, so elemental children inherit the xenotype;
@@ -37,7 +37,7 @@
 		<nameMakerFemale>NamerPersonElemental</nameMakerFemale>
 		<chanceToUseNameMaker>1</chanceToUseNameMaker>
 		<genes>
-			<li>Skin_SlateGray</li>
+			<li>PMM_Skin_GnomeBrown</li>
 			<li>ProjectMomo_Momo</li>
 		</genes>
 	</XenotypeDef>
@@ -57,7 +57,7 @@
 		<nameMakerFemale>NamerPersonElemental</nameMakerFemale>
 		<chanceToUseNameMaker>1</chanceToUseNameMaker>
 		<genes>
-			<li>Skin_Orange</li>
+			<li>PMM_Skin_IgnisOrange</li>
 			<li>ProjectMomo_Momo</li>
 		</genes>
 	</XenotypeDef>

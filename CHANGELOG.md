@@ -10,3 +10,6 @@
 - 2026-08-30: feat: custom undine/sylph skin genes - PMM_Skin_UndineBlue (watery
   blues) and PMM_Skin_SylphGreen (light greens), parented on Biotech
   GeneSkinColorOverride so randomBrightnessFactor varies the shade per pawn
+- 2026-08-30: feat: gnome/ignis custom skin genes - PMM_Skin_GnomeBrown (dirt
+  browns) and PMM_Skin_IgnisOrange (flame oranges); all four elementals now use
+  custom PMM_Skin_* genes with per-pawn shade variation
