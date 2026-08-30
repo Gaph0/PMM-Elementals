@@ -13,3 +13,7 @@
 - 2026-08-30: feat: gnome/ignis custom skin genes - PMM_Skin_GnomeBrown (dirt
   browns) and PMM_Skin_IgnisOrange (flame oranges); all four elementals now use
   custom PMM_Skin_* genes with per-pawn shade variation
+- 2026-08-30: feat: phase 2 assembly - four gated wander-in workers (gnome caves,
+  ignis hot biome/>30C avg, sylph >1000m, undine coast/river/lake), wild-man +
+  reach-outside + per-element backstory pins, race-swap postfix. Handles 1.6 API
+  (PlanetTile, SurfaceTile.Rivers, avg temp = (Min+Max)/2)
