@@ -99,7 +99,7 @@
 		<genes>
 			<li>PMM_Skin_SylphGreen</li>
 			<li>ProjectMomo_Momo</li>
-			<li>Mood_Sanguine</li>
+			<li>Mood_Optimist</li>
 			<li>KindInstinct</li>
 			<li>LowSleep</li>
 			<li>Delicate</li>
@@ -108,7 +108,7 @@
 			<li>AptitudeTerrible_Construction</li>
 			<li>AptitudeTerrible_Mining</li>
 			<li>AptitudeStrong_Social</li>
-			<li>AptitudeRemarkable_Artistic</li>
+			<li>AptitudeStrong_Artistic</li>
 		</genes>
 	</XenotypeDef>
 

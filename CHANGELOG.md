@@ -34,3 +34,5 @@
   "doesn't correspond to any field" errors). Kits now correctly inside each genes block
 - 2026-08-30: feat: ignis heat super-tolerance (MaxTemp_LargeIncrease) - pairs with
   her cold weakness (MinTemp_SmallIncrease); a fire elemental shrugs heat, suffers cold
+- 2026-08-30: balance: sylph very-happy -> happy (Mood_Sanguine -> Mood_Optimist),
+  great-artistic -> strong-artistic (AptitudeRemarkable_Artistic -> AptitudeStrong_Artistic)
