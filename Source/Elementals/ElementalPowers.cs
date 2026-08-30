@@ -29,7 +29,7 @@ namespace PMM_Elementals
     }
 
     // =====================================================================
-    // IGNIS — flame aura. When a wild ignis lands a melee hit:
+    // IGNIS — flame aura. When an ignis (wild or colony) lands a melee hit:
     //   * HUMANS (non-momo) → extra tease, never fire (a Momo's melee on a human
     //     already deals tease instead of physical harm — core TeaseDamagePatch).
     //   * everything else (momos, animals, insects, mechanoids) → ignited.
@@ -68,7 +68,7 @@ namespace PMM_Elementals
             {
                 return;
             }
-            if (!ElementalXenotypes.IsIgnis(attacker) || attacker.IsColonist || victim.health?.hediffSet == null)
+            if (!ElementalXenotypes.IsIgnis(attacker) || victim.health?.hediffSet == null)
             {
                 return;
             }
@@ -94,17 +94,8 @@ namespace PMM_Elementals
             }
             else
             {
-                // Momos, animals, insects, mechanoids: will the flames to burn. Log why a
-                // target can't be lit (FlammableNow is the usual culprit on mechs/robots).
-                if (!victim.FlammableNow)
-                {
-                    Log.Message($"[PMM_Elementals] ignis aura: {victim.LabelShort} is not flammable (FlammableNow false) - no ignite");
-                }
-                else
-                {
-                    victim.TryAttachFire(FireSize, attacker);
-                    Log.Message($"[PMM_Elementals] ignis aura: tried to ignite {victim.LabelShort} (fireSize {FireSize})");
-                }
+                // Momos, animals, insects, mechanoids: will the flames to burn.
+                victim.TryAttachFire(FireSize, attacker);
             }
         }
     }

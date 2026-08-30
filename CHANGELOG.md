@@ -55,3 +55,6 @@
 - 2026-08-30: balance: gnome living-stone regen 0.4 -> 1.0 severity/hour. Diagnose:
   added ignis-aura ignite logging (logs FlammableNow-false targets like mechs and
   successful ignites) to pin down why non-human mobs stopped igniting
+- 2026-08-30: fix: ignis flame aura never fired for colony/recruited ignis - the aura
+  was gated to wild-only (attacker.IsColonist returned early). Dropped the gate: any
+  ignis (wild or colony) carries the aura. Removed the temporary ignite diagnostics
