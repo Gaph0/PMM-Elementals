@@ -75,6 +75,7 @@
 			<li>AptitudeRemarkable_Cooking</li>
 			<li>AptitudeTerrible_Plants</li>
 			<li>AptitudeTerrible_Animals</li>
+			<li>MaxTemp_LargeIncrease</li>
 			<li>MinTemp_SmallIncrease</li>
 			<li>Mood_Pessimist</li>
 			<li>MoveSpeed_Quick</li>

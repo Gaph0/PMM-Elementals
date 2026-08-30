@@ -32,3 +32,5 @@
 - 2026-08-30: fix: gene-kit XML malformed - Ignis/Sylph kit genes orphaned after
   description and Undine kit duplicated outside the def (loader dropped them with
   "doesn't correspond to any field" errors). Kits now correctly inside each genes block
+- 2026-08-30: feat: ignis heat super-tolerance (MaxTemp_LargeIncrease) - pairs with
+  her cold weakness (MinTemp_SmallIncrease); a fire elemental shrugs heat, suffers cold
