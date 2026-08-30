@@ -48,3 +48,7 @@
   hidden marker hediff granted at generation (the slime jelly-ooze mechanism), ignis
   melee patch, undine map component + filth patch. Undine CleaningSpeed stat kept (a
   race stat, not a comp). Removed inert race <comps>
+- 2026-08-30: fix: gnome living-stone missed rough rock - OnStone only checked the
+  Diggable affordance (soil/gravel), not rough stone. Added SmoothableStone affordance
+  (how the smooth-floor designator detects rough Granite/Slate), so gnomes now regen on
+  bare mountain rock as well as soil and under mountain roof

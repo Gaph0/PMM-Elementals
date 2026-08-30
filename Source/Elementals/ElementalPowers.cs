@@ -141,15 +141,22 @@ namespace PMM_Elementals
             if (pawn.Position.Roofed(pawn.Map) &&
                 pawn.Position.GetRoof(pawn.Map) == RoofDefOf.RoofRockThick)
             {
-                return true;
+                return true; // deep under the mountain
             }
             if (diggableAffordance == null)
             {
                 diggableAffordance = DefDatabase<TerrainAffordanceDef>.GetNamedSilentFail("Diggable");
             }
             TerrainDef terrain = pawn.Position.GetTerrain(pawn.Map);
-            return terrain != null && terrain.affordances != null &&
-                   diggableAffordance != null && terrain.affordances.Contains(diggableAffordance);
+            if (terrain?.affordances == null)
+            {
+                return false;
+            }
+            // Rough stone (Granite/Slate/etc. — the rough-rock a mountain map bares, which the
+            // smooth-floor designator detects via SmoothableStone) OR rough diggable ground
+            // (gravel/soil/sand). Smoothed and built floors carry neither affordance.
+            return terrain.affordances.Contains(TerrainAffordanceDefOf.SmoothableStone) ||
+                   (diggableAffordance != null && terrain.affordances.Contains(diggableAffordance));
         }
 
         private static void HealWorstInjury(Pawn pawn, float amount)
