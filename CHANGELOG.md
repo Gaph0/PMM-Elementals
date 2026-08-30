@@ -24,3 +24,8 @@
   roof-grid sampler counted incidental overhead-mountain rock (~500 cells = a small
   hill) as "caves". Replaced with vanilla World.HasCaves(map.Tile), which checks the
   tile's cave TileMutator directly and cannot false-positive on rock
+- 2026-08-30: feat: full thematic gene kits per user spec (amends locked D4/D5 minimal
+  ruling). Gnome dead-calm/cave-dweller/robust/plants+construction; Ignis naked-speed/
+  fire-immune/great-cook/cold-weak/quick; Sylph happy/kind/low-sleep/delicate/attractive/
+  quick-study/social+artistic; Undine happy/kind/plants+medical/poor-mining/nearsighted/
+  cold-weak/slow. Aptitudes via auto-generated Aptitude{Level}_{Skill} template genes

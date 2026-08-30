@@ -133,16 +133,32 @@ refugees/wanderers — incident-only, like slimes), shared name maker
 (`NamerPersonElemental`, §4.4), `ProjectMomo_Momo` in every gene list.
 Icons are vanilla placeholders (phase 4 replaces them, slime `Impid` precedent).
 
-**Locked gene ruling (D4/D5, applied to ALL four for consistency):** v1 xenotypes
-carry only `ProjectMomo_Momo` + one custom `PMM_Skin_*` gene each
-(`Defs/GeneDefs/Genes_ElementalSkin.xml`): Gnome `PMM_Skin_GnomeBrown` (dirt browns),
-Ignis `PMM_Skin_IgnisOrange` (flame oranges), Sylph `PMM_Skin_SylphGreen` (light
-greens), Undine `PMM_Skin_UndineBlue` (watery blues). Each is parented on Biotech's
-`GeneSkinColorOverride`, whose `randomBrightnessFactor 0.18` yields varied shades per
-pawn. Every thematic gene from the draft kits (FireResistant/FireSpew, DarkVision,
-move-speed, mood/aptitude) is deferred to phase 3 (§6) — v1 flavour rides on
-descriptions, backstories and letters. All skin gene defNames verified against
-Biotech 1.6.
+**Locked gene ruling (D4/D5):** v1 xenotypes carry `ProjectMomo_Momo` + one custom
+`PMM_Skin_*` gene each (`Defs/GeneDefs/Genes_ElementalSkin.xml`): Gnome
+`PMM_Skin_GnomeBrown` (dirt browns), Ignis `PMM_Skin_IgnisOrange` (flame oranges),
+Sylph `PMM_Skin_SylphGreen` (light greens), Undine `PMM_Skin_UndineBlue` (watery
+blues). Each is parented on Biotech's `GeneSkinColorOverride`, whose
+`randomBrightnessFactor 0.18` yields varied shades per pawn. All defNames verified
+against Biotech 1.6.
+
+**AMENDED (2026-08-30, full thematic kits added per user spec):** on top of the skin +
+Momo base, each xenotype now carries a full elemental kit. `MinTemp_SmallIncrease` =
+cold weakness (raises comfy-temp minimum); `CaveDweller` = the "indoor dweller"
+gnome; mood via the `Mood_*` spectrum; aptitudes via the auto-generated
+`Aptitude{Level}_{Skill}` template genes (Terrible −8/Poor −4/Strong +4/Remarkable
++8, per-skill exclusion so different skills stack). All defNames verified vs Biotech 1.6.
+
+| Elemental | Kit (beyond skin + Momo) |
+|---|---|
+| Gnome | `Aggression_DeadCalm`, `MoveSpeed_Slow`, `VerySleepy`, `CaveDweller`, `AptitudeTerrible_Cooking`, `AptitudeTerrible_Medicine`, `AptitudeRemarkable_Plants`, `AptitudeStrong_Construction`, `Robust`, `Nearsighted`, `AptitudeTerrible_Artistic` |
+| Ignis | `NakedSpeed`, `FireResistant`, `AptitudeRemarkable_Cooking`, `AptitudeTerrible_Plants`, `AptitudeTerrible_Animals`, `MinTemp_SmallIncrease`, `Mood_Pessimist`, `MoveSpeed_Quick` |
+| Sylph | `Mood_Sanguine`, `KindInstinct`, `LowSleep`, `Delicate`, `Beauty_Pretty`, `Learning_Fast`, `AptitudeTerrible_Construction`, `AptitudeTerrible_Mining`, `AptitudeStrong_Social`, `AptitudeRemarkable_Artistic` |
+| Undine | `Mood_Sanguine`, `KindInstinct`, `AptitudeStrong_Plants`, `AptitudeStrong_Medicine`, `AptitudePoor_Mining`, `Nearsighted`, `MinTemp_SmallIncrease`, `MoveSpeed_Slow` |
+
+Only if play-testing shows a gap, the remaining phase-3 options are: Ignis flame aura
+(race comp), Gnome living-stone healing, Sylph caprice mood hediff, and elemental
+butcher drops (`specificMeatDef` motes/cores). ~~Undine devotion/covenant~~ — cut per
+locked D6.
 
 **`PMM_ElementalGnome`** — earth. Label `gnome`. `combatPowerFactor 1.5`.
 Icon placeholder `UI/Icons/Xenotypes/Dirtmole`.
