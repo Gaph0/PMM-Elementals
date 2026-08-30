@@ -52,3 +52,6 @@
   Diggable affordance (soil/gravel), not rough stone. Added SmoothableStone affordance
   (how the smooth-floor designator detects rough Granite/Slate), so gnomes now regen on
   bare mountain rock as well as soil and under mountain roof
+- 2026-08-30: balance: gnome living-stone regen 0.4 -> 1.0 severity/hour. Diagnose:
+  added ignis-aura ignite logging (logs FlammableNow-false targets like mechs and
+  successful ignites) to pin down why non-human mobs stopped igniting

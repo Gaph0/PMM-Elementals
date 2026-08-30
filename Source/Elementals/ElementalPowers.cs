@@ -94,7 +94,17 @@ namespace PMM_Elementals
             }
             else
             {
-                victim.TryAttachFire(FireSize, attacker);
+                // Momos, animals, insects, mechanoids: will the flames to burn. Log why a
+                // target can't be lit (FlammableNow is the usual culprit on mechs/robots).
+                if (!victim.FlammableNow)
+                {
+                    Log.Message($"[PMM_Elementals] ignis aura: {victim.LabelShort} is not flammable (FlammableNow false) - no ignite");
+                }
+                else
+                {
+                    victim.TryAttachFire(FireSize, attacker);
+                    Log.Message($"[PMM_Elementals] ignis aura: tried to ignite {victim.LabelShort} (fireSize {FireSize})");
+                }
             }
         }
     }
@@ -108,7 +118,7 @@ namespace PMM_Elementals
     {
         public HediffCompProperties_LivingStone() { compClass = typeof(HediffComp_LivingStone); }
         public int intervalTicks = 2500;
-        public float severityPerPulse = 0.4f;
+        public float severityPerPulse = 1.0f;
     }
 
     public class HediffComp_LivingStone : HediffComp
