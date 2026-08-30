@@ -17,3 +17,6 @@
   ignis hot biome/>30C avg, sylph >1000m, undine coast/river/lake), wild-man +
   reach-outside + per-element backstory pins, race-swap postfix. Handles 1.6 API
   (PlanetTile, SurfaceTile.Rivers, avg temp = (Min+Max)/2)
+- 2026-08-30: feat: elemental wild-man think trees (one branch per kind so wild
+  elementals wander instead of JobGiver_ExitMapBest off the map) + sync.sh to
+  rsync the mod into RimWorld/Mods for testing
