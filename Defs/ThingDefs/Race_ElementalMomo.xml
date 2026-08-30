@@ -19,48 +19,36 @@
 	<ThingDef Name="PMM_ElementalMomoRaceBase" ParentName="Human" Abstract="True">
 	</ThingDef>
 
-	<!-- Gnome momo: an earth elemental in a woman's form. -->
+	<!-- Gnome momo: an earth elemental in a woman's form. Living-stone healing is a
+	     HediffComp on a marker hediff (see ElementalPowers.cs — race <comps> never
+	     instantiate on a pawn). -->
 	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
 		<defName>PMM_Race_GnomeMomo</defName>
 		<label>gnome momo</label>
 		<description>An earth elemental momo. Her full, quiet body is the soil given a woman's form - patient, grounding, and slow to anger.</description>
-		<!-- Living stone: slowly knits her wounds while standing on natural stone or under mountain. -->
-		<comps>
-			<li Class="PMM_Elementals.CompProperties_LivingStone"/>
-		</comps>
 	</ThingDef>
 
-	<!-- Ignis momo: a fire elemental in a woman's form. -->
+	<!-- Ignis momo: a fire elemental in a woman's form. The flame aura is a melee patch. -->
 	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
 		<defName>PMM_Race_IgnisMomo</defName>
 		<label>ignis momo</label>
 		<description>A fire elemental momo. Flames lick harmlessly along her skin, burning only when she wills it - a raging fire given a woman's form.</description>
-		<!-- Flame aura: her melee teases humans, ignites everything else. -->
-		<comps>
-			<li Class="PMM_Elementals.CompProperties_FlameAura"/>
-		</comps>
 	</ThingDef>
 
-	<!-- Sylph momo: a wind elemental in a woman's form. -->
+	<!-- Sylph momo: a wind elemental in a woman's form. Caprice is a HediffComp on a marker. -->
 	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
 		<defName>PMM_Race_SylphMomo</defName>
 		<label>sylph momo</label>
 		<description>A wind elemental momo. The wind is always swirling inside her - capricious, free-spirited, and impossible to pin down.</description>
-		<!-- Caprice: a hidden mood that swings with the wind on a daily whim. -->
-		<comps>
-			<li Class="PMM_Elementals.CompProperties_Caprice"/>
-		</comps>
 	</ThingDef>
 
-	<!-- Undine momo: a water elemental in a woman's form. -->
+	<!-- Undine momo: a water elemental in a woman's form. Wet-speed and water filth are
+	     a map component + filth patch; the CleaningSpeed stat offset below works (it is a
+	     race stat, not a comp). -->
 	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
 		<defName>PMM_Race_UndineMomo</defName>
 		<label>undine momo</label>
 		<description>A water elemental momo. Her translucent body is water given a woman's form - pure, gentle, and quietly devoted.</description>
-		<!-- Water affinity: faster in wet weather, leaves puddles (not trash) at a slower rate. -->
-		<comps>
-			<li Class="PMM_Elementals.CompProperties_UndineWaterAffinity"/>
-		</comps>
 		<!-- Tidy water-keeper: cleans noticeably faster. -->
 		<statBases>
 			<CleaningSpeed>1.5</CleaningSpeed>

@@ -42,3 +42,9 @@
   Undine water affinity (wet-weather speed hediff via map component, Filth_Water at 1/3
   rate instead of trash, CleaningSpeed 1.5). Caravan-speed investigated but deferred
   (no per-pawn hook; needs bespoke GetTicksPerMove patch)
+- 2026-08-30: fix: phase-3 powers never fired - a pawn's RACE-def <comps> are never
+  instantiated (InitializeComps only runs for HediffWithComps/WorldObject, never a
+  Pawn's race def), so race comps were inert. Ported to: gnome/sylph HediffComps on a
+  hidden marker hediff granted at generation (the slime jelly-ooze mechanism), ignis
+  melee patch, undine map component + filth patch. Undine CleaningSpeed stat kept (a
+  race stat, not a comp). Removed inert race <comps>

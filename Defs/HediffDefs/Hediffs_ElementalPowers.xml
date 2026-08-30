@@ -2,6 +2,46 @@
 <Defs>
 
 	<!--
+		Phase-3 marker hediffs. A pawn's RACE-def <comps> are never instantiated (see
+		ElementalPowers.cs), so the gnome/sylph ticking powers live in HediffComps on a
+		hidden marker hediff granted at generation (Patch_GrantElementalMarkers). Hediffs
+		on a pawn DO get comps and DO tick — the slime mod's jelly-ooze uses the same
+		mechanism. Both markers are invisible (isBad false, no flavour stages) and
+		uncurable.
+	-->
+
+	<!-- Gnome living stone: carries the HediffComp_LivingStone that knits wounds on rough
+	     ground / under mountain. -->
+	<HediffDef>
+		<defName>PMM_Hediff_GnomeLivingStone</defName>
+		<label>living stone</label>
+		<description>The gnome's earthen body slowly knits itself while she stands on rough ground or beneath the mountain.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<everCurableByItem>false</everCurableByItem>
+		<comps>
+			<li Class="PMM_Elementals.HediffCompProperties_LivingStone"/>
+		</comps>
+	</HediffDef>
+
+	<!-- Sylph caprice: carries the HediffComp_Caprice that re-rolls her daily whim. -->
+	<HediffDef>
+		<defName>PMM_Hediff_SylphCaprice</defName>
+		<label>caprice</label>
+		<description>The sylph's mood swings with the wind, unpredictable and free-spirited.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<everCurableByItem>false</everCurableByItem>
+		<comps>
+			<li Class="PMM_Elementals.HediffCompProperties_Caprice"/>
+		</comps>
+	</HediffDef>
+
+	<!--
 		Undine wet-weather speed (hidden): maintained by MapComponent_UndineWetSpeed while
 		it rains or snows. The MoveSpeed offset makes her glide faster in wet weather.
 	-->

@@ -42,6 +42,8 @@ namespace PMM_Elementals
         public static ThingDef PMM_Race_UndineMomo;
 
         // Phase-3 powers.
+        public static HediffDef PMM_Hediff_GnomeLivingStone;
+        public static HediffDef PMM_Hediff_SylphCaprice;
         public static HediffDef PMM_Hediff_UndineWetSpeed;
         public static ThoughtDef PMM_Thought_SylphCapriceFoul;
         public static ThoughtDef PMM_Thought_SylphCapriceGiddy;
