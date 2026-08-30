@@ -18,44 +18,11 @@ namespace PMM_Elementals
     /// </summary>
     public abstract class IncidentWorker_ElementalWandersIn : IncidentWorker_WildManWandersIn
     {
-        /// <summary>Roof sampling stride: every 8th cell in x and z (~1.5% of the map).</summary>
-        protected const int RoofSampleStride = 8;
-
-        /// <summary>
-        /// Thick-roof sample hits needed to count as "has caves". 8 hits at stride 8 is
-        /// ~500 overhead-mountain cells - a modest cave system, not a full mountain.
-        /// </summary>
-        protected const int MinThickRoofSamples = 8;
-
         /// <summary>The pawn kind this incident spawns. Each subclass pins its own element.</summary>
         protected abstract PawnKindDef PawnKindToSpawn { get; }
 
         /// <summary>The environment gate. Each subclass implements its own terrain rule.</summary>
         protected abstract bool ClimateAcceptable(Map map);
-
-        /// <summary>
-        /// Cheap cave check: sample the roof grid on a stride and count overhead
-        /// mountain (thick rock roof). A cave system has hundreds of such cells, so a
-        /// coarse sample finds it without scanning the whole map every storyteller tick.
-        /// Used by the gnome wander-in.
-        /// </summary>
-        protected static bool HasCaves(Map map)
-        {
-            int hits = 0;
-            RoofGrid roofGrid = map.roofGrid;
-            for (int x = 0; x < map.Size.x; x += RoofSampleStride)
-            {
-                for (int z = 0; z < map.Size.z; z += RoofSampleStride)
-                {
-                    if (roofGrid.RoofAt(new IntVec3(x, 0, z)) == RoofDefOf.RoofRockThick &&
-                        ++hits >= MinThickRoofSamples)
-                    {
-                        return true;
-                    }
-                }
-            }
-            return false;
-        }
 
         /// <summary>Vanilla checks, minus the seasonal/faction gates, plus the terrain gate.</summary>
         protected override bool CanFireNowSub(IncidentParms parms)
@@ -201,20 +168,29 @@ namespace PMM_Elementals
 
     /// <summary>
     /// A gnome wanders in. Same wild-man spawn flow as the base, but it only fires on
-    /// maps that have caves (overhead mountain) - the caves and mines earth elementals
-    /// call home - and always spawns the gnome-only pawn kind. No biome or climate gate:
-    /// gnomes are not tied to surface weather, only to caves.
+    /// tiles that GENERATE caves - the caves and mines earth elementals call home - and
+    /// always spawns the gnome-only pawn kind. No biome or climate gate: gnomes are not
+    /// tied to surface weather, only to caves.
     /// </summary>
     public class IncidentWorker_GnomeWandersIn : IncidentWorker_ElementalWandersIn
     {
         protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_GnomeWild;
 
-        /// <summary>Gnome gate: any map that has caves.</summary>
+        /// <summary>
+        /// Gnome gate: the world tile must generate caves. Uses the game's own
+        /// <see cref="RimWorld.Planet.World.HasCaves"/>, which reports whether the tile
+        /// carries a cave TileMutator (the same check vanilla's cave map generator uses).
+        /// This replaced the slime-style roof-grid sampler: that heuristic only counted
+        /// overhead-mountain ROCK on the current map, so any map with a small rocky hill
+        /// (~500 mountain cells) read as "caves" even on a caveless world tile. The world
+        /// mutator answers "does this tile have caves" directly and cannot false-positive
+        /// on incidental rock.
+        /// </summary>
         protected override bool ClimateAcceptable(Map map)
         {
-            if (!HasCaves(map))
+            if (!Find.World.HasCaves(map.Tile))
             {
-                Log.Message("[PMM_Elementals] gnome wander-in blocked: no caves (overhead mountain) on the map");
+                Log.Message("[PMM_Elementals] gnome wander-in blocked: world tile has no caves (no cave tile mutator)");
                 return false;
             }
             return true;

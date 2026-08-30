@@ -20,3 +20,7 @@
 - 2026-08-30: feat: elemental wild-man think trees (one branch per kind so wild
   elementals wander instead of JobGiver_ExitMapBest off the map) + sync.sh to
   rsync the mod into RimWorld/Mods for testing
+- 2026-08-30: fix: gnome gate false-positived on caveless maps - the slime-style
+  roof-grid sampler counted incidental overhead-mountain rock (~500 cells = a small
+  hill) as "caves". Replaced with vanilla World.HasCaves(map.Tile), which checks the
+  tile's cave TileMutator directly and cannot false-positive on rock
