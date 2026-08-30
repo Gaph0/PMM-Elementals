@@ -41,9 +41,17 @@ namespace PMM_Elementals
         public static ThingDef PMM_Race_SylphMomo;
         public static ThingDef PMM_Race_UndineMomo;
 
+        // Phase-3 powers.
+        public static HediffDef PMM_Hediff_UndineWetSpeed;
+        public static ThoughtDef PMM_Thought_SylphCapriceFoul;
+        public static ThoughtDef PMM_Thought_SylphCapriceGiddy;
+        // Resolved from Project Momo core (cross-mod def; assigned by name, not DefOf).
+        public static HediffDef ProjectMomo_TeaseDamage;
+
         static ElementalDefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(ElementalDefOf));
+            ProjectMomo_TeaseDamage = DefDatabase<HediffDef>.GetNamedSilentFail("ProjectMomo_TeaseDamage");
         }
     }
 }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--
+		Sylph caprice mood thoughts. The CompCaprice re-rolls a whim each day and applies
+		one of these (or neither, for a calm whim). Short duration so the mood never
+		lingers past the next whim. These are memory thoughts, so they show in the Needs
+		tab with their mood offset — that's the visible "swings with the wind" effect.
+	-->
+	<ThoughtDef>
+		<defName>PMM_Thought_SylphCapriceFoul</defName>
+		<durationDays>1</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>foul whim</label>
+				<description>A dark mood has blown in on the wind; nothing pleases her today.</description>
+				<baseMoodEffect>-6</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>PMM_Thought_SylphCapriceGiddy</defName>
+		<durationDays>1</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>giddy whim</label>
+				<description>A light, carefree mood has swept in on the wind; everything delights her today.</description>
+				<baseMoodEffect>6</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+</Defs>

@@ -36,3 +36,9 @@
   her cold weakness (MinTemp_SmallIncrease); a fire elemental shrugs heat, suffers cold
 - 2026-08-30: balance: sylph very-happy -> happy (Mood_Sanguine -> Mood_Optimist),
   great-artistic -> strong-artistic (AptitudeRemarkable_Artistic -> AptitudeStrong_Artistic)
+- 2026-08-30: feat: phase 3 signature powers - Ignis flame aura (humans get extra
+  tease never fire, momos/animals/insects/mechs ignite), Gnome living-stone healing
+  (rough ground/under mountain), Sylph caprice mood whims (thought-based, foul/giddy),
+  Undine water affinity (wet-weather speed hediff via map component, Filth_Water at 1/3
+  rate instead of trash, CleaningSpeed 1.5). Caravan-speed investigated but deferred
+  (no per-pawn hook; needs bespoke GetTicksPerMove patch)

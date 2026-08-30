@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--
+		Undine wet-weather speed (hidden): maintained by MapComponent_UndineWetSpeed while
+		it rains or snows. The MoveSpeed offset makes her glide faster in wet weather.
+	-->
+	<HediffDef>
+		<defName>PMM_Hediff_UndineWetSpeed</defName>
+		<label>in her element</label>
+		<description>The undine moves with effortless grace through the rain.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<everCurableByItem>false</everCurableByItem>
+		<stages>
+			<li>
+				<minSeverity>0</minSeverity>
+				<statOffsets>
+					<MoveSpeed>1.0</MoveSpeed>
+				</statOffsets>
+			</li>
+		</stages>
+	</HediffDef>
+
+</Defs>

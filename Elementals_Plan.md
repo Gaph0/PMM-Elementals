@@ -155,10 +155,37 @@ gnome; mood via the `Mood_*` spectrum; aptitudes via the auto-generated
 | Sylph | `Mood_Sanguine`, `KindInstinct`, `LowSleep`, `Delicate`, `Beauty_Pretty`, `Learning_Fast`, `AptitudeTerrible_Construction`, `AptitudeTerrible_Mining`, `AptitudeStrong_Social`, `AptitudeRemarkable_Artistic` |
 | Undine | `Mood_Sanguine`, `KindInstinct`, `AptitudeStrong_Plants`, `AptitudeStrong_Medicine`, `AptitudePoor_Mining`, `Nearsighted`, `MinTemp_SmallIncrease`, `MoveSpeed_Slow` |
 
-Only if play-testing shows a gap, the remaining phase-3 options are: Ignis flame aura
-(race comp), Gnome living-stone healing, Sylph caprice mood hediff, and elemental
-butcher drops (`specificMeatDef` motes/cores). ~~Undine devotion/covenant~~ — cut per
-locked D6.
+## 6. Phase 3 — signature powers (DONE 2026-08-30)
+
+All four shipped as race comps on the custom `PMM_Race_*Momo` ThingDefs
+(`Source/Elementals/ElementalPowers.cs`, `Defs/ThingDefs/Race_ElementalMomo.xml`).
+
+- **Ignis flame aura** (`CompFlameAura` + `Patch_IgnisFlameAura`): postfix on
+  `Verb_MeleeAttackDamage.ApplyMeleeDamageToTarget` (same hook as the core tease
+  patch). **Humans** (non-momo) get *extra tease only, never fire* — consistent with
+  core: a Momo's melee on a human already deals tease, not physical harm. **Momos,
+  animals, insects, mechanoids** get ignited via `TryAttachFire`. Wild ignis only.
+- **Gnome living stone** (`CompLivingStone`): ticks rare; while on rough/diggable
+  ground (terrain `Diggable` affordance) or under thick mountain roof, shaves
+  severity off her worst injury each pulse.
+- **Sylph caprice** (`CompCaprice`): re-rolls a whim each ~24 h and applies a 1-day
+  memory thought — `PMM_Thought_SylphCapriceFoul` (−6) or `..._Giddy` (+6), or none
+  for a calm whim. Implemented as a **thought**, not a hediff capMod, because **no
+  `Mood` PawnCapacityDef exists** — mood can't be a hediff capacity offset.
+- **Undine water affinity** (`CompUndineWaterAffinity` + helpers): wet-weather speed
+  via `MapComponent_UndineWetSpeed` (injected by `Patch_AddUndineWetSpeedComponent` on
+  `Map.ConstructComponents`; applies/removes the `PMM_Hediff_UndineWetSpeed`
+  MoveSpeed-offset hediff while Rain/Snow > 0); water filth via `Patch_UndineWaterFilth`
+  (slime-filth pattern: drops `Filth_Water` at ~1/3 vanilla rate instead of terrain
+  filth/trash); faster cleaning via a `CleaningSpeed 1.5` stat offset on the race.
+
+**Caravan travel speed (Sylph) — investigated, not implemented.** Caravan speed is
+`CaravanTicksPerMoveUtility.GetTicksPerMove`, averaging each pawn's caravan riding
+move speed (floored by the slowest member). There is **no per-pawn "caravan speed
+aura" hook** — the only lever is `CaravanRidingSpeedFactor` (a stat for *rideable*
+pack animals, read for the mounted-speed bonus). A sylph-boosts-caravan feature would
+need a Harmony postfix on `GetTicksPerMove` scanning the roster for a sylph and scaling
+the result — a bespoke patch, not a clean stat. Deferred pending a decision.
 
 **`PMM_ElementalGnome`** — earth. Label `gnome`. `combatPowerFactor 1.5`.
 Icon placeholder `UI/Icons/Xenotypes/Dirtmole`.
