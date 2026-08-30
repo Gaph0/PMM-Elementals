@@ -29,3 +29,6 @@
   fire-immune/great-cook/cold-weak/quick; Sylph happy/kind/low-sleep/delicate/attractive/
   quick-study/social+artistic; Undine happy/kind/plants+medical/poor-mining/nearsighted/
   cold-weak/slow. Aptitudes via auto-generated Aptitude{Level}_{Skill} template genes
+- 2026-08-30: fix: gene-kit XML malformed - Ignis/Sylph kit genes orphaned after
+  description and Undine kit duplicated outside the def (loader dropped them with
+  "doesn't correspond to any field" errors). Kits now correctly inside each genes block
