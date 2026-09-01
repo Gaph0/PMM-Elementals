@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--
+		The Old Dusty Lamp, dropped by the PMM_GenieLampFound incident (desert,
+		arid shrubland and extreme desert maps only). A colonist right-clicks it and
+		picks "Clean the lamp" — the vanilla CompUsable + UseItem job flow (the mech
+		serum pattern): when the cleaning finishes, CompUseEffect_GenieLamp frees the
+		genie and pops her join offer, then CompUseEffectDestroySelf consumes the lamp.
+
+		DeteriorationRate 0: the lamp has waited centuries in the sand — it does not
+		rot away before anyone finds it. Placeholder art reuses the vanilla golden
+		cube texture (a small golden artefact); replace with your own art later.
+	-->
+	<ThingDef>
+		<defName>PMM_Item_OldDustyLamp</defName>
+		<label>old dusty lamp</label>
+		<description>A tarnished old oil lamp, heavy with dust and age. It feels faintly warm to the touch, as if something inside has been waiting a very long time. A thorough cleaning might reveal what.</description>
+		<thingClass>ThingWithComps</thingClass>
+		<category>Item</category>
+		<tickerType>Never</tickerType>
+		<altitudeLayer>Item</altitudeLayer>
+		<useHitPoints>true</useHitPoints>
+		<selectable>true</selectable>
+		<rotatable>false</rotatable>
+		<stackLimit>1</stackLimit>
+		<tradeNeverStack>true</tradeNeverStack>
+		<alwaysHaulable>true</alwaysHaulable>
+		<graphicData>
+			<texPath>Things/Item/Special/GoldenCube</texPath>
+			<graphicClass>Graphic_Single</graphicClass>
+		</graphicData>
+		<statBases>
+			<MaxHitPoints>120</MaxHitPoints>
+			<MarketValue>800</MarketValue>
+			<Mass>3</Mass>
+			<DeteriorationRate>0</DeteriorationRate>
+			<Flammability>0</Flammability>
+			<Beauty>2</Beauty>
+		</statBases>
+		<techLevel>Medieval</techLevel>
+		<tradeTags>
+			<li>ExoticMisc</li>
+		</tradeTags>
+		<comps>
+			<li Class="CompProperties_Usable">
+				<useJob>UseItem</useJob>
+				<useLabel>Clean the lamp</useLabel>
+				<useDuration>300</useDuration>
+			</li>
+			<li Class="CompProperties_UseEffect">
+				<compClass>PMM_Elementals.CompUseEffect_GenieLamp</compClass>
+			</li>
+			<li Class="CompProperties_UseEffectDestroySelf"/>
+		</comps>
+	</ThingDef>
+
+</Defs>

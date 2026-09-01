@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--
+		Apsara charm mood thought (D-A3 locked +3). A situational thought active while the
+		pawn carries the PMM_Hediff_ApsaraCharm exposure hediff — the radius-limited,
+		heddiff-driven analogue of the Anomaly joybringer's map-wide JoyousPresence
+		(+3 mood). ThoughtWorker_ApsaraCharmPresence checks for the hediff. A thought,
+		not a hediff capacity — same ruling as the sylph caprice: no Mood PawnCapacityDef
+		exists, so mood can't be a hediff capacity offset.
+	-->
+	<ThoughtDef>
+		<defName>PMM_Thought_ApsaraCharm</defName>
+		<thoughtClass>Thought_Situational</thoughtClass>
+		<workerClass>PMM_Elementals.ThoughtWorker_ApsaraCharmPresence</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>captivated</label>
+				<description>Her dance lingers at the edge of my vision, sweet as warm milk. I feel light. Wonderful.</description>
+				<baseMoodEffect>3</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+</Defs>

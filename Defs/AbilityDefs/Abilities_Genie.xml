@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--
+		The genie's wish (granted by PMM_Gene_GenieWish, the Dorome mud-merge
+		pattern). A pawn-targeted ability that only ever applies to her bonded
+		master — the colonist who cleaned her lamp — granting in priority order:
+		regrow the biggest missing limb, erase a permanent scar, or lift the biggest
+		temporary negative memory. CompAbilityEffect_GenieWish enforces the target
+		rule, greys the gizmo below 95% mana, and drains her mana to zero on cast.
+
+		cooldownTicksRange 3600000 = one full year (60 days × 60000); the vanilla
+		ability system runs the cooldown, no custom state. Range 999 with no line of
+		sight: her magic finds her master anywhere on the map. Icon placeholder
+		reuses Royalty's word-of-joy psycast (a granted boon).
+	-->
+	<AbilityDef>
+		<defName>PMM_Ability_GenieWish</defName>
+		<label>grant wish</label>
+		<description>Grant one wish to the colonist she is bound to: regrow a missing limb, erase an old scar, or lift a lasting sorrow — in that order. The wish takes nearly all her mana and cannot be granted more than once a year.</description>
+		<iconPath>UI/Abilities/WordOfJoy</iconPath>
+		<cooldownTicksRange>3600000</cooldownTicksRange>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>999</range>
+			<warmupTime>2.0</warmupTime>
+			<requireLineOfSight>false</requireLineOfSight>
+			<targetParams>
+				<canTargetLocations>false</canTargetLocations>
+				<canTargetPawns>true</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				<canTargetSelf>false</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="PMM_Elementals.CompProperties_AbilityGenieWish"/>
+		</comps>
+	</AbilityDef>
+
+</Defs>

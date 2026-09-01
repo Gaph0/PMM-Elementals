@@ -64,4 +64,20 @@
 		</stages>
 	</HediffDef>
 
+	<!-- Dryad photosynthesis: carries the HediffComp_Photosynthesis that refills food,
+	     rest and mana while she stands unroofed in real sunlight (D15). -->
+	<HediffDef>
+		<defName>PMM_Hediff_DryadPhotosynthesis</defName>
+		<label>photosynthesis</label>
+		<description>The dryad's living-wood body drinks in the sunlight, sustaining her food, rest and mana while she basks in it.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<everCurableByItem>false</everCurableByItem>
+		<comps>
+			<li Class="PMM_Elementals.HediffCompProperties_Photosynthesis"/>
+		</comps>
+	</HediffDef>
+
 </Defs>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--
+		The genie's join-offer letter. ChoiceLetter_GenieOffer (see GeniePowers.cs) is
+		a self-contained ChoiceLetter whose Welcome/Send-away options act directly —
+		vanilla's ChoiceLetter_AcceptJoiner runs on quest signal plumbing that a plain
+		item use-effect cannot wire up. Warm gold, no flashing: an offer, not an alarm.
+	-->
+	<LetterDef>
+		<defName>PMM_Letter_GenieOffer</defName>
+		<letterClass>PMM_Elementals.ChoiceLetter_GenieOffer</letterClass>
+		<color>(222, 186, 106)</color>
+		<flashInterval>-1</flashInterval>
+	</LetterDef>
+
+</Defs>

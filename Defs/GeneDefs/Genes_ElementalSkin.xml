@@ -54,4 +54,86 @@
 		<displayOrderInCategory>88</displayOrderInCategory>
 	</GeneDef>
 
+	<!-- Dorome: a range of clay greys (user ruling 2026-09-01: several shades of clay
+	     grey, hair identical to body colour — hair handled by Patch_DoromeHairColor).
+	     Mid-base (115, 105, 95) spans roughly (94,86,78) wet riverbed clay to
+	     (136,124,112) pale dried clay after the ±18% roll. -->
+	<GeneDef ParentName="GeneSkinColorOverride" MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PMM_Skin_DoromeClay</defName>
+		<label>dorome skin</label>
+		<labelShortAdj>dorome</labelShortAdj>
+		<description>Carriers of this gene have skin in shifting shades of clay grey, from wet riverbed clay to pale sun-dried silt.</description>
+		<skinColorOverride>(115, 105, 95)</skinColorOverride>
+		<displayOrderInCategory>88</displayOrderInCategory>
+	</GeneDef>
+
+	<!-- Dorome mud-merge ability gene (locked D11: tamed-only teleport). Grants the
+	     PMM_Ability_DoromeMudMerge gizmo; the vanilla ability system enforces the
+	     6-hour cooldown. Icon placeholder reuses Biotech's long-jump-legs gene icon. -->
+	<GeneDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PMM_Gene_DoromeMudMerge</defName>
+		<label>mud merge</label>
+		<description>Carriers can melt into natural ground and swim through the earth, emerging anywhere on the map. The strain keeps them from merging more than once every few hours.</description>
+		<iconPath>UI/Icons/Genes/Gene_LongJumpLegs</iconPath>
+		<displayCategory>Ability</displayCategory>
+		<abilities>
+			<li>PMM_Ability_DoromeMudMerge</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>PMM_Ability_DoromeMudMerge</AbilityDef>
+		</descriptionHyperlinks>
+	</GeneDef>
+
+	<!-- Dryad: a range of bark browns (locked D17). Mid-base (120, 95, 70) spans roughly
+	     (98,78,57) dark wet bark to (142,112,83) pale sun-bleached wood after the ±18% roll. -->
+	<GeneDef ParentName="GeneSkinColorOverride" MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PMM_Skin_DryadBark</defName>
+		<label>dryad skin</label>
+		<labelShortAdj>dryad</labelShortAdj>
+		<description>Carriers of this gene have skin in shifting shades of bark brown, from dark wet bark to pale sun-bleached wood.</description>
+		<skinColorOverride>(120, 95, 70)</skinColorOverride>
+		<displayOrderInCategory>88</displayOrderInCategory>
+	</GeneDef>
+
+	<!-- Genie: a range of dusky desert tans — the bronze of a lamp-dweller's skin.
+	     Mid-base (148, 104, 74) spans roughly (121,85,61) deep bronze to
+	     (175,123,87) sunlit tan after the ±18% roll. -->
+	<GeneDef ParentName="GeneSkinColorOverride" MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PMM_Skin_GenieTan</defName>
+		<label>genie skin</label>
+		<labelShortAdj>genie</labelShortAdj>
+		<description>Carriers of this gene have skin in shifting shades of dusky desert tan, from deep lamp-bronze to sunlit dunes.</description>
+		<skinColorOverride>(148, 104, 74)</skinColorOverride>
+		<displayOrderInCategory>88</displayOrderInCategory>
+	</GeneDef>
+
+	<!-- Genie wish-granting ability gene. Grants the PMM_Ability_GenieWish gizmo:
+	     one wish a year for her bonded master, costing nearly all her mana. Icon
+	     placeholder reuses Biotech's psychic-bonding gene icon (a bond of service). -->
+	<GeneDef MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PMM_Gene_GenieWish</defName>
+		<label>wish-granting</label>
+		<description>Carriers can grant a wish to the one they are bound to: regrowing a missing limb, erasing an old scar, or lifting a lasting sorrow. A wish takes nearly all of the carrier's mana and cannot be granted more than once a year.</description>
+		<iconPath>UI/Icons/Genes/Gene_PsychicBonding</iconPath>
+		<displayCategory>Ability</displayCategory>
+		<abilities>
+			<li>PMM_Ability_GenieWish</li>
+		</abilities>
+		<descriptionHyperlinks>
+			<AbilityDef>PMM_Ability_GenieWish</AbilityDef>
+		</descriptionHyperlinks>
+	</GeneDef>
+
+	<!-- Apsara: a range of milky creams — her body clad in liquid "like sweet milk"
+	     (Apsara wiki entry, locked D-A6). Mid-base (240, 225, 200) spans roughly
+	     (197,185,164) warm milk to (255,255,236) fresh cream after the ±18% roll. -->
+	<GeneDef ParentName="GeneSkinColorOverride" MayRequire="Ludeon.RimWorld.Biotech">
+		<defName>PMM_Skin_ApsaraCream</defName>
+		<label>apsara skin</label>
+		<labelShortAdj>apsara</labelShortAdj>
+		<description>Carriers of this gene have skin in shifting shades of milky cream, from warm milk to fresh, glistening cream.</description>
+		<skinColorOverride>(240, 225, 200)</skinColorOverride>
+		<displayOrderInCategory>88</displayOrderInCategory>
+	</GeneDef>
+
 </Defs>

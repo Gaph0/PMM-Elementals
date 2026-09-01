@@ -164,6 +164,39 @@ namespace PMM_Elementals
             return Find.FactionManager.TryGetRandomNonColonyHumanlikeFaction(
                 out formerFaction, tryMedievalOrBetter: false, allowDefeated: true, TechLevel.Undefined);
         }
+
+        /// <summary>
+        /// Shared water gate for the water elementals (undine, apsara): the world tile
+        /// must touch water — coastal tiles bordering an ocean, tiles on a river, or the
+        /// Lake biome. Extracted from the undine worker so both water elementals share it.
+        /// <paramref name="caller"/> names the elemental in the debug log lines.
+        /// </summary>
+        protected static bool TileHasWater(Map map, string caller)
+        {
+            RimWorld.Planet.Tile tile = Find.WorldGrid[map.Tile];
+            if (tile == null)
+            {
+                Log.Message($"[PMM_Elementals] {caller} wander-in blocked: world tile is null");
+                return false;
+            }
+            if (tile.IsCoastal)
+            {
+                return true; // borders an ocean
+            }
+            // Rivers live on SurfaceTile (the surface-layer Tile subclass) in 1.6, not on
+            // the abstract Tile base. The int indexer returns the surface tile.
+            if (Find.WorldGrid[map.Tile.tileId] is RimWorld.Planet.SurfaceTile surface &&
+                surface.Rivers != null && surface.Rivers.Count > 0)
+            {
+                return true; // on a river
+            }
+            if (tile.PrimaryBiome?.defName == "Lake")
+            {
+                return true; // the Lake biome
+            }
+            Log.Message($"[PMM_Elementals] {caller} wander-in blocked: tile is not coastal, riverine, or lake");
+            return false;
+        }
     }
 
     /// <summary>
@@ -274,29 +307,105 @@ namespace PMM_Elementals
         /// <summary>Undine gate: the world tile must touch water (coast, river, or lake).</summary>
         protected override bool ClimateAcceptable(Map map)
         {
-            RimWorld.Planet.Tile tile = Find.WorldGrid[map.Tile];
-            if (tile == null)
+            return TileHasWater(map, "undine");
+        }
+    }
+
+    /// <summary>
+    /// An apsara wanders in. Same water gate as the undine (coast, river, or Lake) -
+    /// her fellow water elemental; she is the joy elemental of the waters.
+    /// </summary>
+    public class IncidentWorker_ApsaraWandersIn : IncidentWorker_ElementalWandersIn
+    {
+        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_ApsaraWild;
+
+        /// <summary>Apsara gate: the world tile must touch water (coast, river, or lake).</summary>
+        protected override bool ClimateAcceptable(Map map)
+        {
+            return TileHasWater(map, "apsara");
+        }
+    }
+
+    /// <summary>
+    /// A dorome wanders in. Fires on her two habitats (locked D9): tiles that generate
+    /// caves - the deep earth she shares with gnomes - OR swamp biomes with at least
+    /// 1000 mm of yearly rainfall: the sodden wetlands her muddy body calls home.
+    /// </summary>
+    public class IncidentWorker_DoromeWandersIn : IncidentWorker_ElementalWandersIn
+    {
+        /// <summary>Swamp biomes wet enough for a dorome when the rainfall clause passes.</summary>
+        private static readonly HashSet<string> SwampBiomes = new HashSet<string>
+        {
+            "TemperateSwamp",
+            "TropicalSwamp",
+        };
+
+        /// <summary>Rainfall threshold in millimetres per year for the wetland clause.</summary>
+        private const float MinRainfall = 1000f;
+
+        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_DoromeWild;
+
+        /// <summary>Dorome gate: cave tile, or swamp biome with >= 1000 mm rainfall.</summary>
+        protected override bool ClimateAcceptable(Map map)
+        {
+            if (Find.World.HasCaves(map.Tile))
             {
-                Log.Message("[PMM_Elementals] undine wander-in blocked: world tile is null");
+                return true; // cave tiles: the gnome world-mutator check
+            }
+            RimWorld.Planet.Tile tile = Find.WorldGrid[map.Tile];
+            if (tile?.PrimaryBiome != null && SwampBiomes.Contains(tile.PrimaryBiome.defName))
+            {
+                if (tile.rainfall >= MinRainfall)
+                {
+                    return true; // rainy wetlands
+                }
+                Log.Message($"[PMM_Elementals] dorome wander-in blocked: swamp biome {tile.PrimaryBiome.defName} but rainfall {tile.rainfall:F0}mm < {MinRainfall}mm");
                 return false;
             }
-            if (tile.IsCoastal)
-            {
-                return true; // borders an ocean
-            }
-            // Rivers live on SurfaceTile (the surface-layer Tile subclass) in 1.6, not on
-            // the abstract Tile base. The int indexer returns the surface tile.
-            if (Find.WorldGrid[map.Tile.tileId] is RimWorld.Planet.SurfaceTile surface &&
-                surface.Rivers != null && surface.Rivers.Count > 0)
-            {
-                return true; // on a river
-            }
-            if (tile.PrimaryBiome?.defName == "Lake")
-            {
-                return true; // the Lake biome
-            }
-            Log.Message("[PMM_Elementals] undine wander-in blocked: tile is not coastal, riverine, or lake");
+            Log.Message($"[PMM_Elementals] dorome wander-in blocked: no caves, biome {tile?.PrimaryBiome?.defName ?? "null"} is not a swamp");
             return false;
+        }
+    }
+
+    /// <summary>
+    /// A dryad wanders in. Fires on her one habitat (locked D14): forested maps, and
+    /// only while the current outdoor temperature sits inside the vanilla tree growth
+    /// range - she walks when her trees could be growing, never in deep winter or a
+    /// killing heat wave. Swamps stay the dorome's wetlands; bogs are not her woods.
+    /// </summary>
+    public class IncidentWorker_DryadWandersIn : IncidentWorker_ElementalWandersIn
+    {
+        /// <summary>The three Core forest biomes a dryad calls home.</summary>
+        private static readonly HashSet<string> ForestBiomes = new HashSet<string>
+        {
+            "TemperateForest",
+            "BorealForest",
+            "TropicalRainforest",
+        };
+
+        // Vanilla PlantProperties growth range (verified 1.6 IL): trees grow 0-58 C
+        // (optimal 6-42). The dryad walks only when her trees could be growing.
+        private const float MinGrowthTemp = 0f;
+        private const float MaxGrowthTemp = 58f;
+
+        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_DryadWild;
+
+        /// <summary>Dryad gate: forest biome AND current outdoor temp in 0-58 C.</summary>
+        protected override bool ClimateAcceptable(Map map)
+        {
+            RimWorld.Planet.Tile tile = Find.WorldGrid[map.Tile];
+            if (tile?.PrimaryBiome == null || !ForestBiomes.Contains(tile.PrimaryBiome.defName))
+            {
+                Log.Message($"[PMM_Elementals] dryad wander-in blocked: biome {tile?.PrimaryBiome?.defName ?? "null"} is not forest");
+                return false;
+            }
+            float temp = map.mapTemperature.OutdoorTemp;
+            if (temp < MinGrowthTemp || temp > MaxGrowthTemp)
+            {
+                Log.Message($"[PMM_Elementals] dryad wander-in blocked: {temp:F0}C outside tree growth range {MinGrowthTemp:F0}-{MaxGrowthTemp:F0}C");
+                return false;
+            }
+            return true;
         }
     }
 }

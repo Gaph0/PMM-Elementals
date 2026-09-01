@@ -26,6 +26,10 @@ namespace PMM_Elementals
         public static bool IsIgnis(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_ElementalIgnis";
         public static bool IsSylph(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_ElementalSylph";
         public static bool IsUndine(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_ElementalUndine";
+        public static bool IsDorome(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_ElementalDorome";
+        public static bool IsDryad(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_ElementalDryad";
+        public static bool IsApsara(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_ElementalApsara";
+        public static bool IsGenie(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_ElementalGenie";
     }
 
     // =====================================================================
@@ -257,6 +261,18 @@ namespace PMM_Elementals
             else if (ElementalXenotypes.IsSylph(__result))
             {
                 GrantMarker(__result, ElementalDefOf.PMM_Hediff_SylphCaprice);
+            }
+            else if (ElementalXenotypes.IsDryad(__result))
+            {
+                GrantMarker(__result, ElementalDefOf.PMM_Hediff_DryadPhotosynthesis);
+            }
+            else if (ElementalXenotypes.IsApsara(__result))
+            {
+                GrantMarker(__result, ElementalDefOf.PMM_Hediff_ApsaraAllure);
+            }
+            else if (ElementalXenotypes.IsGenie(__result))
+            {
+                GrantMarker(__result, ElementalDefOf.PMM_Hediff_GenieFreedom);
             }
         }
 

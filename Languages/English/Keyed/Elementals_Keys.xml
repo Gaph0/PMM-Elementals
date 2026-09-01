@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LanguageData>
+
+	<!-- Reject message when the mud-merge ability targets an invalid cell
+	     (floor, deep water, fogged, unstandable) — see CompAbilityEffect_MudMerge. -->
+	<PMM_DoromeMudMerge_InvalidTarget>Must be revealed, natural ground — no floors, no deep water.</PMM_DoromeMudMerge_InvalidTarget>
+
+        <!-- Genie join-offer letter (see ChoiceLetter_GenieOffer). GENIE is the freed
+             genie, CLEANER the colonist who cleaned the lamp. Two text variants:
+             the cleaner is a bondable man (she promises the tsugai bond) or not
+             (she is freed unbound — a woman can never be her master). -->
+        <PMM_GenieOffer_Label>A genie is freed!</PMM_GenieOffer_Label>
+        <PMM_GenieOffer_Text_Bonded>As {CLEANER_nameDef} cleans the dust from the old lamp, a genie swirls free in a rush of violet smoke! Bowing low before her rescuer, {GENIE_nameDef} offers to join the colony and bind herself to {CLEANER_nameDef} in a tsugai bond — his to ask for one wish a year, granted with all the power she has.
+
+She will linger a few hours to savor her freedom, then wander on. Welcome her before she goes, or send her back into the smoke?</PMM_GenieOffer_Text_Bonded>
+        <PMM_GenieOffer_Text_Unbound>As {CLEANER_nameDef} cleans the dust from the old lamp, a genie swirls free in a rush of violet smoke! {GENIE_nameDef} owes her freedom to the colony and offers to join it — but her heart is unbound: only a man she forms a tsugai bond with can receive her wishes, one a year, at the price of nearly all her mana.
+
+She will linger a few hours to savor her freedom, then wander on. Welcome her before she goes, or send her back into the smoke?</PMM_GenieOffer_Text_Unbound>
+        <PMM_GenieOffer_Accept>Welcome her to the colony</PMM_GenieOffer_Accept>
+        <PMM_GenieOffer_Reject>Send her away</PMM_GenieOffer_Reject>
+        <PMM_GenieJoined_Bonded>{PAWN_nameDef} the genie has joined the colony, binding herself to {MASTER_nameDef} in a tsugai bond! Her yearly wish is his to ask.</PMM_GenieJoined_Bonded>
+        <PMM_GenieJoined_Unbound>{PAWN_nameDef} the genie has joined the colony! Her heart is unbound — only a man she forms a tsugai bond with can receive her wish.</PMM_GenieJoined_Unbound>
+
+        <!-- Genie wish gizmo gates and grant messages (see CompAbilityEffect_GenieWish). -->
+        <PMM_GenieWish_NoBond>{PAWN_labelShort} has no living tsugai husband in the colony — her wishes are for him alone.</PMM_GenieWish_NoBond>
+        <PMM_GenieWish_NoMana>{PAWN_labelShort}'s mana is not full enough — a wish takes nearly all she has (95% required).</PMM_GenieWish_NoMana>
+        <PMM_GenieWish_NotBondedTarget>A genie's wish is for her bonded master alone.</PMM_GenieWish_NotBondedTarget>
+        <PMM_GenieWish_NothingToGrant>{PAWN_labelShort} has no missing limbs, no scars and no lasting sorrows — there is nothing to wish away.</PMM_GenieWish_NothingToGrant>
+        <PMM_GenieWish_Limb>The genie's magic regrows {PAWN_possessive} {PART}!</PMM_GenieWish_Limb>
+        <PMM_GenieWish_Scar>The genie's magic smooths away one of {PAWN_possessive} old scars.</PMM_GenieWish_Scar>
+        <PMM_GenieWish_Mood>The genie's magic lifts "{THOUGHT}" from {PAWN_nameDef}'s heart.</PMM_GenieWish_Mood>
+        <PMM_GenieBond_Master>master: {MASTER_labelShort}</PMM_GenieBond_Master>
+
+        <!-- Genie freedom timer (see HediffComp_GenieFreedom / Patch_GenieDepartureMessage). -->
+        <PMM_GenieFreedom_LeavesIn>leaves in {TIME}</PMM_GenieFreedom_LeavesIn>
+        <PMM_GenieDeparted>{PAWN_nameDef} the genie has wandered off to enjoy her newfound freedom. Her offer has gone with her.</PMM_GenieDeparted>
+
+</LanguageData>
+

@@ -96,4 +96,78 @@
 		</skillGains>
 	</BackstoryDef>
 
+	<!-- Dorome adulthood: the clay-shaper. Construction from shaping clay to bricks,
+	     Mining from a lifetime of moving earth. -->
+	<BackstoryDef>
+		<defName>PMM_DoromeAdult</defName>
+		<title>clay-shaper dorome</title>
+		<titleShort>dorome</titleShort>
+		<description>{PAWN_nameDef} grew into a slow, contented shaper of wet earth, raising banks and bricks from the mud of caves and wetlands, and waiting patiently for a man to wrap in a warm, muddy embrace.</description>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+			<li>PMM_DoromeSpawn</li>
+		</spawnCategories>
+		<bodyTypeGlobal>Female</bodyTypeGlobal>
+		<skillGains>
+			<Construction>3</Construction>
+			<Mining>3</Mining>
+		</skillGains>
+	</BackstoryDef>
+
+	<!-- Dryad adulthood: the tree-warden. Plants from a lifetime of tending the forest
+	     (pairs with her AptitudeRemarkable_Plants), Social from the lore's passionate
+	     seducer of men. -->
+	<BackstoryDef>
+		<defName>PMM_DryadAdult</defName>
+		<title>tree-warden dryad</title>
+		<titleShort>dryad</titleShort>
+		<description>{PAWN_nameDef} grew into a warden of the deep forest, coaxing fruit and timber from the trees she calls her own, and luring the men who wander beneath her boughs into her warm, hollowed trunk.</description>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+			<li>PMM_DryadSpawn</li>
+		</spawnCategories>
+		<bodyTypeGlobal>Female</bodyTypeGlobal>
+		<skillGains>
+			<Plants>4</Plants>
+			<Social>2</Social>
+		</skillGains>
+	</BackstoryDef>
+
+	<!-- Apsara adulthood: the love-dancer. Social from championing erotic love, Artistic
+	     from a lifetime of the dance (pairs with her AptitudeStrong_Social/Artistic). -->
+	<BackstoryDef>
+		<defName>PMM_ApsaraAdult</defName>
+		<title>love-dancer apsara</title>
+		<titleShort>apsara</titleShort>
+		<description>{PAWN_nameDef} grew into a dancer of the love goddess, perfecting the "dance of love" that steals the heart of any who behold it, and wandering from river to sea to fill loveless men with love.</description>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+			<li>PMM_ApsaraSpawn</li>
+		</spawnCategories>
+		<bodyTypeGlobal>Female</bodyTypeGlobal>
+		<skillGains>
+			<Social>4</Social>
+			<Artistic>2</Artistic>
+		</skillGains>
+	</BackstoryDef>
+
+	<!-- Genie adulthood: the lamp-bound wish-granter. Intellectual and Crafting from
+	     long centuries of studying mortals' wishes and crafting their fulfilment
+	     (pairs with the base-game genie's AptitudeRemarkable_Intellectual/Crafting). -->
+	<BackstoryDef>
+		<defName>PMM_GenieAdult</defName>
+		<title>lamp-bound genie</title>
+		<titleShort>genie</titleShort>
+		<description>{PAWN_nameDef} was bound into a magic lamp and passed from hand to hand across the desert, studying each new owner's heart and crafting their dearest wishes into being - always in the letter, if not the spirit.</description>
+		<slot>Adulthood</slot>
+		<spawnCategories>
+			<li>PMM_GenieSpawn</li>
+		</spawnCategories>
+		<bodyTypeGlobal>Female</bodyTypeGlobal>
+		<skillGains>
+			<Intellectual>4</Intellectual>
+			<Crafting>2</Crafting>
+		</skillGains>
+	</BackstoryDef>
+
 </Defs>

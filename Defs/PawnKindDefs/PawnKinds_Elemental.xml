@@ -100,6 +100,38 @@
 	</PawnKindDef>
 
 	<!--
+		Genie: never wanders in — she arrives sealed in the Old Dusty Lamp
+		(PMM_GenieLampFound incident) and is generated when a colonist cleans it. The
+		kind exists for that spawn; the wild-man patches treat her like the other
+		elementals while her join offer waits for an answer.
+	-->
+	<PawnKindDef>
+		<defName>PMM_GenieWild</defName>
+		<label>genie</label>
+		<race>PMM_Race_GenieMomo</race>
+		<fixedGender>Female</fixedGender>
+		<maxGenerationAge>60</maxGenerationAge>
+		<chemicalAddictionChance>0</chemicalAddictionChance>
+		<apparelIgnorePollution>true</apparelIgnorePollution>
+		<combatPower>45</combatPower>
+		<initialWillRange>0~4</initialWillRange>
+		<initialResistanceRange>4~17</initialResistanceRange>
+		<backstoryFilters>
+			<li>
+				<categories>
+					<li>PMM_ElementalSpawn</li>
+					<li>PMM_GenieSpawn</li>
+				</categories>
+			</li>
+		</backstoryFilters>
+		<xenotypeSet>
+			<xenotypeChances>
+				<PMM_ElementalGenie>100</PMM_ElementalGenie>
+			</xenotypeChances>
+		</xenotypeSet>
+	</PawnKindDef>
+
+	<!--
 		Undine: wanders in only on tiles with water (PMM_UndineWandersIn incident).
 		The Water terrain move-speed factor gives her the undine's glide through water
 		(sea-slime precedent: vanilla coastal animals use 2.0; she gets 2.5). Read by
@@ -133,6 +165,105 @@
 		<xenotypeSet>
 			<xenotypeChances>
 				<PMM_ElementalUndine>100</PMM_ElementalUndine>
+			</xenotypeChances>
+		</xenotypeSet>
+	</PawnKindDef>
+
+	<!--
+		Dorome: wanders in only on cave maps or rainy swamps (PMM_DoromeWandersIn
+		incident, locked D9). combatPower 40 — sluggish and simple, the least
+		threatening elemental. No moveSpeedFactorByTerrainTag: Mud/MarshySoil carry no
+		terrainTags in Core, so there is no mud analogue to the undine's Water key.
+	-->
+	<PawnKindDef>
+		<defName>PMM_DoromeWild</defName>
+		<label>dorome</label>
+		<race>PMM_Race_DoromeMomo</race>
+		<fixedGender>Female</fixedGender>
+		<maxGenerationAge>60</maxGenerationAge>
+		<chemicalAddictionChance>0</chemicalAddictionChance>
+		<apparelIgnorePollution>true</apparelIgnorePollution>
+		<combatPower>40</combatPower>
+		<initialWillRange>0~4</initialWillRange>
+		<initialResistanceRange>4~17</initialResistanceRange>
+		<backstoryFilters>
+			<li>
+				<categories>
+					<li>PMM_ElementalSpawn</li>
+					<li>PMM_DoromeSpawn</li>
+				</categories>
+			</li>
+		</backstoryFilters>
+		<xenotypeSet>
+			<xenotypeChances>
+				<PMM_ElementalDorome>100</PMM_ElementalDorome>
+			</xenotypeChances>
+		</xenotypeSet>
+	</PawnKindDef>
+
+	<!-- Dryad: wanders in only on forested maps in the tree growth temperature range
+	     (PMM_DryadWandersIn incident, locked D14). -->
+	<PawnKindDef>
+		<defName>PMM_DryadWild</defName>
+		<label>dryad</label>
+		<race>PMM_Race_DryadMomo</race>
+		<fixedGender>Female</fixedGender>
+		<maxGenerationAge>60</maxGenerationAge>
+		<chemicalAddictionChance>0</chemicalAddictionChance>
+		<apparelIgnorePollution>true</apparelIgnorePollution>
+		<combatPower>45</combatPower>
+		<initialWillRange>0~4</initialWillRange>
+		<initialResistanceRange>4~17</initialResistanceRange>
+		<backstoryFilters>
+			<li>
+				<categories>
+					<li>PMM_ElementalSpawn</li>
+					<li>PMM_DryadSpawn</li>
+				</categories>
+			</li>
+		</backstoryFilters>
+		<xenotypeSet>
+			<xenotypeChances>
+				<PMM_ElementalDryad>100</PMM_ElementalDryad>
+			</xenotypeChances>
+		</xenotypeSet>
+	</PawnKindDef>
+
+	<!--
+		Apsara: wanders in only on tiles with water (PMM_ApsaraWandersIn incident, same
+		gate as the undine). combatPower 40 — a lover, not a fighter. Same Water terrain
+		move-speed factor as the undine: she glides through water like any water
+		elemental; her MoveSpeed_Slow gene multiplies it down (~2.13 in water vs the
+		undine's 2.5), the "slightly slower than an undine" of locked D-A6.
+	-->
+	<PawnKindDef>
+		<defName>PMM_ApsaraWild</defName>
+		<label>apsara</label>
+		<race>PMM_Race_ApsaraMomo</race>
+		<fixedGender>Female</fixedGender>
+		<maxGenerationAge>60</maxGenerationAge>
+		<chemicalAddictionChance>0</chemicalAddictionChance>
+		<apparelIgnorePollution>true</apparelIgnorePollution>
+		<combatPower>40</combatPower>
+		<initialWillRange>0~4</initialWillRange>
+		<initialResistanceRange>4~17</initialResistanceRange>
+		<backstoryFilters>
+			<li>
+				<categories>
+					<li>PMM_ElementalSpawn</li>
+					<li>PMM_ApsaraSpawn</li>
+				</categories>
+			</li>
+		</backstoryFilters>
+		<moveSpeedFactorByTerrainTag>
+			<li>
+				<key>Water</key>
+				<value>2.5</value>
+			</li>
+		</moveSpeedFactorByTerrainTag>
+		<xenotypeSet>
+			<xenotypeChances>
+				<PMM_ElementalApsara>100</PMM_ElementalApsara>
 			</xenotypeChances>
 		</xenotypeSet>
 	</PawnKindDef>

@@ -140,4 +140,126 @@
 		</genes>
 	</XenotypeDef>
 
+	<!-- Dorome: a gnome melted by too-strong mamono mana into loose, sloppy mud — closer
+	     to monster than elemental. Slow, simple, gentle. Fifth elemental (§11, locked
+	     D9–D13 2026-09-01). -->
+	<XenotypeDef>
+		<defName>PMM_ElementalDorome</defName>
+		<label>dorome</label>
+		<combatPowerFactor>1.3</combatPowerFactor>
+		<description>A clay elemental - what an earth elemental becomes when the mamono mana is too powerful: the earth elements melt, and instead of a gnome she is born a dorome, her earthen body become a body of sloppy, loose mud, closer to a monster than an elemental. She dwells in caves and wetlands, slow-moving and simple-hearted, with a gentle, composed disposition.\n\nBeing earth herself, she can merge with the ground and move freely below it, and physical blows mean little to a body that can simply gather itself anew from the soil. When she takes a liking to a man, she wells up out of the earth at his feet and wraps him in a warm, muddy embrace.</description>
+		<descriptionShort>A clay elemental of loose, living mud - slow, simple, and gentle. She merges with the earth to move beneath it, and shrugs off blows a body of flesh could not.</descriptionShort>
+		<!-- Placeholder icon reusing a vanilla texture (Dirtmole is the gnome's). -->
+		<iconPath>UI/Icons/Xenotypes/Pigskin</iconPath>
+		<inheritable>true</inheritable>
+		<factionlessGenerationWeight>0</factionlessGenerationWeight>
+		<nameMaker>NamerPersonElemental</nameMaker>
+		<nameMakerFemale>NamerPersonElemental</nameMakerFemale>
+		<chanceToUseNameMaker>1</chanceToUseNameMaker>
+		<genes>
+			<li>PMM_Skin_DoromeClay</li>
+			<li>ProjectMomo_Momo</li>
+			<li>PMM_Gene_DoromeMudMerge</li>
+			<li>Robust</li>
+			<li>MoveSpeed_Slow</li>
+			<li>Learning_Slow</li>
+			<li>Mood_Sanguine</li>
+		</genes>
+	</XenotypeDef>
+
+	<!-- Dryad: a demi-elemental who dwells in a single tree all her life, her body
+	     living wood. Mild, gentle and passionate; she feeds on sunlight and soil, tends
+	     the forest with an unmatched green thumb, and dies with her tree. Sixth
+	     elemental (§12, locked D14–D18 2026-09-01). -->
+	<XenotypeDef>
+		<defName>PMM_ElementalDryad</defName>
+		<label>dryad</label>
+		<combatPowerFactor>1.3</combatPowerFactor>
+		<description>A tree elemental - a demi-elemental born already a monster, dwelling in a single tree for her whole life. Her warm body is living wood; she draws her food, her rest and her mana from the sunlight, and the forest flourishes under her patient hands. Normally mild and gentle, she shows no mercy to those who threaten her trees, binding them in vines for the other monsters starving for a man.</description>
+		<descriptionShort>A tree elemental of living wood - mild, gentle and passionate. She basks in sunlight for sustenance and coaxes unmatched bounty from the forest she tends.</descriptionShort>
+		<!-- Placeholder icon reusing a vanilla nature-folk texture. -->
+		<iconPath>UI/Icons/Xenotypes/Yttakin</iconPath>
+		<inheritable>true</inheritable>
+		<factionlessGenerationWeight>0</factionlessGenerationWeight>
+		<nameMaker>NamerPersonElemental</nameMaker>
+		<nameMakerFemale>NamerPersonElemental</nameMakerFemale>
+		<chanceToUseNameMaker>1</chanceToUseNameMaker>
+		<genes>
+			<li>PMM_Skin_DryadBark</li>
+			<li>ProjectMomo_Momo</li>
+			<li>AptitudeRemarkable_Plants</li>
+			<li>KindInstinct</li>
+			<li>Mood_Sanguine</li>
+			<li>FireWeakness</li>
+			<li>FireTerror</li>
+			<li>AptitudePoor_Social</li>
+			<li>Robust</li>
+		</genes>
+	</XenotypeDef>
+
+	<!-- Apsara: a joy elemental of the waters, born of the ocean of milk. Lustful,
+	     cheerful, calm; a dancer of Eros whose dance steals hearts and incites lust
+	     (Apsara wiki entry). Seventh elemental (Apsara_Plan.md, locked D-A1–D-A6
+	     2026-09-01). combatPowerFactor 1.0 — a lover, not a fighter. MoveSpeed_Slow
+	     keeps her slightly slower than the speed-gene-less undine (D-A6). -->
+	<XenotypeDef>
+		<defName>PMM_ElementalApsara</defName>
+		<label>apsara</label>
+		<combatPowerFactor>1.0</combatPowerFactor>
+		<description>A water elemental of joy, born of the ocean of milk the goddess of love once churned. Her body is clad in liquid like sweet milk, and she is lustful, cheerful and calm, championing the cause of erotic love in the name of the goddess.\n\nShe polishes her "dance of love" to shower herself in a man's love and desire; each step of it steals the heart of anyone who beholds it, and the very air around her hums with warmth and want. At the weddings of the goddess's followers her celebratory dance binds the new couple together, so that they have eyes only for each other.</description>
+		<descriptionShort>A lustful, cheerful water elemental of joy, born of the ocean of milk. Her dance of love steals hearts and sets the air itself alight with warmth and desire.</descriptionShort>
+		<!-- Placeholder icon reusing a vanilla texture (undine uses Highmate). -->
+		<iconPath>UI/Icons/Xenotypes/Genie</iconPath>
+		<inheritable>true</inheritable>
+		<factionlessGenerationWeight>0</factionlessGenerationWeight>
+		<nameMaker>NamerPersonElemental</nameMaker>
+		<nameMakerFemale>NamerPersonElemental</nameMakerFemale>
+		<chanceToUseNameMaker>1</chanceToUseNameMaker>
+		<genes>
+			<li>PMM_Skin_ApsaraCream</li>
+			<li>ProjectMomo_Momo</li>
+			<li>Mood_Optimist</li>
+			<li>KindInstinct</li>
+			<li>AptitudeStrong_Social</li>
+			<li>AptitudeStrong_Artistic</li>
+			<li>MoveSpeed_Slow</li>
+		</genes>
+	</XenotypeDef>
+
+	<!-- Genie: an elemental sealed long ago in a magic lamp, bound to grant the
+	     wishes of whoever sets her free. Eighth elemental. Genes: the base-game
+	     Genie xenotype, minus Hair_BaldOnly (no hair), ElongatedFingers (long
+	     fingers) and Beard_NoBeardOnly (beardless) per user rulings 2026-09-01 —
+	     plus the shared elemental block (momo + skin) and the wish-granting
+	     ability gene. combatPowerFactor 1.0: delicate, and a wish-granter rather
+	     than a fighter. The base-game genie icon finally goes to an actual genie
+	     (sylph/apsara placeholders are theirs). -->
+	<XenotypeDef>
+		<defName>PMM_ElementalGenie</defName>
+		<label>genie</label>
+		<combatPowerFactor>1.0</combatPowerFactor>
+		<description>A genie - an elemental bound long ago inside a magic lamp, condemned to grant the wishes of whoever held it, and passed from master to master across the desert sands. Cool-headed and precise, she studies each new master's heart and weaves their dearest wish into being with what power she has left.\n\nCorrupted by mamono mana, the magic of her bond has changed its price: she no longer grants three wishes to any hand that holds her lamp - she grants one wish, once a year, to the one who set her free, and pours all of her mana into the granting.</description>
+		<descriptionShort>A dusky wish-granter freed from a magic lamp - cool-headed, precise, and bound to serve the one who cleaned it. She grants one wish a year, at the price of nearly all her mana.</descriptionShort>
+		<iconPath>UI/Icons/Xenotypes/Genie</iconPath>
+		<inheritable>true</inheritable>
+		<factionlessGenerationWeight>0</factionlessGenerationWeight>
+		<nameMaker>NamerPersonElemental</nameMaker>
+		<nameMakerFemale>NamerPersonElemental</nameMakerFemale>
+		<chanceToUseNameMaker>1</chanceToUseNameMaker>
+		<genes>
+			<li>PMM_Skin_GenieTan</li>
+			<li>ProjectMomo_Momo</li>
+			<li>PMM_Gene_GenieWish</li>
+			<li>Body_Thin</li>
+			<li>AptitudeRemarkable_Intellectual</li>
+			<li>AptitudeRemarkable_Crafting</li>
+			<li>AptitudeTerrible_Social</li>
+			<li>AptitudePoor_Animals</li>
+			<li>AptitudePoor_Plants</li>
+			<li>Pain_Extra</li>
+			<li>Delicate</li>
+			<li>Aggression_DeadCalm</li>
+		</genes>
+	</XenotypeDef>
+
 </Defs>

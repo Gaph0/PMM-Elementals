@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--
+		Dorome mud (locked D10). No vanilla mud filth exists (checked Core+Odyssey
+		Filth_* 2026-09-01), so the dorome's shed filth is a custom def. Cloned from
+		Filth_Dirt (same Grainy texture, dirt-clean sound, 45-50 day decay, rain washes
+		it away) with a darker wet-clay tint and slightly worse outdoor beauty: she
+		leaves mud behind instead of vanilla terrain filth and trash — see
+		Patch_DoromeMudFilth in DoromePowers.cs, the verbatim slime-filth pattern.
+	-->
+	<ThingDef ParentName="BaseFilth">
+		<defName>PMM_Filth_Mud</defName>
+		<label>mud</label>
+		<graphicData>
+			<texPath>Things/Filth/Grainy</texPath>
+			<color>(58,44,34,110)</color>
+		</graphicData>
+		<filth>
+			<placementMask>
+				<li>Terrain</li>
+			</placementMask>
+			<disappearsInDays>45~50</disappearsInDays>
+			<rainWashes>true</rainWashes>
+			<cleaningWorkToReduceThickness>35</cleaningWorkToReduceThickness>
+			<canFilthAttach>true</canFilthAttach>
+			<cleaningSound>Interact_CleanFilth_Dirt</cleaningSound>
+		</filth>
+		<statBases>
+			<BeautyOutdoors>-2</BeautyOutdoors>
+		</statBases>
+	</ThingDef>
+
+</Defs>

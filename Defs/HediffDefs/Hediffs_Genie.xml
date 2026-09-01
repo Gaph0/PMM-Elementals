@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--
+		LEGACY (user ruling 2026-09-01: the genie's bond IS the core mod's tsugai
+		bond). This hediff is no longer granted — the wish resolves her master from
+		the tsugai relation, and the tsugai bond hediff marks the bond on both
+		partners. The def stays so first-build saves still load; those copies are
+		inert (see the legacy note in GeniePowers.cs).
+	-->
+	<HediffDef>
+		<defName>PMM_Hediff_GenieBond</defName>
+		<label>lamp bond</label>
+		<description>The genie is bound to the one who cleaned her lamp, and will grant her wishes to that master alone.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<everCurableByItem>false</everCurableByItem>
+		<comps>
+			<li Class="PMM_Elementals.HediffCompProperties_GenieBond"/>
+		</comps>
+	</HediffDef>
+
+	<!--
+		The genie's freedom timer (user request 2026-09-01): a genie fresh from the
+		lamp wanders and savors her freedom for a few hours (10000 ticks = 4 in-game
+		hours), then heads for the map edge unless the player has welcomed her. The
+		comp shows "(leaves in X)" in the health tab while the countdown runs;
+		ThinkNode_ConditionalGenieFreedomSpent opens her exit branch when it expires
+		(see GeniePowers.cs). Granted at generation by Patch_GrantElementalMarkers.
+	-->
+	<HediffDef>
+		<defName>PMM_Hediff_GenieFreedom</defName>
+		<label>enjoying her freedom</label>
+		<description>Fresh from centuries in the lamp, the genie is savoring the open sky. When the wonder wears off, she will wander on - unless someone gives her a reason to stay.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<everCurableByItem>false</everCurableByItem>
+		<comps>
+			<li Class="PMM_Elementals.HediffCompProperties_GenieFreedom"/>
+		</comps>
+	</HediffDef>
+
+</Defs>

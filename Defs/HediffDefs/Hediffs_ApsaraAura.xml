@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--
+		Apsara allure aura. Hidden marker hediff on the apsara carries the ticking
+		HediffComp_ApsaraAura (race-def <comps> never instantiate on a pawn — the
+		gnome/sylph marker pattern). The comp sweeps the map (D-A1: map-wide, no radius)
+		every 600 ticks, refreshing the charm hediff on every non-hostile humanlike and
+		topping up their joy need.
+	-->
+	<HediffDef>
+		<defName>PMM_Hediff_ApsaraAllure</defName>
+		<label>allure</label>
+		<description>The apsara's dance of love saturates the air around her, lifting spirits and kindling desire in everyone nearby.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<initialSeverity>0.01</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<everCurableByItem>false</everCurableByItem>
+		<comps>
+			<li Class="PMM_Elementals.HediffCompProperties_ApsaraAura"/>
+		</comps>
+	</HediffDef>
+
+	<!--
+		Apsara's charm — the exposure hediff the aura applies. Beneficial and visible:
+		carriers feel light-hearted and warm-blooded. The vanilla
+		HediffComp_GiveLovinMTBFactor (D-A2 locked 0.6) multiplies their post-lovin'
+		refractory cooldown in JobDriver_Lovin.GenerateRandomMinTicksToNextLovin —
+		the exact PleasurePulse pattern (Data/Anomaly Hediffs_Global_Misc.xml). Zero
+		code needed for the lovin' effect. HediffComp_Disappears fades it ~6h after the
+		carrier leaves the aura (the comp re-ticks the range only when reapplied, so the
+		aura comp's refresh keeps it alive indefinitely while she's around).
+	-->
+	<HediffDef>
+		<defName>PMM_Hediff_ApsaraCharm</defName>
+		<label>apsara's charm</label>
+		<description>Captivated by the apsara's dance of love — heart light, blood warm, every face a little fairer.</description>
+		<hediffClass>HediffWithComps</hediffClass>
+		<isBad>false</isBad>
+		<initialSeverity>1</initialSeverity>
+		<maxSeverity>1</maxSeverity>
+		<everCurableByItem>false</everCurableByItem>
+		<comps>
+			<li Class="HediffCompProperties_Disappears">
+				<disappearsAfterTicks>15000~15000</disappearsAfterTicks>
+				<showRemainingTime>true</showRemainingTime>
+			</li>
+			<li Class="HediffCompProperties_GiveLovinMTBFactor">
+				<lovinMTBFactor>0.6</lovinMTBFactor>
+			</li>
+		</comps>
+	</HediffDef>
+
+</Defs>

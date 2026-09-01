@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Defs>
+
+	<!--
+		Dorome mud-merge (locked D11: tamed-only). A location-targeted ability granted
+		by PMM_Gene_DoromeMudMerge: she melts into the ground and emerges at any
+		revealed natural cell on the map (no line of sight — she swims through the
+		earth). 15000 ticks = 6 in-game hours; the vanilla ability system runs the
+		cooldown from cooldownTicksRange, so there is no custom cooldown state.
+
+		Target validity (natural tile, standable, no built floors, no deep water,
+		revealed) is enforced by CompAbilityEffect_MudMerge — see DoromePowers.cs.
+		Icon placeholder reuses Biotech's longjump ability icon (a relocation).
+	-->
+	<AbilityDef>
+		<defName>PMM_Ability_DoromeMudMerge</defName>
+		<label>merge with the earth</label>
+		<description>Melt into the ground and swim through the earth, emerging at any natural spot on the map. Works only on natural ground - no floors, no deep water - and the strain keeps her from merging more than once every few hours.</description>
+		<iconPath>UI/Abilities/Longjump</iconPath>
+		<cooldownTicksRange>15000</cooldownTicksRange>
+		<hostile>false</hostile>
+		<casterMustBeCapableOfViolence>false</casterMustBeCapableOfViolence>
+		<displayGizmoWhileUndrafted>true</displayGizmoWhileUndrafted>
+		<disableGizmoWhileUndrafted>false</disableGizmoWhileUndrafted>
+		<verbProperties>
+			<verbClass>Verb_CastAbility</verbClass>
+			<range>999</range>
+			<warmupTime>1.5</warmupTime>
+			<requireLineOfSight>false</requireLineOfSight>
+			<targetParams>
+				<canTargetLocations>true</canTargetLocations>
+				<canTargetPawns>false</canTargetPawns>
+				<canTargetBuildings>false</canTargetBuildings>
+				<canTargetItems>false</canTargetItems>
+				<canTargetSelf>false</canTargetSelf>
+			</targetParams>
+		</verbProperties>
+		<comps>
+			<li Class="PMM_Elementals.CompProperties_AbilityMudMerge"/>
+		</comps>
+	</AbilityDef>
+
+</Defs>

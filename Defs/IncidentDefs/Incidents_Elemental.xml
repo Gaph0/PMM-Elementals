@@ -11,6 +11,14 @@
 		gating lives in the C# ClimateAcceptable overrides, like the bubble/taisui/sea
 		slimes. baseChance 1.0 flat for all four (locked D7): each elemental is the only
 		spawn in her environment; tune after play-testing.
+
+		Target tags: Map_PlayerHome (vanilla parity — home settlements) plus
+		Map_TempIncident (user ruling 2026-09-01): elementals may also wander onto
+		temporary maps such as camps. Each map rolls its own storyteller, so a camp
+		map fires independently of the home map. There is no per-target chance-scaling
+		hook in 1.6 (weights come from the global BaseChanceThisGame), so "more likely
+		on camps" is not a clean toggle — it would need a Harmony patch on the weight
+		selector. Out of scope for now.
 	-->
 
 	<!-- A gnome wanders in. Fires only on maps with caves (overhead mountain) — the
@@ -79,6 +87,78 @@
 		<populationEffect>IncreaseMedium</populationEffect>
 		<letterLabel>{0} wanders in</letterLabel>
 		<letterText>A {0} has risen from the waters and wandered into the area, her translucent body glistening. {PAWN_pronoun}'s called {PAWN_nameDef}.\n\nYou can attempt to tame {PAWN_objective}.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+	</IncidentDef>
+
+	<!-- A dorome wanders in. Fires only on cave maps or on swamp biomes with at least
+	     1000 mm of yearly rainfall (locked D9) — the caves and wetlands clay
+	     elementals call home. -->
+	<IncidentDef>
+		<defName>PMM_DoromeWandersIn</defName>
+		<label>dorome wanders in</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>PMM_Elementals.IncidentWorker_DoromeWandersIn</workerClass>
+		<baseChance>1.0</baseChance>
+		<populationEffect>IncreaseMedium</populationEffect>
+		<letterLabel>{0} wanders in</letterLabel>
+		<letterText>A {0} has welled up out of the sodden earth and wandered into the area, loose mud sloughing off her as she moves. {PAWN_pronoun}'s called {PAWN_nameDef}.\n\nYou can attempt to tame {PAWN_objective}.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+	</IncidentDef>
+
+	<!-- A dryad wanders in. Fires only on forested maps (Temperate/Boreal/Tropical
+	     forest) while the current outdoor temperature sits inside the tree growth range
+	     0-58 C (locked D14) — the woods, in the growing season, where her trees live. -->
+	<IncidentDef>
+		<defName>PMM_DryadWandersIn</defName>
+		<label>dryad wanders in</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>PMM_Elementals.IncidentWorker_DryadWandersIn</workerClass>
+		<baseChance>1.0</baseChance>
+		<populationEffect>IncreaseMedium</populationEffect>
+		<letterLabel>{0} wanders in</letterLabel>
+		<letterText>A {0} has stepped out from between the trees and wandered into the area, leaves stirring in her hair as she turns her face to the sun. {PAWN_pronoun}'s called {PAWN_nameDef}.\n\nYou can attempt to tame {PAWN_objective}.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+	</IncidentDef>
+
+	<!-- An apsara wanders in. Fires only on tiles with water (coast, river, or Lake
+	     biome) — the same gate as the undine, her fellow water elemental. -->
+	<IncidentDef>
+		<defName>PMM_ApsaraWandersIn</defName>
+		<label>apsara wanders in</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>PMM_Elementals.IncidentWorker_ApsaraWandersIn</workerClass>
+		<baseChance>1.0</baseChance>
+		<populationEffect>IncreaseMedium</populationEffect>
+		<letterLabel>{0} wanders in</letterLabel>
+		<letterText>An {0} has risen from the waters and wandered into the area, moving with a dancer's grace that already draws every eye. {PAWN_pronoun}'s called {PAWN_nameDef}.\n\nYou can attempt to tame {PAWN_objective}.</letterText>
+		<letterDef>NeutralEvent</letterDef>
+	</IncidentDef>
+
+	<!-- A strange lamp turns up. Fires only on the Desert, AridShrubland and
+	     ExtremeDesert biomes (gated in the worker — same C#-only gating ruling as
+	     the wander-ins). It drops the Old Dusty Lamp ITEM, not a pawn: the genie
+	     herself only appears when a colonist cleans it (see Item_GenieLamp.xml). -->
+	<IncidentDef>
+		<defName>PMM_GenieLampFound</defName>
+		<label>strange lamp in the sand</label>
+		<category>Misc</category>
+		<targetTags>
+			<li>Map_PlayerHome</li>
+		</targetTags>
+		<workerClass>PMM_Elementals.IncidentWorker_GenieLampFound</workerClass>
+		<baseChance>1.0</baseChance>
+		<populationEffect>IncreaseMedium</populationEffect>
+		<letterLabel>A strange lamp</letterLabel>
+		<letterText>Something glints in the sand at the edge of the colony: an old lamp, caked in dust and half-buried by the wind. It feels faintly warm, as if something inside has been waiting a very long time.\n\nA colonist could clean it and see what — or who — comes out.</letterText>
 		<letterDef>NeutralEvent</letterDef>
 	</IncidentDef>
 

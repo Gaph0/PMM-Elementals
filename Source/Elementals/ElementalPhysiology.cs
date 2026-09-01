@@ -4,7 +4,7 @@ using Verse;
 
 namespace PMM_Elementals
 {
-    /// <summary>The four wild elemental pawn kinds, shared by the wild-man patches.</summary>
+    /// <summary>The five wild elemental pawn kinds, shared by the wild-man patches.</summary>
     public static class ElementalKinds
     {
         public static bool IsElementalKind(PawnKindDef kind)
@@ -12,7 +12,11 @@ namespace PMM_Elementals
             return kind == ElementalDefOf.PMM_GnomeWild ||
                    kind == ElementalDefOf.PMM_IgnisWild ||
                    kind == ElementalDefOf.PMM_SylphWild ||
-                   kind == ElementalDefOf.PMM_UndineWild;
+                   kind == ElementalDefOf.PMM_UndineWild ||
+                   kind == ElementalDefOf.PMM_DoromeWild ||
+                   kind == ElementalDefOf.PMM_DryadWild ||
+                   kind == ElementalDefOf.PMM_ApsaraWild ||
+                   kind == ElementalDefOf.PMM_GenieWild;
         }
     }
 
@@ -101,6 +105,10 @@ namespace PMM_Elementals
             if (kind == ElementalDefOf.PMM_IgnisWild) return "PMM_IgnisAdult";
             if (kind == ElementalDefOf.PMM_SylphWild) return "PMM_SylphAdult";
             if (kind == ElementalDefOf.PMM_UndineWild) return "PMM_UndineAdult";
+            if (kind == ElementalDefOf.PMM_DoromeWild) return "PMM_DoromeAdult";
+            if (kind == ElementalDefOf.PMM_DryadWild) return "PMM_DryadAdult";
+            if (kind == ElementalDefOf.PMM_ApsaraWild) return "PMM_ApsaraAdult";
+            if (kind == ElementalDefOf.PMM_GenieWild) return "PMM_GenieAdult";
             return "PMM_ElementalChild"; // unreachable; safe fallback
         }
     }
@@ -142,6 +150,10 @@ namespace PMM_Elementals
                 case "PMM_ElementalIgnis": return ElementalDefOf.PMM_Race_IgnisMomo;
                 case "PMM_ElementalSylph": return ElementalDefOf.PMM_Race_SylphMomo;
                 case "PMM_ElementalUndine": return ElementalDefOf.PMM_Race_UndineMomo;
+                case "PMM_ElementalDorome": return ElementalDefOf.PMM_Race_DoromeMomo;
+                case "PMM_ElementalDryad": return ElementalDefOf.PMM_Race_DryadMomo;
+                case "PMM_ElementalApsara": return ElementalDefOf.PMM_Race_ApsaraMomo;
+                case "PMM_ElementalGenie": return ElementalDefOf.PMM_Race_GenieMomo;
                 default: return null;
             }
         }

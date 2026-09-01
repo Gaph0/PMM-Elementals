@@ -55,4 +55,53 @@
 		</statBases>
 	</ThingDef>
 
+	<!-- Dorome momo: a clay elemental in a woman's form. Mud filth, the tamed-only
+	     mud-merge ability and the clay-grey hair are all patches (see DoromePowers.cs) -
+	     nothing here needs race comps. Human butcher yields (D2 parity). -->
+	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
+		<defName>PMM_Race_DoromeMomo</defName>
+		<label>dorome momo</label>
+		<description>A clay elemental momo. Her soft, clay-grey body is wet earth given a woman's form - slow, simple, and endlessly gentle.</description>
+	</ThingDef>
+
+	<!-- Dryad momo: a tree elemental in a woman's form. She IS her tree, so her body is
+	     living wood: butchering yields wood (meatDef) and no leather (LeatherAmount 0),
+	     and her comfortable temperature range is the vanilla tree growth range 0-58 C
+	     (requirement 3; the Human parent sets 16/26). Her green thumb (locked D16) is a
+	     pawn-side stat pair: she works plants faster and her own harvests yield more.
+	     Photosynthesis is a HediffComp on a marker hediff (see DryadPowers.cs). -->
+	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
+		<defName>PMM_Race_DryadMomo</defName>
+		<label>dryad momo</label>
+		<description>A tree elemental momo. Her warm body is living wood given a woman's form - mild, gentle, and deeply rooted in the forest she tends.</description>
+		<race>
+			<meatDef>WoodLog</meatDef>
+		</race>
+		<statBases>
+			<ComfyTemperatureMin>0</ComfyTemperatureMin>
+			<ComfyTemperatureMax>58</ComfyTemperatureMax>
+			<LeatherAmount>0</LeatherAmount>
+			<PlantWorkSpeed>1.4</PlantWorkSpeed>
+			<PlantHarvestYield>1.25</PlantHarvestYield>
+		</statBases>
+	</ThingDef>
+
+	<!-- Apsara momo: a joy elemental in a woman's form. The allure aura is a HediffComp
+	     on a marker hediff, and the party/romance effects are patches (see
+	     ApsaraPowers.cs) - nothing here needs race comps. Human butcher yields (D2 parity). -->
+	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
+		<defName>PMM_Race_ApsaraMomo</defName>
+		<label>apsara momo</label>
+		<description>A joy elemental momo. Her body, clad in liquid like sweet milk, is the ocean of love given a woman's form - cheerful, lustful, and forever mid-dance.</description>
+	</ThingDef>
+
+	<!-- Genie momo: an elemental of the lamp in a woman's form. The wish is a
+	     gene-granted ability and the lamp bond a marker hediff (see GeniePowers.cs) -
+	     nothing here needs race comps. Human butcher yields (D2 parity). -->
+	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
+		<defName>PMM_Race_GenieMomo</defName>
+		<label>genie momo</label>
+		<description>A genie momo. Once bound to a magic lamp, her dusky body is wish-magic given a woman's form - cool-headed, precise, and bound to serve the one who set her free.</description>
+	</ThingDef>
+
 </Defs>
