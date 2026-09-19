@@ -17,6 +17,14 @@
 		"Could not find parent node" failure).
 	-->
 	<ThingDef Name="PMM_ElementalMomoRaceBase" ParentName="Human" Abstract="True">
+		<!-- Slightly smaller than a baseline human (1.0): lower carrying capacity and
+		     butcher yields, better melee dodge. Inherited by all eight elementals.
+		     Body size is a RaceProperties field in 1.6 (baseBodySize), NOT a statBases
+		     stat — there is no "BodySize" StatDef, so <BodySize> in statBases throws
+		     "No StatDef named BodySize" cross-reference errors (one per inheriting race). -->
+		<race>
+			<baseBodySize>0.8</baseBodySize>
+		</race>
 	</ThingDef>
 
 	<!-- Gnome momo: an earth elemental in a woman's form. Living-stone healing is a

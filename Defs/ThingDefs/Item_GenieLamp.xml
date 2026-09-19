@@ -9,8 +9,7 @@
 		genie and pops her join offer, then CompUseEffectDestroySelf consumes the lamp.
 
 		DeteriorationRate 0: the lamp has waited centuries in the sand — it does not
-		rot away before anyone finds it. Placeholder art reuses the vanilla golden
-		cube texture (a small golden artefact); replace with your own art later.
+		rot away before anyone finds it. Uses the GenieJar art (an oil lamp).
 	-->
 	<ThingDef>
 		<defName>PMM_Item_OldDustyLamp</defName>
@@ -27,7 +26,7 @@
 		<tradeNeverStack>true</tradeNeverStack>
 		<alwaysHaulable>true</alwaysHaulable>
 		<graphicData>
-			<texPath>Things/Item/Special/GoldenCube</texPath>
+			<texPath>Things/Items/GenieJar/GenieJar</texPath>
 			<graphicClass>Graphic_Single</graphicClass>
 		</graphicData>
 		<statBases>
