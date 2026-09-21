@@ -18,31 +18,27 @@ namespace PMM_Elementals
     }
 
     /// <summary>
-    /// Def references resolved at startup. The four wild pawn kinds, the four xenotypes
-    /// and the four custom races — everything the physiology patches need without a
-    /// string lookup at call time. Backstory defs are fetched by name per kind (slime
-    /// pattern) since they are looked up once per pawn generation, not per tick.
+    /// Def references resolved at startup. The eight wild pawn kinds and the eight custom
+    /// races — everything the physiology patches need without a string lookup at call
+    /// time. Backstory defs are fetched by name per kind (slime pattern) since they are
+    /// looked up once per pawn generation, not per tick.
+    ///
+    /// The <b>xenotypes</b> live in ElementalXenotypeDefOf below instead, of necessity: a
+    /// pawnkind and its xenotype deliberately share one defName (PMM_Elemental_Gnome), and
+    /// a [DefOf] field binds by FIELD NAME, so two fields with that name cannot sit in one
+    /// class. Two classes is also how vanilla splits PawnKindDefOf from XenotypeDefOf.
     /// </summary>
     [DefOf]
     public static class ElementalDefOf
     {
-        public static PawnKindDef PMM_GnomeWild;
-        public static PawnKindDef PMM_IgnisWild;
-        public static PawnKindDef PMM_SylphWild;
-        public static PawnKindDef PMM_UndineWild;
-        public static PawnKindDef PMM_DoromeWild;
-        public static PawnKindDef PMM_DryadWild;
-        public static PawnKindDef PMM_ApsaraWild;
-        public static PawnKindDef PMM_GenieWild;
-
-        public static XenotypeDef PMM_ElementalGnome;
-        public static XenotypeDef PMM_ElementalIgnis;
-        public static XenotypeDef PMM_ElementalSylph;
-        public static XenotypeDef PMM_ElementalUndine;
-        public static XenotypeDef PMM_ElementalDorome;
-        public static XenotypeDef PMM_ElementalDryad;
-        public static XenotypeDef PMM_ElementalApsara;
-        public static XenotypeDef PMM_ElementalGenie;
+        public static PawnKindDef PMM_Elemental_Gnome;
+        public static PawnKindDef PMM_Elemental_Ignis;
+        public static PawnKindDef PMM_Elemental_Sylph;
+        public static PawnKindDef PMM_Elemental_Undine;
+        public static PawnKindDef PMM_Elemental_Dorome;
+        public static PawnKindDef PMM_Elemental_Dryad;
+        public static PawnKindDef PMM_Elemental_Apsara;
+        public static PawnKindDef PMM_Elemental_Genie;
 
         public static ThingDef PMM_Race_GnomeMomo;
         public static ThingDef PMM_Race_IgnisMomo;
@@ -64,15 +60,13 @@ namespace PMM_Elementals
         public static HediffDef PMM_Hediff_GenieFreedom;
         public static LetterDef PMM_Letter_GenieOffer;
 
-        // Phase-3 powers.
-        public static HediffDef PMM_Hediff_GnomeLivingStone;
-        public static HediffDef PMM_Hediff_SylphCaprice;
+        // Phase-3 powers. Gnome living stone, sylph caprice and dryad photosynthesis need
+        // no HediffDef of their own any more: their HediffComps sit on the race trackers
+        // (see Race_ElementalMomo.xml).
         public static HediffDef PMM_Hediff_UndineWetSpeed;
-        public static HediffDef PMM_Hediff_DryadPhotosynthesis;
         public static ThoughtDef PMM_Thought_SylphCapriceFoul;
         public static ThoughtDef PMM_Thought_SylphCapriceGiddy;
-        // Apsara aura (marker + exposure) and charm thought.
-        public static HediffDef PMM_Hediff_ApsaraAllure;
+        // Apsara charm (the aura comp itself sits on her race tracker) + its thought.
         public static HediffDef PMM_Hediff_ApsaraCharm;
         public static ThoughtDef PMM_Thought_ApsaraCharm;
         // Resolved from Project Momo core (cross-mod def; assigned by name, not DefOf).
@@ -86,6 +80,31 @@ namespace PMM_Elementals
             ProjectMomo_TeaseDamage = DefDatabase<HediffDef>.GetNamedSilentFail("ProjectMomo_TeaseDamage");
             ProjectMomo_Mana = DefDatabase<NeedDef>.GetNamedSilentFail("ProjectMomo_Mana");
             ProjectMomo_Tsugai = DefDatabase<PawnRelationDef>.GetNamedSilentFail("ProjectMomo_Tsugai");
+        }
+    }
+
+    /// <summary>
+    /// The eight elemental xenotypes, keyed by the same defNames as the kinds above.
+    /// Split out of ElementalDefOf because a pawnkind and its xenotype share one defName
+    /// and [DefOf] binds by field name — see the comment there. Nothing reads these yet;
+    /// they exist so xenotype work (transformation, checks) has a resolved reference
+    /// instead of a string lookup.
+    /// </summary>
+    [DefOf]
+    public static class ElementalXenotypeDefOf
+    {
+        public static XenotypeDef PMM_Elemental_Gnome;
+        public static XenotypeDef PMM_Elemental_Ignis;
+        public static XenotypeDef PMM_Elemental_Sylph;
+        public static XenotypeDef PMM_Elemental_Undine;
+        public static XenotypeDef PMM_Elemental_Dorome;
+        public static XenotypeDef PMM_Elemental_Dryad;
+        public static XenotypeDef PMM_Elemental_Apsara;
+        public static XenotypeDef PMM_Elemental_Genie;
+
+        static ElementalXenotypeDefOf()
+        {
+            DefOfHelper.EnsureInitializedInCtor(typeof(ElementalXenotypeDefOf));
         }
     }
 }

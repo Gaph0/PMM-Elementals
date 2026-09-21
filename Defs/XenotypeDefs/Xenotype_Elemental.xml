@@ -24,7 +24,7 @@
 
 	<!-- Gnome: an earth elemental born of corrupted earth elements. Calm, quiet, voluptuous. -->
 	<XenotypeDef>
-		<defName>PMM_ElementalGnome</defName>
+		<defName>PMM_Elemental_Gnome</defName>
 		<label>gnome</label>
 		<combatPowerFactor>1.5</combatPowerFactor>
 		<description>An earth elemental, born from concentrated earth elements that were corrupted by mamono mana and became a monsterized elemental. She is a quiet, carefree monster with a full, voluptuous body, as if to symbolize the earth itself, and she dwells in lands rich in earth like caves and mines.\n\nMost of the time she hardly speaks, silently cuddling with whomever she fancies - though occasionally, delirious with passion, she will throw herself at a man, seeking to make love slowly over a long time: she the soil, and he the plant taking root.</description>
@@ -51,11 +51,17 @@
 			<li>Nearsighted</li>
 			<li>AptitudeTerrible_Artistic</li>
 		</genes>
+		<modExtensions>
+			<li Class="BigAndSmall.XenotypeExtension">
+				<setRace>PMM_Race_GnomeMomo</setRace>
+				<forceRace>true</forceRace>
+			</li>
+		</modExtensions>
 	</XenotypeDef>
 
 	<!-- Ignis: a fire elemental born of corrupted fire elements. Strong-willed, passionate. -->
 	<XenotypeDef>
-		<defName>PMM_ElementalIgnis</defName>
+		<defName>PMM_Elemental_Ignis</defName>
 		<label>ignis</label>
 		<combatPowerFactor>1.8</combatPowerFactor>
 		<description>A fire elemental, born from concentrated fire elements that were corrupted by mamono mana and became a monsterized elemental. She is violent like a raging flame, with an unfussy disposition and little regard for minor details, wandering places of high temperature in search of human men as her lust smolders within.\n\nAs long as she does not will it, the flames that cover her body will not burn those who touch them - but being enveloped by them makes a body flush and hot-headed, burning with desire.</description>
@@ -80,11 +86,17 @@
 			<li>Mood_Pessimist</li>
 			<li>MoveSpeed_Quick</li>
 		</genes>
+		<modExtensions>
+			<li Class="BigAndSmall.XenotypeExtension">
+				<setRace>PMM_Race_IgnisMomo</setRace>
+				<forceRace>true</forceRace>
+			</li>
+		</modExtensions>
 	</XenotypeDef>
 
 	<!-- Sylph: a wind elemental born of corrupted wind elements. Capricious, free-spirited. -->
 	<XenotypeDef>
-		<defName>PMM_ElementalSylph</defName>
+		<defName>PMM_Elemental_Sylph</defName>
 		<label>sylph</label>
 		<combatPowerFactor>1.2</combatPowerFactor>
 		<description>A wind elemental, born from concentrated wind elements that were corrupted by mamono mana and became a monsterized elemental. She is capricious and free-spirited, like the wind; ordinarily she hides herself and flies around the sky with the wind, looking for human men, though she often descends and reveals herself on a whim.\n\nRumours carried on the wind have made her deeply fascinated with the romance between men and women, and when she finds a man she likes, she seeks intercourse almost the same way a child begs to be played with.</description>
@@ -110,11 +122,17 @@
 			<li>AptitudeStrong_Social</li>
 			<li>AptitudeStrong_Artistic</li>
 		</genes>
+		<modExtensions>
+			<li Class="BigAndSmall.XenotypeExtension">
+				<setRace>PMM_Race_SylphMomo</setRace>
+				<forceRace>true</forceRace>
+			</li>
+		</modExtensions>
 	</XenotypeDef>
 
 	<!-- Undine: a water elemental born of corrupted water elements. Pure, kind, gentle. -->
 	<XenotypeDef>
-		<defName>PMM_ElementalUndine</defName>
+		<defName>PMM_Elemental_Undine</defName>
 		<label>undine</label>
 		<combatPowerFactor>1.4</combatPowerFactor>
 		<description>A water elemental, born from concentrated water elements that were corrupted by mamono mana and became a monsterized elemental. Her beautiful body is translucent like the water she is made of, and she has a pure, kind heart with a gentle disposition, dwelling near sources of water like lakes and springs.\n\nShe seldom attacks humans - but she is always seeking a human man to share love with, and if one strikes her fancy, she will actively seduce him, her strong yearning converted by mamono mana into powerful desire.</description>
@@ -138,13 +156,19 @@
 			<li>MinTemp_SmallIncrease</li>
 			<li>MoveSpeed_Slow</li>
 		</genes>
+		<modExtensions>
+			<li Class="BigAndSmall.XenotypeExtension">
+				<setRace>PMM_Race_UndineMomo</setRace>
+				<forceRace>true</forceRace>
+			</li>
+		</modExtensions>
 	</XenotypeDef>
 
 	<!-- Dorome: a gnome melted by too-strong mamono mana into loose, sloppy mud — closer
 	     to monster than elemental. Slow, simple, gentle. Fifth elemental (§11, locked
 	     D9–D13 2026-09-01). -->
 	<XenotypeDef>
-		<defName>PMM_ElementalDorome</defName>
+		<defName>PMM_Elemental_Dorome</defName>
 		<label>dorome</label>
 		<combatPowerFactor>1.3</combatPowerFactor>
 		<description>A clay elemental - what an earth elemental becomes when the mamono mana is too powerful: the earth elements melt, and instead of a gnome she is born a dorome, her earthen body become a body of sloppy, loose mud, closer to a monster than an elemental. She dwells in caves and wetlands, slow-moving and simple-hearted, with a gentle, composed disposition.\n\nBeing earth herself, she can merge with the ground and move freely below it, and physical blows mean little to a body that can simply gather itself anew from the soil. When she takes a liking to a man, she wells up out of the earth at his feet and wraps him in a warm, muddy embrace.</description>
@@ -165,6 +189,12 @@
 			<li>Learning_Slow</li>
 			<li>Mood_Sanguine</li>
 		</genes>
+		<modExtensions>
+			<li Class="BigAndSmall.XenotypeExtension">
+				<setRace>PMM_Race_DoromeMomo</setRace>
+				<forceRace>true</forceRace>
+			</li>
+		</modExtensions>
 	</XenotypeDef>
 
 	<!-- Dryad: a demi-elemental who dwells in a single tree all her life, her body
@@ -172,7 +202,7 @@
 	     the forest with an unmatched green thumb, and dies with her tree. Sixth
 	     elemental (§12, locked D14–D18 2026-09-01). -->
 	<XenotypeDef>
-		<defName>PMM_ElementalDryad</defName>
+		<defName>PMM_Elemental_Dryad</defName>
 		<label>dryad</label>
 		<combatPowerFactor>1.3</combatPowerFactor>
 		<description>A tree elemental - a demi-elemental born already a monster, dwelling in a single tree for her whole life. Her warm body is living wood; she draws her food, her rest and her mana from the sunlight, and the forest flourishes under her patient hands. Normally mild and gentle, she shows no mercy to those who threaten her trees, binding them in vines for the other monsters starving for a man.</description>
@@ -195,6 +225,12 @@
 			<li>AptitudePoor_Social</li>
 			<li>Robust</li>
 		</genes>
+		<modExtensions>
+			<li Class="BigAndSmall.XenotypeExtension">
+				<setRace>PMM_Race_DryadMomo</setRace>
+				<forceRace>true</forceRace>
+			</li>
+		</modExtensions>
 	</XenotypeDef>
 
 	<!-- Apsara: a joy elemental of the waters, born of the ocean of milk. Lustful,
@@ -203,7 +239,7 @@
 	     2026-09-01). combatPowerFactor 1.0 — a lover, not a fighter. MoveSpeed_Slow
 	     keeps her slightly slower than the speed-gene-less undine (D-A6). -->
 	<XenotypeDef>
-		<defName>PMM_ElementalApsara</defName>
+		<defName>PMM_Elemental_Apsara</defName>
 		<label>apsara</label>
 		<combatPowerFactor>1.0</combatPowerFactor>
 		<description>A water elemental of joy, born of the ocean of milk the goddess of love once churned. Her body is clad in liquid like sweet milk, and she is lustful, cheerful and calm, championing the cause of erotic love in the name of the goddess.\n\nShe polishes her "dance of love" to shower herself in a man's love and desire; each step of it steals the heart of anyone who beholds it, and the very air around her hums with warmth and want. At the weddings of the goddess's followers her celebratory dance binds the new couple together, so that they have eyes only for each other.</description>
@@ -224,6 +260,12 @@
 			<li>AptitudeStrong_Artistic</li>
 			<li>MoveSpeed_Slow</li>
 		</genes>
+		<modExtensions>
+			<li Class="BigAndSmall.XenotypeExtension">
+				<setRace>PMM_Race_ApsaraMomo</setRace>
+				<forceRace>true</forceRace>
+			</li>
+		</modExtensions>
 	</XenotypeDef>
 
 	<!-- Genie: an elemental sealed long ago in a magic lamp, bound to grant the
@@ -235,7 +277,7 @@
 	     than a fighter. The base-game genie icon finally goes to an actual genie
 	     (sylph/apsara placeholders are theirs). -->
 	<XenotypeDef>
-		<defName>PMM_ElementalGenie</defName>
+		<defName>PMM_Elemental_Genie</defName>
 		<label>genie</label>
 		<combatPowerFactor>1.0</combatPowerFactor>
 		<description>A genie - an elemental bound long ago inside a magic lamp, condemned to grant the wishes of whoever held it, and passed from master to master across the desert sands. Cool-headed and precise, she studies each new master's heart and weaves their dearest wish into being with what power she has left.\n\nCorrupted by mamono mana, the magic of her bond has changed its price: she no longer grants three wishes to any hand that holds her lamp - she grants one wish, once a year, to the one who set her free, and pours all of her mana into the granting.</description>
@@ -260,6 +302,12 @@
 			<li>Delicate</li>
 			<li>Aggression_DeadCalm</li>
 		</genes>
+		<modExtensions>
+			<li Class="BigAndSmall.XenotypeExtension">
+				<setRace>PMM_Race_GenieMomo</setRace>
+				<forceRace>true</forceRace>
+			</li>
+		</modExtensions>
 	</XenotypeDef>
 
 </Defs>

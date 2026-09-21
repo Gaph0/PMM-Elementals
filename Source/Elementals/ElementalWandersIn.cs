@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using ProjectMomo;
 using RimWorld;
 using Verse;
 
@@ -39,7 +40,7 @@ namespace PMM_Elementals
 
             if (!(parms.target is Map map))
             {
-                Log.Message("[PMM_Elementals] wander-in blocked: target is not a map");
+                PMMLog.Message("[PMM_Elementals] wander-in blocked: target is not a map");
                 return false;
             }
             if (!ClimateAcceptable(map))
@@ -48,7 +49,7 @@ namespace PMM_Elementals
             }
             if (!TryFindEntryCell(map, out _))
             {
-                Log.Message("[PMM_Elementals] wander-in blocked: no edge cell can reach the colony");
+                PMMLog.Message("[PMM_Elementals] wander-in blocked: no edge cell can reach the colony");
                 return false;
             }
             return true;
@@ -64,17 +65,17 @@ namespace PMM_Elementals
         {
             if (!(parms.target is Map map))
             {
-                Log.Message("[PMM_Elementals] wander-in blocked: target is not a map");
+                PMMLog.Message("[PMM_Elementals] wander-in blocked: target is not a map");
                 return false;
             }
             if (map.GameConditionManager.ConditionIsActive(GameConditionDefOf.ToxicFallout))
             {
-                Log.Message("[PMM_Elementals] wander-in blocked: toxic fallout active");
+                PMMLog.Message("[PMM_Elementals] wander-in blocked: toxic fallout active");
                 return false;
             }
             if (ModsConfig.BiotechActive && map.GameConditionManager.ConditionIsActive(GameConditionDefOf.NoxiousHaze))
             {
-                Log.Message("[PMM_Elementals] wander-in blocked: noxious haze active");
+                PMMLog.Message("[PMM_Elementals] wander-in blocked: noxious haze active");
                 return false;
             }
             return true;
@@ -176,7 +177,7 @@ namespace PMM_Elementals
             RimWorld.Planet.Tile tile = Find.WorldGrid[map.Tile];
             if (tile == null)
             {
-                Log.Message($"[PMM_Elementals] {caller} wander-in blocked: world tile is null");
+                PMMLog.Message($"[PMM_Elementals] {caller} wander-in blocked: world tile is null");
                 return false;
             }
             if (tile.IsCoastal)
@@ -194,7 +195,7 @@ namespace PMM_Elementals
             {
                 return true; // the Lake biome
             }
-            Log.Message($"[PMM_Elementals] {caller} wander-in blocked: tile is not coastal, riverine, or lake");
+                PMMLog.Message($"[PMM_Elementals] {caller} wander-in blocked: tile is not coastal, riverine, or lake");
             return false;
         }
     }
@@ -207,7 +208,7 @@ namespace PMM_Elementals
     /// </summary>
     public class IncidentWorker_GnomeWandersIn : IncidentWorker_ElementalWandersIn
     {
-        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_GnomeWild;
+        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_Elemental_Gnome;
 
         /// <summary>
         /// Gnome gate: the world tile must generate caves. Uses the game's own
@@ -223,7 +224,7 @@ namespace PMM_Elementals
         {
             if (!Find.World.HasCaves(map.Tile))
             {
-                Log.Message("[PMM_Elementals] gnome wander-in blocked: world tile has no caves (no cave tile mutator)");
+                PMMLog.Message("[PMM_Elementals] gnome wander-in blocked: world tile has no caves (no cave tile mutator)");
                 return false;
             }
             return true;
@@ -248,7 +249,7 @@ namespace PMM_Elementals
         /// <summary>Average-temperature threshold in °C for the hot-lands clause.</summary>
         private const float MinAverageTemp = 30f;
 
-        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_IgnisWild;
+        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_Elemental_Ignis;
 
         /// <summary>Ignis gate: a hot biome, or a tile averaging over 30 °C.</summary>
         protected override bool ClimateAcceptable(Map map)
@@ -265,7 +266,7 @@ namespace PMM_Elementals
                              GenTemperature.MaxTemperatureAtTile(map.Tile)) / 2f;
             if (avgTemp <= MinAverageTemp)
             {
-                Log.Message($"[PMM_Elementals] ignis wander-in blocked: biome {tile?.PrimaryBiome?.defName ?? "null"}, avg temp {avgTemp:F1}C <= {MinAverageTemp}C");
+                PMMLog.Message($"[PMM_Elementals] ignis wander-in blocked: biome {tile?.PrimaryBiome?.defName ?? "null"}, avg temp {avgTemp:F1}C <= {MinAverageTemp}C");
                 return false;
             }
             return true;
@@ -281,7 +282,7 @@ namespace PMM_Elementals
         /// <summary>Elevation threshold in metres.</summary>
         private const float MinElevation = 1000f;
 
-        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_SylphWild;
+        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_Elemental_Sylph;
 
         /// <summary>Sylph gate: the world tile must sit above 1000 m.</summary>
         protected override bool ClimateAcceptable(Map map)
@@ -289,7 +290,7 @@ namespace PMM_Elementals
             float elevation = Find.WorldGrid[map.Tile].elevation;
             if (elevation <= MinElevation)
             {
-                Log.Message($"[PMM_Elementals] sylph wander-in blocked: elevation {elevation:F0}m <= {MinElevation:F0}m");
+                PMMLog.Message($"[PMM_Elementals] sylph wander-in blocked: elevation {elevation:F0}m <= {MinElevation:F0}m");
                 return false;
             }
             return true;
@@ -302,7 +303,7 @@ namespace PMM_Elementals
     /// </summary>
     public class IncidentWorker_UndineWandersIn : IncidentWorker_ElementalWandersIn
     {
-        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_UndineWild;
+        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_Elemental_Undine;
 
         /// <summary>Undine gate: the world tile must touch water (coast, river, or lake).</summary>
         protected override bool ClimateAcceptable(Map map)
@@ -317,7 +318,7 @@ namespace PMM_Elementals
     /// </summary>
     public class IncidentWorker_ApsaraWandersIn : IncidentWorker_ElementalWandersIn
     {
-        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_ApsaraWild;
+        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_Elemental_Apsara;
 
         /// <summary>Apsara gate: the world tile must touch water (coast, river, or lake).</summary>
         protected override bool ClimateAcceptable(Map map)
@@ -343,7 +344,7 @@ namespace PMM_Elementals
         /// <summary>Rainfall threshold in millimetres per year for the wetland clause.</summary>
         private const float MinRainfall = 1000f;
 
-        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_DoromeWild;
+        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_Elemental_Dorome;
 
         /// <summary>Dorome gate: cave tile, or swamp biome with >= 1000 mm rainfall.</summary>
         protected override bool ClimateAcceptable(Map map)
@@ -359,10 +360,10 @@ namespace PMM_Elementals
                 {
                     return true; // rainy wetlands
                 }
-                Log.Message($"[PMM_Elementals] dorome wander-in blocked: swamp biome {tile.PrimaryBiome.defName} but rainfall {tile.rainfall:F0}mm < {MinRainfall}mm");
+                PMMLog.Message($"[PMM_Elementals] dorome wander-in blocked: swamp biome {tile.PrimaryBiome.defName} but rainfall {tile.rainfall:F0}mm < {MinRainfall}mm");
                 return false;
             }
-            Log.Message($"[PMM_Elementals] dorome wander-in blocked: no caves, biome {tile?.PrimaryBiome?.defName ?? "null"} is not a swamp");
+                PMMLog.Message($"[PMM_Elementals] dorome wander-in blocked: no caves, biome {tile?.PrimaryBiome?.defName ?? "null"} is not a swamp");
             return false;
         }
     }
@@ -388,7 +389,7 @@ namespace PMM_Elementals
         private const float MinGrowthTemp = 0f;
         private const float MaxGrowthTemp = 58f;
 
-        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_DryadWild;
+        protected override PawnKindDef PawnKindToSpawn => ElementalDefOf.PMM_Elemental_Dryad;
 
         /// <summary>Dryad gate: forest biome AND current outdoor temp in 0-58 C.</summary>
         protected override bool ClimateAcceptable(Map map)
@@ -396,13 +397,13 @@ namespace PMM_Elementals
             RimWorld.Planet.Tile tile = Find.WorldGrid[map.Tile];
             if (tile?.PrimaryBiome == null || !ForestBiomes.Contains(tile.PrimaryBiome.defName))
             {
-                Log.Message($"[PMM_Elementals] dryad wander-in blocked: biome {tile?.PrimaryBiome?.defName ?? "null"} is not forest");
+                PMMLog.Message($"[PMM_Elementals] dryad wander-in blocked: biome {tile?.PrimaryBiome?.defName ?? "null"} is not forest");
                 return false;
             }
             float temp = map.mapTemperature.OutdoorTemp;
             if (temp < MinGrowthTemp || temp > MaxGrowthTemp)
             {
-                Log.Message($"[PMM_Elementals] dryad wander-in blocked: {temp:F0}C outside tree growth range {MinGrowthTemp:F0}-{MaxGrowthTemp:F0}C");
+                PMMLog.Message($"[PMM_Elementals] dryad wander-in blocked: {temp:F0}C outside tree growth range {MinGrowthTemp:F0}-{MaxGrowthTemp:F0}C");
                 return false;
             }
             return true;

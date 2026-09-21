@@ -20,7 +20,7 @@
 
 	<!-- Gnome: wanders in only on maps with caves (PMM_GnomeWandersIn incident). -->
 	<PawnKindDef>
-		<defName>PMM_GnomeWild</defName>
+		<defName>PMM_Elemental_Gnome</defName>
 		<label>gnome</label>
 		<race>PMM_Race_GnomeMomo</race>
 		<fixedGender>Female</fixedGender>
@@ -40,14 +40,14 @@
 		</backstoryFilters>
 		<xenotypeSet>
 			<xenotypeChances>
-				<PMM_ElementalGnome>100</PMM_ElementalGnome>
+				<PMM_Elemental_Gnome>100</PMM_Elemental_Gnome>
 			</xenotypeChances>
 		</xenotypeSet>
 	</PawnKindDef>
 
 	<!-- Ignis: wanders in only on hot maps (PMM_IgnisWandersIn incident). -->
 	<PawnKindDef>
-		<defName>PMM_IgnisWild</defName>
+		<defName>PMM_Elemental_Ignis</defName>
 		<label>ignis</label>
 		<race>PMM_Race_IgnisMomo</race>
 		<fixedGender>Female</fixedGender>
@@ -67,14 +67,14 @@
 		</backstoryFilters>
 		<xenotypeSet>
 			<xenotypeChances>
-				<PMM_ElementalIgnis>100</PMM_ElementalIgnis>
+				<PMM_Elemental_Ignis>100</PMM_Elemental_Ignis>
 			</xenotypeChances>
 		</xenotypeSet>
 	</PawnKindDef>
 
 	<!-- Sylph: wanders in only on high-elevation tiles (PMM_SylphWandersIn incident). -->
 	<PawnKindDef>
-		<defName>PMM_SylphWild</defName>
+		<defName>PMM_Elemental_Sylph</defName>
 		<label>sylph</label>
 		<race>PMM_Race_SylphMomo</race>
 		<fixedGender>Female</fixedGender>
@@ -94,7 +94,7 @@
 		</backstoryFilters>
 		<xenotypeSet>
 			<xenotypeChances>
-				<PMM_ElementalSylph>100</PMM_ElementalSylph>
+				<PMM_Elemental_Sylph>100</PMM_Elemental_Sylph>
 			</xenotypeChances>
 		</xenotypeSet>
 	</PawnKindDef>
@@ -106,7 +106,7 @@
 		elementals while her join offer waits for an answer.
 	-->
 	<PawnKindDef>
-		<defName>PMM_GenieWild</defName>
+		<defName>PMM_Elemental_Genie</defName>
 		<label>genie</label>
 		<race>PMM_Race_GenieMomo</race>
 		<fixedGender>Female</fixedGender>
@@ -126,7 +126,7 @@
 		</backstoryFilters>
 		<xenotypeSet>
 			<xenotypeChances>
-				<PMM_ElementalGenie>100</PMM_ElementalGenie>
+				<PMM_Elemental_Genie>100</PMM_Elemental_Genie>
 			</xenotypeChances>
 		</xenotypeSet>
 	</PawnKindDef>
@@ -138,7 +138,7 @@
 		the vanilla StatPart_TerrainMoveSpeed on the MoveSpeed stat.
 	-->
 	<PawnKindDef>
-		<defName>PMM_UndineWild</defName>
+		<defName>PMM_Elemental_Undine</defName>
 		<label>undine</label>
 		<race>PMM_Race_UndineMomo</race>
 		<fixedGender>Female</fixedGender>
@@ -164,7 +164,7 @@
 		</moveSpeedFactorByTerrainTag>
 		<xenotypeSet>
 			<xenotypeChances>
-				<PMM_ElementalUndine>100</PMM_ElementalUndine>
+				<PMM_Elemental_Undine>100</PMM_Elemental_Undine>
 			</xenotypeChances>
 		</xenotypeSet>
 	</PawnKindDef>
@@ -176,7 +176,7 @@
 		terrainTags in Core, so there is no mud analogue to the undine's Water key.
 	-->
 	<PawnKindDef>
-		<defName>PMM_DoromeWild</defName>
+		<defName>PMM_Elemental_Dorome</defName>
 		<label>dorome</label>
 		<race>PMM_Race_DoromeMomo</race>
 		<fixedGender>Female</fixedGender>
@@ -196,7 +196,7 @@
 		</backstoryFilters>
 		<xenotypeSet>
 			<xenotypeChances>
-				<PMM_ElementalDorome>100</PMM_ElementalDorome>
+				<PMM_Elemental_Dorome>100</PMM_Elemental_Dorome>
 			</xenotypeChances>
 		</xenotypeSet>
 	</PawnKindDef>
@@ -204,7 +204,7 @@
 	<!-- Dryad: wanders in only on forested maps in the tree growth temperature range
 	     (PMM_DryadWandersIn incident, locked D14). -->
 	<PawnKindDef>
-		<defName>PMM_DryadWild</defName>
+		<defName>PMM_Elemental_Dryad</defName>
 		<label>dryad</label>
 		<race>PMM_Race_DryadMomo</race>
 		<fixedGender>Female</fixedGender>
@@ -224,7 +224,7 @@
 		</backstoryFilters>
 		<xenotypeSet>
 			<xenotypeChances>
-				<PMM_ElementalDryad>100</PMM_ElementalDryad>
+				<PMM_Elemental_Dryad>100</PMM_Elemental_Dryad>
 			</xenotypeChances>
 		</xenotypeSet>
 	</PawnKindDef>
@@ -237,7 +237,7 @@
 		undine's 2.5), the "slightly slower than an undine" of locked D-A6.
 	-->
 	<PawnKindDef>
-		<defName>PMM_ApsaraWild</defName>
+		<defName>PMM_Elemental_Apsara</defName>
 		<label>apsara</label>
 		<race>PMM_Race_ApsaraMomo</race>
 		<fixedGender>Female</fixedGender>
@@ -263,7 +263,7 @@
 		</moveSpeedFactorByTerrainTag>
 		<xenotypeSet>
 			<xenotypeChances>
-				<PMM_ElementalApsara>100</PMM_ElementalApsara>
+				<PMM_Elemental_Apsara>100</PMM_Elemental_Apsara>
 			</xenotypeChances>
 		</xenotypeSet>
 	</PawnKindDef>

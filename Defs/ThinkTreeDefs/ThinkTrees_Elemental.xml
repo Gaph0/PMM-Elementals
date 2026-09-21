@@ -13,14 +13,14 @@
 		pawn's kindDef exactly (it does NOT follow pawn.def / the race, so the race-by-xenotype
 		swap is irrelevant here). Every elemental kind must be listed or it will walk straight
 		off the map.
-			PMM_GnomeWild   = the gnome wander-in (caves)
-			PMM_IgnisWild   = the ignis wander-in (hot maps)
-			PMM_SylphWild   = the sylph wander-in (high elevation)
-			PMM_UndineWild  = the undine wander-in (water tiles)
-			PMM_DoromeWild  = the dorome wander-in (caves / rainy swamps)
-			PMM_DryadWild   = the dryad wander-in (forest, growing season)
-			PMM_ApsaraWild  = the apsara wander-in (water tiles)
-			PMM_GenieWild   = the genie (freed from her lamp). Her branch is special:
+			PMM_Elemental_Gnome   = the gnome wander-in (caves)
+			PMM_Elemental_Ignis   = the ignis wander-in (hot maps)
+			PMM_Elemental_Sylph   = the sylph wander-in (high elevation)
+			PMM_Elemental_Undine  = the undine wander-in (water tiles)
+			PMM_Elemental_Dorome  = the dorome wander-in (caves / rainy swamps)
+			PMM_Elemental_Dryad   = the dryad wander-in (forest, growing season)
+			PMM_Elemental_Apsara  = the apsara wander-in (water tiles)
+			PMM_Elemental_Genie   = the genie (freed from her lamp). Her branch is special:
 			  ThinkNode_ConditionalGenieFreedomSpent opens the vanilla JobGiver_ExitMapBest
 			  once her freedom timer (PMM_Hediff_GenieFreedom) runs out while she is still
 			  factionless - she wanders a few hours enjoying her freedom, THEN leaves.
@@ -32,7 +32,7 @@
 			<subNodes>
 
 				<li Class="ThinkNode_ConditionalPawnKind">
-					<pawnKind>PMM_GnomeWild</pawnKind>
+					<pawnKind>PMM_Elemental_Gnome</pawnKind>
 					<subNodes>
 						<li Class="ThinkNode_Subtree">
 							<treeDef>MainWildManBehaviorCore</treeDef>
@@ -42,7 +42,7 @@
 				</li>
 
 				<li Class="ThinkNode_ConditionalPawnKind">
-					<pawnKind>PMM_IgnisWild</pawnKind>
+					<pawnKind>PMM_Elemental_Ignis</pawnKind>
 					<subNodes>
 						<li Class="ThinkNode_Subtree">
 							<treeDef>MainWildManBehaviorCore</treeDef>
@@ -52,7 +52,7 @@
 				</li>
 
 				<li Class="ThinkNode_ConditionalPawnKind">
-					<pawnKind>PMM_SylphWild</pawnKind>
+					<pawnKind>PMM_Elemental_Sylph</pawnKind>
 					<subNodes>
 						<li Class="ThinkNode_Subtree">
 							<treeDef>MainWildManBehaviorCore</treeDef>
@@ -62,7 +62,7 @@
 				</li>
 
 				<li Class="ThinkNode_ConditionalPawnKind">
-					<pawnKind>PMM_UndineWild</pawnKind>
+					<pawnKind>PMM_Elemental_Undine</pawnKind>
 					<subNodes>
 						<li Class="ThinkNode_Subtree">
 							<treeDef>MainWildManBehaviorCore</treeDef>
@@ -72,7 +72,7 @@
 				</li>
 
 			<li Class="ThinkNode_ConditionalPawnKind">
-				<pawnKind>PMM_DoromeWild</pawnKind>
+				<pawnKind>PMM_Elemental_Dorome</pawnKind>
 				<subNodes>
 					<li Class="ThinkNode_Subtree">
 						<treeDef>MainWildManBehaviorCore</treeDef>
@@ -82,7 +82,7 @@
 			</li>
 
 			<li Class="ThinkNode_ConditionalPawnKind">
-				<pawnKind>PMM_DryadWild</pawnKind>
+				<pawnKind>PMM_Elemental_Dryad</pawnKind>
 				<subNodes>
 					<li Class="ThinkNode_Subtree">
 						<treeDef>MainWildManBehaviorCore</treeDef>
@@ -92,7 +92,7 @@
 			</li>
 
 			<li Class="ThinkNode_ConditionalPawnKind">
-				<pawnKind>PMM_ApsaraWild</pawnKind>
+				<pawnKind>PMM_Elemental_Apsara</pawnKind>
 				<subNodes>
 					<li Class="ThinkNode_Subtree">
 						<treeDef>MainWildManBehaviorCore</treeDef>
@@ -106,7 +106,7 @@
 			     for the map edge. The exit branch sits ABOVE the wild-man core so it
 			     wins the moment her freedom runs out. -->
 			<li Class="ThinkNode_ConditionalPawnKind">
-				<pawnKind>PMM_GenieWild</pawnKind>
+				<pawnKind>PMM_Elemental_Genie</pawnKind>
 				<subNodes>
 					<li Class="PMM_Elementals.ThinkNode_ConditionalGenieFreedomSpent">
 						<subNodes>
@@ -121,7 +121,7 @@
 			</li>
 
 				<li Class="ThinkNode_ConditionalPawnKind">
-					<pawnKind>PMM_GnomeWild</pawnKind>
+					<pawnKind>PMM_Elemental_Gnome</pawnKind>
 					<subNodes>
 						<li Class="ThinkNode_Tagger">
 							<tagToGive>Idle</tagToGive>
@@ -136,7 +136,7 @@
 				</li>
 
 				<li Class="ThinkNode_ConditionalPawnKind">
-					<pawnKind>PMM_IgnisWild</pawnKind>
+					<pawnKind>PMM_Elemental_Ignis</pawnKind>
 					<subNodes>
 						<li Class="ThinkNode_Tagger">
 							<tagToGive>Idle</tagToGive>
@@ -151,7 +151,7 @@
 				</li>
 
 				<li Class="ThinkNode_ConditionalPawnKind">
-					<pawnKind>PMM_SylphWild</pawnKind>
+					<pawnKind>PMM_Elemental_Sylph</pawnKind>
 					<subNodes>
 						<li Class="ThinkNode_Tagger">
 							<tagToGive>Idle</tagToGive>
@@ -166,7 +166,7 @@
 				</li>
 
 				<li Class="ThinkNode_ConditionalPawnKind">
-					<pawnKind>PMM_UndineWild</pawnKind>
+					<pawnKind>PMM_Elemental_Undine</pawnKind>
 					<subNodes>
 						<li Class="ThinkNode_Tagger">
 							<tagToGive>Idle</tagToGive>
@@ -181,7 +181,7 @@
 				</li>
 
 			<li Class="ThinkNode_ConditionalPawnKind">
-				<pawnKind>PMM_DoromeWild</pawnKind>
+				<pawnKind>PMM_Elemental_Dorome</pawnKind>
 				<subNodes>
 					<li Class="ThinkNode_Tagger">
 						<tagToGive>Idle</tagToGive>
@@ -196,7 +196,7 @@
 			</li>
 
 			<li Class="ThinkNode_ConditionalPawnKind">
-				<pawnKind>PMM_DryadWild</pawnKind>
+				<pawnKind>PMM_Elemental_Dryad</pawnKind>
 				<subNodes>
 					<li Class="ThinkNode_Tagger">
 						<tagToGive>Idle</tagToGive>
@@ -211,7 +211,7 @@
 			</li>
 
 			<li Class="ThinkNode_ConditionalPawnKind">
-				<pawnKind>PMM_ApsaraWild</pawnKind>
+				<pawnKind>PMM_Elemental_Apsara</pawnKind>
 				<subNodes>
 					<li Class="ThinkNode_Tagger">
 						<tagToGive>Idle</tagToGive>
@@ -226,7 +226,7 @@
 			</li>
 
 			<li Class="ThinkNode_ConditionalPawnKind">
-				<pawnKind>PMM_GenieWild</pawnKind>
+				<pawnKind>PMM_Elemental_Genie</pawnKind>
 				<subNodes>
 					<li Class="ThinkNode_Tagger">
 						<tagToGive>Idle</tagToGive>
