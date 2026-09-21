@@ -2,44 +2,17 @@
 <Defs>
 
 	<!--
-		Phase-3 marker hediffs. A pawn's RACE-def <comps> are never instantiated (see
-		ElementalPowers.cs), so the gnome/sylph ticking powers live in HediffComps on a
-		hidden marker hediff granted at generation (Patch_GrantElementalMarkers). Hediffs
-		on a pawn DO get comps and DO tick — the slime mod's jelly-ooze uses the same
-		mechanism. Both markers are invisible (isBad false, no flavour stages) and
-		uncurable.
+		Elemental power hediffs. A pawn's RACE-def <comps> are never instantiated (see
+		ElementalPowers.cs), but a HEDIFF's comps do instantiate and tick — the slime
+		mod's jelly-ooze uses the same mechanism.
+
+		The gnome, sylph and dryad powers no longer need a hediff of their own: their
+		HediffComps now sit on those three race trackers (Race_ElementalMomo.xml), which
+		removes a Health-tab row per pawn and lets a transformed woman inherit the power.
+		Only the undine one remains here, because it is added and removed with the
+		weather and a race tracker is permanent. The apsara and genie state hediffs live
+		in their own files.
 	-->
-
-	<!-- Gnome living stone: carries the HediffComp_LivingStone that knits wounds on rough
-	     ground / under mountain. -->
-	<HediffDef>
-		<defName>PMM_Hediff_GnomeLivingStone</defName>
-		<label>living stone</label>
-		<description>The gnome's earthen body slowly knits itself while she stands on rough ground or beneath the mountain.</description>
-		<hediffClass>HediffWithComps</hediffClass>
-		<isBad>false</isBad>
-		<initialSeverity>0.01</initialSeverity>
-		<maxSeverity>1</maxSeverity>
-		<everCurableByItem>false</everCurableByItem>
-		<comps>
-			<li Class="PMM_Elementals.HediffCompProperties_LivingStone"/>
-		</comps>
-	</HediffDef>
-
-	<!-- Sylph caprice: carries the HediffComp_Caprice that re-rolls her daily whim. -->
-	<HediffDef>
-		<defName>PMM_Hediff_SylphCaprice</defName>
-		<label>caprice</label>
-		<description>The sylph's mood swings with the wind, unpredictable and free-spirited.</description>
-		<hediffClass>HediffWithComps</hediffClass>
-		<isBad>false</isBad>
-		<initialSeverity>0.01</initialSeverity>
-		<maxSeverity>1</maxSeverity>
-		<everCurableByItem>false</everCurableByItem>
-		<comps>
-			<li Class="PMM_Elementals.HediffCompProperties_Caprice"/>
-		</comps>
-	</HediffDef>
 
 	<!--
 		Undine wet-weather speed (hidden): maintained by MapComponent_UndineWetSpeed while
@@ -62,22 +35,6 @@
 				</statOffsets>
 			</li>
 		</stages>
-	</HediffDef>
-
-	<!-- Dryad photosynthesis: carries the HediffComp_Photosynthesis that refills food,
-	     rest and mana while she stands unroofed in real sunlight (D15). -->
-	<HediffDef>
-		<defName>PMM_Hediff_DryadPhotosynthesis</defName>
-		<label>photosynthesis</label>
-		<description>The dryad's living-wood body drinks in the sunlight, sustaining her food, rest and mana while she basks in it.</description>
-		<hediffClass>HediffWithComps</hediffClass>
-		<isBad>false</isBad>
-		<initialSeverity>0.01</initialSeverity>
-		<maxSeverity>1</maxSeverity>
-		<everCurableByItem>false</everCurableByItem>
-		<comps>
-			<li Class="PMM_Elementals.HediffCompProperties_Photosynthesis"/>
-		</comps>
 	</HediffDef>
 
 </Defs>

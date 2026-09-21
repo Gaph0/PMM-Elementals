@@ -8,8 +8,8 @@ namespace PMM_Elementals
     // =====================================================================
     // APSARA — joy elemental. Four mechanics, all locked D-A1–D-A6:
     //
-    //   1. Allure aura (this file's HediffComp_ApsaraAura on the PMM_Hediff_ApsaraAllure
-    //      marker): map-wide (D-A1), every 600 ticks refreshes the PMM_Hediff_ApsaraCharm
+    //   1. Allure aura (this file's HediffComp_ApsaraAura, on her race tracker):
+    //      map-wide (D-A1), every 600 ticks refreshes the PMM_Hediff_ApsaraCharm
     //      exposure hediff on every non-hostile humanlike and tops up their joy need
     //      (D-A3). The charm's LOVIN' effect is pure XML — vanilla
     //      HediffComp_GiveLovinMTBFactor (D-A2 0.6) scales the post-lovin' cooldown in
@@ -43,7 +43,7 @@ namespace PMM_Elementals
     }
 
     /// <summary>
-    /// Ticks on the apsara's hidden allure marker. Every interval, sweeps the map
+    /// Ticks on the apsara's race tracker. Every interval, sweeps the map
     /// (D-A1: map-wide — no radius check) and, for every non-hostile humanlike on the
     /// same map, refreshes the charm hediff and tops up the joy need. A pawn who leaves
     /// the aura keeps its charm until the hediff's own HediffComp_Disappears fades it —

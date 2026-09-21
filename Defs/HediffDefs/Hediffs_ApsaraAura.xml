@@ -2,26 +2,13 @@
 <Defs>
 
 	<!--
-		Apsara allure aura. Hidden marker hediff on the apsara carries the ticking
-		HediffComp_ApsaraAura (race-def <comps> never instantiate on a pawn — the
-		gnome/sylph marker pattern). The comp sweeps the map (D-A1: map-wide, no radius)
-		every 600 ticks, refreshing the charm hediff on every non-hostile humanlike and
-		topping up their joy need.
+		Only one apsara hediff is left: the charm she puts on OTHER pawns. Her allure aura
+		needs no hediff of its own — HediffComp_ApsaraAura sits on her race tracker
+		(Race_ElementalMomo.xml) and sweeps the map (D-A1: map-wide, no radius) every 600
+		ticks, refreshing the charm hediff on every non-hostile humanlike and topping up
+		their joy need. Its old marker hediff, and the 0.01-1 severity nothing ever read,
+		are gone.
 	-->
-	<HediffDef>
-		<defName>PMM_Hediff_ApsaraAllure</defName>
-		<label>allure</label>
-		<description>The apsara's dance of love saturates the air around her, lifting spirits and kindling desire in everyone nearby.</description>
-		<hediffClass>HediffWithComps</hediffClass>
-		<isBad>false</isBad>
-		<initialSeverity>0.01</initialSeverity>
-		<maxSeverity>1</maxSeverity>
-		<everCurableByItem>false</everCurableByItem>
-		<comps>
-			<li Class="PMM_Elementals.HediffCompProperties_ApsaraAura"/>
-		</comps>
-	</HediffDef>
-
 	<!--
 		Apsara's charm — the exposure hediff the aura applies. Beneficial and visible:
 		carriers feel light-hearted and warm-blooded. The vanilla

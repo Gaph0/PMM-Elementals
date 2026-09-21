@@ -68,7 +68,7 @@ namespace PMM_Elementals
             RimWorld.Planet.Tile tile = Find.WorldGrid[map.Tile];
             if (tile?.PrimaryBiome == null || !LampBiomes.Contains(tile.PrimaryBiome.defName))
             {
-                Log.Message($"[PMM_Elementals] genie lamp blocked: biome {tile?.PrimaryBiome?.defName ?? "null"} is not desert, arid shrubland or extreme desert");
+                PMMLog.Message($"[PMM_Elementals] genie lamp blocked: biome {tile?.PrimaryBiome?.defName ?? "null"} is not desert, arid shrubland or extreme desert");
                 return false;
             }
             return true;
@@ -164,7 +164,7 @@ namespace PMM_Elementals
         public static Pawn SpawnGenie(Map map, IntVec3 cell)
         {
             Pawn pawn = PawnGenerator.GeneratePawn(new PawnGenerationRequest(
-                ElementalDefOf.PMM_GenieWild, null, PawnGenerationContext.NonPlayer, map.Tile,
+                ElementalDefOf.PMM_Elemental_Genie, null, PawnGenerationContext.NonPlayer, map.Tile,
                 forceGenerateNewPawn: false, allowDead: false, allowDowned: false,
                 canGeneratePawnRelations: true, mustBeCapableOfViolence: false,
                 colonistRelationChanceFactor: 1f, forceAddFreeWarmLayerIfNeeded: false,
@@ -448,7 +448,7 @@ namespace PMM_Elementals
     {
         public static void Postfix(Pawn __instance)
         {
-            if (__instance?.kindDef != ElementalDefOf.PMM_GenieWild)
+            if (__instance?.kindDef != ElementalDefOf.PMM_Elemental_Genie)
             {
                 return;
             }

@@ -22,14 +22,14 @@ namespace PMM_Elementals
     /// <summary>Xenotype helpers for the powers, keyed on genes.Xenotype.defName.</summary>
     public static class ElementalXenotypes
     {
-        public static bool IsGnome(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_ElementalGnome";
-        public static bool IsIgnis(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_ElementalIgnis";
-        public static bool IsSylph(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_ElementalSylph";
-        public static bool IsUndine(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_ElementalUndine";
-        public static bool IsDorome(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_ElementalDorome";
-        public static bool IsDryad(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_ElementalDryad";
-        public static bool IsApsara(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_ElementalApsara";
-        public static bool IsGenie(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_ElementalGenie";
+        public static bool IsGnome(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_Elemental_Gnome";
+        public static bool IsIgnis(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_Elemental_Ignis";
+        public static bool IsSylph(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_Elemental_Sylph";
+        public static bool IsUndine(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_Elemental_Undine";
+        public static bool IsDorome(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_Elemental_Dorome";
+        public static bool IsDryad(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_Elemental_Dryad";
+        public static bool IsApsara(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_Elemental_Apsara";
+        public static bool IsGenie(Pawn p) => p?.genes?.Xenotype?.defName == "PMM_Elemental_Genie";
     }
 
     // =====================================================================
@@ -240,8 +240,9 @@ namespace PMM_Elementals
     }
 
     // =====================================================================
-    // Marker-hediff granter: adds the hidden living-stone / caprice marker hediff to a
-    // gnome / sylph once genes are applied (the markers carry the ticking comps above).
+    // Marker-hediff granter: adds the hidden genie-freedom marker once genes are applied
+    // (it carries the countdown comp). Gnome, sylph, dryad and apsara need no marker:
+    // their comps sit on their race trackers.
     // =====================================================================
 
     [HarmonyPatch(typeof(PawnGenerator), nameof(PawnGenerator.GeneratePawn),
@@ -254,23 +255,7 @@ namespace PMM_Elementals
             {
                 return;
             }
-            if (ElementalXenotypes.IsGnome(__result))
-            {
-                GrantMarker(__result, ElementalDefOf.PMM_Hediff_GnomeLivingStone);
-            }
-            else if (ElementalXenotypes.IsSylph(__result))
-            {
-                GrantMarker(__result, ElementalDefOf.PMM_Hediff_SylphCaprice);
-            }
-            else if (ElementalXenotypes.IsDryad(__result))
-            {
-                GrantMarker(__result, ElementalDefOf.PMM_Hediff_DryadPhotosynthesis);
-            }
-            else if (ElementalXenotypes.IsApsara(__result))
-            {
-                GrantMarker(__result, ElementalDefOf.PMM_Hediff_ApsaraAllure);
-            }
-            else if (ElementalXenotypes.IsGenie(__result))
+            if (ElementalXenotypes.IsGenie(__result))
             {
                 GrantMarker(__result, ElementalDefOf.PMM_Hediff_GenieFreedom);
             }
