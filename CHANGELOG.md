@@ -2,6 +2,12 @@
 
 ## Player-facing
 
+- 2026-09-20: Changed the notes about a refused wander-in to appear only in development mode.
+- 2026-09-20: Added a "momo corpses" line in the butcher menu, holding all eight elemental momo corpses.
+- 2026-09-20: Changed the apsara's allure to ride on her race row in the Health tab. She shows one row there instead of two, and a woman changed into an apsara carries the aura too.
+- 2026-09-20: Changed the gnome, sylph and dryad powers to ride on their race row in the Health tab. Each now shows one row there instead of two, and a woman changed into one of them gets the power too.
+- 2026-09-20: Changed the elementals to draw at their real size. They now look as small as they already were.
+- 2026-09-20: Fixed a woman corrupted into an elemental keeping a human body. She now becomes that elemental's own race, with its size, temperature tolerance and powers.
 - 2026-09-19: Added Big and Small - Framework as a required mod.
 - 2026-09-19: Rebalanced all eight elementals to 0.8 body size. They carry less, butcher smaller and dodge better than a human.
 - 2026-09-01: Removed the beardless gene from the genie.
@@ -33,6 +39,13 @@
 
 ## Internal
 
+- 2026-09-20: Changed the wander-in and genie-lamp messages to go through core's `PMMLog`, so they only appear in development mode.
+- 2026-09-20: Added the eight elemental races to the shared momo corpses line in the core mod.
+- 2026-09-20: Changed the gnome living stone, sylph caprice, dryad photosynthesis and apsara allure HediffComps to sit on their race trackers, and removed their marker hediffs, DefOf fields and spawn grants. The allure marker's severity was never read, so nothing was lost.
+- 2026-09-20: Changed the undine and genie powers to stay on their own hediffs, because weather and a countdown cannot live on a permanent tracker.
+- 2026-09-20: Changed the elemental xenotype def references into a second class, so a pawnkind and its xenotype can share one name.
+- 2026-09-20: Changed the elemental pawnkind and xenotype names to sort together in the dev spawner.
+- 2026-09-20: Changed the eight elemental race clones to Human-based races with Big & Small race trackers.
 - 2026-09-20: Changed the README to match the code.
 - 2026-09-19: Changed the build to use MSBuild.
 - 2026-09-19: Changed the genie's lamp to use its own jar art instead of the vanilla golden cube.
