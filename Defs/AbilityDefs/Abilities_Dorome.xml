@@ -4,12 +4,12 @@
 	<!--
 		Dorome mud-merge (locked D11: tamed-only). A location-targeted ability granted
 		by PMM_Gene_DoromeMudMerge: she melts into the ground and emerges at any
-		revealed natural cell on the map (no line of sight — she swims through the
+		revealed natural cell on the map (no line of sight - she swims through the
 		earth). 15000 ticks = 6 in-game hours; the vanilla ability system runs the
 		cooldown from cooldownTicksRange, so there is no custom cooldown state.
 
 		Target validity (natural tile, standable, no built floors, no deep water,
-		revealed) is enforced by CompAbilityEffect_MudMerge — see DoromePowers.cs.
+		revealed) is enforced by CompAbilityEffect_MudMerge - see DoromePowers.cs.
 		Icon placeholder reuses Biotech's longjump ability icon (a relocation).
 	-->
 	<AbilityDef>

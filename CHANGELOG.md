@@ -2,6 +2,8 @@
 
 ## Player-facing
 
+- 2026-09-22: Changed the ignis to carry the family's fiery momo gene instead of the vanilla fire resistance and heat tolerance genes. She is still fully immune to fire, heat and lava, and a man she bonds with inherits a lesser fire ward.
+- 2026-09-22: Changed the elementals to look smaller than they really are, so the size difference is easy to see. Their carry weight, butchery and dodge are unchanged.
 - 2026-09-20: Changed the notes about a refused wander-in to appear only in development mode.
 - 2026-09-20: Added a "momo corpses" line in the butcher menu, holding all eight elemental momo corpses.
 - 2026-09-20: Changed the apsara's allure to ride on her race row in the Health tab. She shows one row there instead of two, and a woman changed into an apsara carries the aura too.
@@ -38,6 +40,8 @@
 - 2026-08-30: Fixed the ignis flame aura not working for a recruited ignis.
 
 ## Internal
+
+- 2026-09-24: Changed the em dashes in this mod's text to plain hyphens.
 
 - 2026-09-20: Changed the wander-in and genie-lamp messages to go through core's `PMMLog`, so they only appear in development mode.
 - 2026-09-20: Added the eight elemental races to the shared momo corpses line in the core mod.

@@ -3,7 +3,7 @@
 
 	<!--
 		The genie's join-offer letter. ChoiceLetter_GenieOffer (see GeniePowers.cs) is
-		a self-contained ChoiceLetter whose Welcome/Send-away options act directly —
+		a self-contained ChoiceLetter whose Welcome/Send-away options act directly -
 		vanilla's ChoiceLetter_AcceptJoiner runs on quest signal plumbing that a plain
 		item use-effect cannot wire up. Warm gold, no flashing: an offer, not an alarm.
 	-->

@@ -5,7 +5,7 @@
 		Sylph caprice mood thoughts. The CompCaprice re-rolls a whim each day and applies
 		one of these (or neither, for a calm whim). Short duration so the mood never
 		lingers past the next whim. These are memory thoughts, so they show in the Needs
-		tab with their mood offset — that's the visible "swings with the wind" effect.
+		tab with their mood offset - that's the visible "swings with the wind" effect.
 	-->
 	<ThoughtDef>
 		<defName>PMM_Thought_SylphCapriceFoul</defName>

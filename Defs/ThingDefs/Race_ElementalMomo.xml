@@ -8,12 +8,12 @@
 		D2 locked: custom races, one per element. They exist for identity (the race
 		label on the info card), future comps (the phase-3 Ignis flame aura / Gnome
 		living-stone hooks go on these races) and slime-family parity. v1 keeps HUMAN
-		butcher yields: no specificMeatDef, leather untouched — so no C# race setup is
+		butcher yields: no specificMeatDef, leather untouched - so no C# race setup is
 		needed (the slime NullLeather/specificMeatDef dance was jelly-specific).
 		Elemental-flavoured butcher drops (motes/cores) are a phase-3 option.
 
 		Abstract base below is the only valid ParentName target for the concrete races
-		(a concrete def cannot be a ParentName — the slime race file documents that
+		(a concrete def cannot be a ParentName - the slime race file documents that
 		"Could not find parent node" failure).
 
 		Big & Small: every race below declares a RaceExtension pointing at its own tracker
@@ -22,19 +22,30 @@
 		would live later. The base carries the shared size, which matters twice:
 		<baseBodySize> is what the game uses for carrying capacity, butchering and dodge,
 		while SM_BodySizeMultiplier is the stat B&S's scaler reads to DRAW a humanlike at
-		that size — without the stat, an 0.8 elemental still rendered at 1.0.
+		that size - without the stat, an 0.8 elemental still rendered at 1.0.
 	-->
 	<ThingDef Name="PMM_ElementalMomoRaceBase" ParentName="Human" Abstract="True">
 		<!-- Slightly smaller than a baseline human (1.0): lower carrying capacity and
 		     butcher yields, better melee dodge. Inherited by all eight elementals.
 		     Body size is a RaceProperties field in 1.6 (baseBodySize), NOT a statBases
-		     stat — there is no "BodySize" StatDef, so <BodySize> in statBases throws
+		     stat - there is no "BodySize" StatDef, so <BodySize> in statBases throws
 		     "No StatDef named BodySize" cross-reference errors (one per inheriting race). -->
 		<statBases>
-			<!-- Kept equal to baseBodySize above: B&S's scaler reads this stat, not
-			     baseBodySize, so without it the drawn size never matched the carrying and
-			     butchering size. Same finding as the insect momo races. -->
+			<!-- Two B&S size stats, two different jobs:
+			     SM_BodySizeMultiplier feeds the pawn's REAL size, and it multiplies the
+			     base above (0.8 x 0.8 = 0.64 for an adult), which is what carrying
+			     capacity, butchery and melee dodge read.
+			     SM_Cosmetic_BodySizeMultiplier feeds B&S's RENDER size. BSCache.GetBodyRenderSize
+			     reads its cosmeticScaleMultiplier, and for a race with no size offsets the
+			     drawn scale comes out of the decompiled maths as a simple rule:
+			         drawn = real + cosmetic - 1
+			     so today it is 0.8 + 0.75 - 1 = 0.55 of a human, while the mechanics stay
+			     at 0.64. Lower the cosmetic number to make her LOOK smaller without
+			     touching a single mechanic, or raise it past 1.0 for a bigger sister race
+			     (the future dark covenantor elementals are planned larger than these, so
+			     keep this one small and leave the headroom). -->
 			<SM_BodySizeMultiplier>0.8</SM_BodySizeMultiplier>
+			<SM_Cosmetic_BodySizeMultiplier>0.75</SM_Cosmetic_BodySizeMultiplier>
 		</statBases>
 		<race>
 			<baseBodySize>0.8</baseBodySize>
@@ -42,7 +53,7 @@
 	</ThingDef>
 
 	<!-- Gnome momo: an earth elemental in a woman's form. Living-stone healing is a
-	     HediffComp on her race tracker below — race <comps> never instantiate on a
+	     HediffComp on her race tracker below - race <comps> never instantiate on a
 	     pawn, but a hediff's comps do. -->
 	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
 		<defName>PMM_Race_GnomeMomo</defName>
@@ -172,7 +183,7 @@
 		The abstract base holds the part every element shares (the CompProperties_Race
 		swap flag), the same trick the race defs use.
 
-		Four of them also carry a PERMANENT elemental power as a HediffComp — gnome
+		Four of them also carry a PERMANENT elemental power as a HediffComp - gnome
 		living stone, sylph caprice, dryad photosynthesis, apsara allure. That is one
 		hediff per pawn instead of two: the power's own marker hediff is gone, so the
 		Health tab shows a single race row, and because B&S applies the tracker on a

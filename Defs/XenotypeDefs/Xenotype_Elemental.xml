@@ -10,13 +10,15 @@
 		Sylph PMM_Skin_SylphGreen, Undine PMM_Skin_UndineBlue. Each is parented on
 		Biotech's GeneSkinColorOverride whose randomBrightnessFactor yields varied
 		shades per pawn. The thematic kits (fire immunity, dark vision, wind speed,
-		...) are phase-3 candidates — see Elementals_Plan.md §6. v1 flavour rides on
-		descriptions, backstories and letters.
+		...) are phase-3 candidates - see Elementals_Plan.md §6. v1 flavour rides on
+		descriptions, backstories and letters. Ignis kit landed 2026-09-22: she now carries
+		ProjectMomo_MomoFiery (total fire immunity, plus the lesser ward her bonded man
+		inherits); the other seven kits are still open.
 
 		Shared block on every xenotype:
 		- inheritable, so elemental children inherit the xenotype;
 		- factionlessGenerationWeight 0: never appear as refugees, wanderers, crash-pod
-		  survivors etc. — elementals only enter the map through their four gated
+		  survivors etc. - elementals only enter the map through their four gated
 		  wander-in incidents;
 		- the shared NamerPersonElemental name maker;
 		- ProjectMomo_Momo: elementals ARE momos (mana need, tease melee, bond-capable).
@@ -77,11 +79,18 @@
 			<li>PMM_Skin_IgnisOrange</li>
 			<li>ProjectMomo_Momo</li>
 			<li>NakedSpeed</li>
-			<li>FireResistant</li>
+			<!-- Her fire kit, from core (Defs/GeneDefs.xml): full immunity to fire, heat and
+			     lava, plus the lesser fire ward a tsugai-bonded man inherits. It replaced
+			     vanilla FireResistant and MaxTemp_LargeIncrease on 2026-09-22, because the
+			     fiery gene already covers both: Flammability 0 could never ignite her,
+			     ComfyTemperatureMax +1000 beats any heat, and FireImmunityPatch nullifies
+			     Heat damage. One deliberate trade-off: VEE's Biotech patch keys its
+			     sun-sickness buildup on vanilla FireResistant, so she now takes sun
+			     sickness at the normal rate. -->
+			<li>ProjectMomo_MomoFiery</li>
 			<li>AptitudeRemarkable_Cooking</li>
 			<li>AptitudeTerrible_Plants</li>
 			<li>AptitudeTerrible_Animals</li>
-			<li>MaxTemp_LargeIncrease</li>
 			<li>MinTemp_SmallIncrease</li>
 			<li>Mood_Pessimist</li>
 			<li>MoveSpeed_Quick</li>
@@ -164,7 +173,7 @@
 		</modExtensions>
 	</XenotypeDef>
 
-	<!-- Dorome: a gnome melted by too-strong mamono mana into loose, sloppy mud — closer
+	<!-- Dorome: a gnome melted by too-strong mamono mana into loose, sloppy mud - closer
 	     to monster than elemental. Slow, simple, gentle. Fifth elemental (§11, locked
 	     D9–D13 2026-09-01). -->
 	<XenotypeDef>
@@ -236,7 +245,7 @@
 	<!-- Apsara: a joy elemental of the waters, born of the ocean of milk. Lustful,
 	     cheerful, calm; a dancer of Eros whose dance steals hearts and incites lust
 	     (Apsara wiki entry). Seventh elemental (Apsara_Plan.md, locked D-A1–D-A6
-	     2026-09-01). combatPowerFactor 1.0 — a lover, not a fighter. MoveSpeed_Slow
+	     2026-09-01). combatPowerFactor 1.0 - a lover, not a fighter. MoveSpeed_Slow
 	     keeps her slightly slower than the speed-gene-less undine (D-A6). -->
 	<XenotypeDef>
 		<defName>PMM_Elemental_Apsara</defName>
@@ -271,7 +280,7 @@
 	<!-- Genie: an elemental sealed long ago in a magic lamp, bound to grant the
 	     wishes of whoever sets her free. Eighth elemental. Genes: the base-game
 	     Genie xenotype, minus Hair_BaldOnly (no hair), ElongatedFingers (long
-	     fingers) and Beard_NoBeardOnly (beardless) per user rulings 2026-09-01 —
+	     fingers) and Beard_NoBeardOnly (beardless) per user rulings 2026-09-01 -
 	     plus the shared elemental block (momo + skin) and the wish-granting
 	     ability gene. combatPowerFactor 1.0: delicate, and a wish-granter rather
 	     than a fighter. The base-game genie icon finally goes to an actual genie

@@ -7,21 +7,21 @@
 
 		CRITICAL: none of these defs set <allowedBiomes>. That storyteller-level gate
 		would hard-block the Ignis temperature clause (a 33 °C TropicalRainforest tile
-		must still be eligible) and the Sylph elevation / Undine river clauses — all
+		must still be eligible) and the Sylph elevation / Undine river clauses - all
 		gating lives in the C# ClimateAcceptable overrides, like the bubble/taisui/sea
 		slimes. baseChance 1.0 flat for all four (locked D7): each elemental is the only
 		spawn in her environment; tune after play-testing.
 
-		Target tags: Map_PlayerHome (vanilla parity — home settlements) plus
+		Target tags: Map_PlayerHome (vanilla parity - home settlements) plus
 		Map_TempIncident (user ruling 2026-09-01): elementals may also wander onto
 		temporary maps such as camps. Each map rolls its own storyteller, so a camp
 		map fires independently of the home map. There is no per-target chance-scaling
 		hook in 1.6 (weights come from the global BaseChanceThisGame), so "more likely
-		on camps" is not a clean toggle — it would need a Harmony patch on the weight
+		on camps" is not a clean toggle - it would need a Harmony patch on the weight
 		selector. Out of scope for now.
 	-->
 
-	<!-- A gnome wanders in. Fires only on maps with caves (overhead mountain) — the
+	<!-- A gnome wanders in. Fires only on maps with caves (overhead mountain) - the
 	     caves and mines earth elementals call home. No biome or climate gate: gnomes
 	     are not tied to surface weather, only to caves. -->
 	<IncidentDef>
@@ -56,7 +56,7 @@
 		<letterDef>NeutralEvent</letterDef>
 	</IncidentDef>
 
-	<!-- A sylph wanders in. Fires only on tiles over 1000 m elevation — the high
+	<!-- A sylph wanders in. Fires only on tiles over 1000 m elevation - the high
 	     country where the mountain winds blow. -->
 	<IncidentDef>
 		<defName>PMM_SylphWandersIn</defName>
@@ -91,7 +91,7 @@
 	</IncidentDef>
 
 	<!-- A dorome wanders in. Fires only on cave maps or on swamp biomes with at least
-	     1000 mm of yearly rainfall (locked D9) — the caves and wetlands clay
+	     1000 mm of yearly rainfall (locked D9) - the caves and wetlands clay
 	     elementals call home. -->
 	<IncidentDef>
 		<defName>PMM_DoromeWandersIn</defName>
@@ -110,7 +110,7 @@
 
 	<!-- A dryad wanders in. Fires only on forested maps (Temperate/Boreal/Tropical
 	     forest) while the current outdoor temperature sits inside the tree growth range
-	     0-58 C (locked D14) — the woods, in the growing season, where her trees live. -->
+	     0-58 C (locked D14) - the woods, in the growing season, where her trees live. -->
 	<IncidentDef>
 		<defName>PMM_DryadWandersIn</defName>
 		<label>dryad wanders in</label>
@@ -127,7 +127,7 @@
 	</IncidentDef>
 
 	<!-- An apsara wanders in. Fires only on tiles with water (coast, river, or Lake
-	     biome) — the same gate as the undine, her fellow water elemental. -->
+	     biome) - the same gate as the undine, her fellow water elemental. -->
 	<IncidentDef>
 		<defName>PMM_ApsaraWandersIn</defName>
 		<label>apsara wanders in</label>
@@ -144,7 +144,7 @@
 	</IncidentDef>
 
 	<!-- A strange lamp turns up. Fires only on the Desert, AridShrubland and
-	     ExtremeDesert biomes (gated in the worker — same C#-only gating ruling as
+	     ExtremeDesert biomes (gated in the worker - same C#-only gating ruling as
 	     the wander-ins). It drops the Old Dusty Lamp ITEM, not a pawn: the genie
 	     herself only appears when a colonist cleans it (see Item_GenieLamp.xml). -->
 	<IncidentDef>
@@ -158,7 +158,7 @@
 		<baseChance>1.0</baseChance>
 		<populationEffect>IncreaseMedium</populationEffect>
 		<letterLabel>A strange lamp</letterLabel>
-		<letterText>Something glints in the sand at the edge of the colony: an old lamp, caked in dust and half-buried by the wind. It feels faintly warm, as if something inside has been waiting a very long time.\n\nA colonist could clean it and see what — or who — comes out.</letterText>
+		<letterText>Something glints in the sand at the edge of the colony: an old lamp, caked in dust and half-buried by the wind. It feels faintly warm, as if something inside has been waiting a very long time.\n\nA colonist could clean it and see what - or who - comes out.</letterText>
 		<letterDef>NeutralEvent</letterDef>
 	</IncidentDef>
 

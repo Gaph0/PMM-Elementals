@@ -3,7 +3,7 @@
 
 	<!--
 		LEGACY (user ruling 2026-09-01: the genie's bond IS the core mod's tsugai
-		bond). This hediff is no longer granted — the wish resolves her master from
+		bond). This hediff is no longer granted - the wish resolves her master from
 		the tsugai relation, and the tsugai bond hediff marks the bond on both
 		partners. The def stays so first-build saves still load; those copies are
 		inert (see the legacy note in GeniePowers.cs).

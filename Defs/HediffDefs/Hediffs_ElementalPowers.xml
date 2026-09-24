@@ -3,7 +3,7 @@
 
 	<!--
 		Elemental power hediffs. A pawn's RACE-def <comps> are never instantiated (see
-		ElementalPowers.cs), but a HEDIFF's comps do instantiate and tick — the slime
+		ElementalPowers.cs), but a HEDIFF's comps do instantiate and tick - the slime
 		mod's jelly-ooze uses the same mechanism.
 
 		The gnome, sylph and dryad powers no longer need a hediff of their own: their

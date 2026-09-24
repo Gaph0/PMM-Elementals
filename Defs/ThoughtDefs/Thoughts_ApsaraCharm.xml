@@ -3,10 +3,10 @@
 
 	<!--
 		Apsara charm mood thought (D-A3 locked +3). A situational thought active while the
-		pawn carries the PMM_Hediff_ApsaraCharm exposure hediff — the radius-limited,
+		pawn carries the PMM_Hediff_ApsaraCharm exposure hediff - the radius-limited,
 		heddiff-driven analogue of the Anomaly joybringer's map-wide JoyousPresence
 		(+3 mood). ThoughtWorker_ApsaraCharmPresence checks for the hediff. A thought,
-		not a hediff capacity — same ruling as the sylph caprice: no Mood PawnCapacityDef
+		not a hediff capacity - same ruling as the sylph caprice: no Mood PawnCapacityDef
 		exists, so mood can't be a hediff capacity offset.
 	-->
 	<ThoughtDef>

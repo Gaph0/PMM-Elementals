@@ -3,7 +3,7 @@
 
 	<!--
 		The four wild elemental pawn kinds. Variety comes entirely from the xenotype and
-		race pinned to each kind — one kind per element, one element per kind.
+		race pinned to each kind - one kind per element, one element per kind.
 
 		Elementals spawn with NO weapons and NO apparel: gear generation only runs when
 		weaponTags/weaponMoney/apparelTags/apparelMoney/apparelRequired are set
@@ -100,7 +100,7 @@
 	</PawnKindDef>
 
 	<!--
-		Genie: never wanders in — she arrives sealed in the Old Dusty Lamp
+		Genie: never wanders in - she arrives sealed in the Old Dusty Lamp
 		(PMM_GenieLampFound incident) and is generated when a colonist cleans it. The
 		kind exists for that spawn; the wild-man patches treat her like the other
 		elementals while her join offer waits for an answer.
@@ -171,7 +171,7 @@
 
 	<!--
 		Dorome: wanders in only on cave maps or rainy swamps (PMM_DoromeWandersIn
-		incident, locked D9). combatPower 40 — sluggish and simple, the least
+		incident, locked D9). combatPower 40 - sluggish and simple, the least
 		threatening elemental. No moveSpeedFactorByTerrainTag: Mud/MarshySoil carry no
 		terrainTags in Core, so there is no mud analogue to the undine's Water key.
 	-->
@@ -231,7 +231,7 @@
 
 	<!--
 		Apsara: wanders in only on tiles with water (PMM_ApsaraWandersIn incident, same
-		gate as the undine). combatPower 40 — a lover, not a fighter. Same Water terrain
+		gate as the undine). combatPower 40 - a lover, not a fighter. Same Water terrain
 		move-speed factor as the undine: she glides through water like any water
 		elemental; her MoveSpeed_Slow gene multiplies it down (~2.13 in water vs the
 		undine's 2.5), the "slightly slower than an undine" of locked D-A6.

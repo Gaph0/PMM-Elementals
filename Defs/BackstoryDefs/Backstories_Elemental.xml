@@ -4,7 +4,7 @@
 	<!--
 		Every elemental shares one childhood (the PMM_ElementalSpawn category) and one
 		per-element adulthood (its own spawn category), so backstory generation has
-		nothing else to pick — the same forced single-story pattern as the slimes. The
+		nothing else to pick - the same forced single-story pattern as the slimes. The
 		generation postfix in the assembly re-forces both slots after generation, so no
 		caller can produce a different story.
 	-->

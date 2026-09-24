@@ -4,11 +4,11 @@
 	<!--
 		The Old Dusty Lamp, dropped by the PMM_GenieLampFound incident (desert,
 		arid shrubland and extreme desert maps only). A colonist right-clicks it and
-		picks "Clean the lamp" — the vanilla CompUsable + UseItem job flow (the mech
+		picks "Clean the lamp" - the vanilla CompUsable + UseItem job flow (the mech
 		serum pattern): when the cleaning finishes, CompUseEffect_GenieLamp frees the
 		genie and pops her join offer, then CompUseEffectDestroySelf consumes the lamp.
 
-		DeteriorationRate 0: the lamp has waited centuries in the sand — it does not
+		DeteriorationRate 0: the lamp has waited centuries in the sand - it does not
 		rot away before anyone finds it. Uses the GenieJar art (an oil lamp).
 	-->
 	<ThingDef>

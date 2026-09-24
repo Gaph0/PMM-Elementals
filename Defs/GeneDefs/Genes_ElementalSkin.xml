@@ -6,7 +6,7 @@
 		(the same abstract base the slime PMM_Skin_SeaFoam used), which carries
 		<randomBrightnessFactor>0.18</randomBrightnessFactor>: each carrier's skin is
 		randomly brightened/darkened by up to ±18% at generation, so ONE mid-shade base
-		colour yields a range of shades across pawns — "various shades of blue/green"
+		colour yields a range of shades across pawns - "various shades of blue/green"
 		without needing multiple genes. Biotech-only, like every skin-colour gene.
 	-->
 
@@ -55,7 +55,7 @@
 	</GeneDef>
 
 	<!-- Dorome: a range of clay greys (user ruling 2026-09-01: several shades of clay
-	     grey, hair identical to body colour — hair handled by Patch_DoromeHairColor).
+	     grey, hair identical to body colour - hair handled by Patch_DoromeHairColor).
 	     Mid-base (115, 105, 95) spans roughly (94,86,78) wet riverbed clay to
 	     (136,124,112) pale dried clay after the ±18% roll. -->
 	<GeneDef ParentName="GeneSkinColorOverride" MayRequire="Ludeon.RimWorld.Biotech">
@@ -95,7 +95,7 @@
 		<displayOrderInCategory>88</displayOrderInCategory>
 	</GeneDef>
 
-	<!-- Genie: a range of dusky desert tans — the bronze of a lamp-dweller's skin.
+	<!-- Genie: a range of dusky desert tans - the bronze of a lamp-dweller's skin.
 	     Mid-base (148, 104, 74) spans roughly (121,85,61) deep bronze to
 	     (175,123,87) sunlit tan after the ±18% roll. -->
 	<GeneDef ParentName="GeneSkinColorOverride" MayRequire="Ludeon.RimWorld.Biotech">
@@ -124,7 +124,7 @@
 		</descriptionHyperlinks>
 	</GeneDef>
 
-	<!-- Apsara: a range of milky creams — her body clad in liquid "like sweet milk"
+	<!-- Apsara: a range of milky creams - her body clad in liquid "like sweet milk"
 	     (Apsara wiki entry, locked D-A6). Mid-base (240, 225, 200) spans roughly
 	     (197,185,164) warm milk to (255,255,236) fresh cream after the ±18% roll. -->
 	<GeneDef ParentName="GeneSkinColorOverride" MayRequire="Ludeon.RimWorld.Biotech">

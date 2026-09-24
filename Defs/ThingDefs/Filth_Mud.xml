@@ -6,7 +6,7 @@
 		Filth_* 2026-09-01), so the dorome's shed filth is a custom def. Cloned from
 		Filth_Dirt (same Grainy texture, dirt-clean sound, 45-50 day decay, rain washes
 		it away) with a darker wet-clay tint and slightly worse outdoor beauty: she
-		leaves mud behind instead of vanilla terrain filth and trash — see
+		leaves mud behind instead of vanilla terrain filth and trash - see
 		Patch_DoromeMudFilth in DoromePowers.cs, the verbatim slime-filth pattern.
 	-->
 	<ThingDef ParentName="BaseFilth">

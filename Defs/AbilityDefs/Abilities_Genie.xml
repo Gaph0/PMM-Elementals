@@ -4,7 +4,7 @@
 	<!--
 		The genie's wish (granted by PMM_Gene_GenieWish, the Dorome mud-merge
 		pattern). A pawn-targeted ability that only ever applies to her bonded
-		master — the colonist who cleaned her lamp — granting in priority order:
+		master - the colonist who cleaned her lamp - granting in priority order:
 		regrow the biggest missing limb, erase a permanent scar, or lift the biggest
 		temporary negative memory. CompAbilityEffect_GenieWish enforces the target
 		rule, greys the gizmo below 95% mana, and drains her mana to zero on cast.
@@ -17,7 +17,7 @@
 	<AbilityDef>
 		<defName>PMM_Ability_GenieWish</defName>
 		<label>grant wish</label>
-		<description>Grant one wish to the colonist she is bound to: regrow a missing limb, erase an old scar, or lift a lasting sorrow — in that order. The wish takes nearly all her mana and cannot be granted more than once a year.</description>
+		<description>Grant one wish to the colonist she is bound to: regrow a missing limb, erase an old scar, or lift a lasting sorrow - in that order. The wish takes nearly all her mana and cannot be granted more than once a year.</description>
 		<iconPath>UI/Abilities/WordOfJoy</iconPath>
 		<cooldownTicksRange>3600000</cooldownTicksRange>
 		<hostile>false</hostile>
