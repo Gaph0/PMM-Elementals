@@ -5,14 +5,14 @@
 
 	<!--
 		Locked gene ruling (D4/D5, applied to all four for consistency): v1 xenotypes
-		carry ONLY ProjectMomo_Momo + one custom PMM_Skin_* gene
+		carry ONLY ProjectMamono_Mamono + one custom PMM_Skin_* gene
 		(Genes_ElementalSkin.xml): Gnome PMM_Skin_GnomeBrown, Ignis PMM_Skin_IgnisOrange,
 		Sylph PMM_Skin_SylphGreen, Undine PMM_Skin_UndineBlue. Each is parented on
 		Biotech's GeneSkinColorOverride whose randomBrightnessFactor yields varied
 		shades per pawn. The thematic kits (fire immunity, dark vision, wind speed,
 		...) are phase-3 candidates - see Elementals_Plan.md §6. v1 flavour rides on
 		descriptions, backstories and letters. Ignis kit landed 2026-09-22: she now carries
-		ProjectMomo_MomoFiery (total fire immunity, plus the lesser ward her bonded man
+		ProjectMamono_MamonoFiery (total fire immunity, plus the lesser ward her bonded man
 		inherits); the other seven kits are still open.
 
 		Shared block on every xenotype:
@@ -21,7 +21,7 @@
 		  survivors etc. - elementals only enter the map through their four gated
 		  wander-in incidents;
 		- the shared NamerPersonElemental name maker;
-		- ProjectMomo_Momo: elementals ARE momos (mana need, tease melee, bond-capable).
+		- ProjectMamono_Mamono: elementals ARE mamonos (mana need, tease melee, bond-capable).
 	-->
 
 	<!-- Gnome: an earth elemental born of corrupted earth elements. Calm, quiet, voluptuous. -->
@@ -40,7 +40,7 @@
 		<chanceToUseNameMaker>1</chanceToUseNameMaker>
 		<genes>
 			<li>PMM_Skin_GnomeBrown</li>
-			<li>ProjectMomo_Momo</li>
+			<li>ProjectMamono_Mamono</li>
 			<li>Aggression_DeadCalm</li>
 			<li>MoveSpeed_Slow</li>
 			<li>VerySleepy</li>
@@ -55,7 +55,7 @@
 		</genes>
 		<modExtensions>
 			<li Class="BigAndSmall.XenotypeExtension">
-				<setRace>PMM_Race_GnomeMomo</setRace>
+				<setRace>PMM_Race_GnomeMamono</setRace>
 				<forceRace>true</forceRace>
 			</li>
 		</modExtensions>
@@ -77,7 +77,7 @@
 		<chanceToUseNameMaker>1</chanceToUseNameMaker>
 		<genes>
 			<li>PMM_Skin_IgnisOrange</li>
-			<li>ProjectMomo_Momo</li>
+			<li>ProjectMamono_Mamono</li>
 			<li>NakedSpeed</li>
 			<!-- Her fire kit, from core (Defs/GeneDefs.xml): full immunity to fire, heat and
 			     lava, plus the lesser fire ward a tsugai-bonded man inherits. It replaced
@@ -87,7 +87,7 @@
 			     Heat damage. One deliberate trade-off: VEE's Biotech patch keys its
 			     sun-sickness buildup on vanilla FireResistant, so she now takes sun
 			     sickness at the normal rate. -->
-			<li>ProjectMomo_MomoFiery</li>
+			<li>ProjectMamono_MamonoFiery</li>
 			<li>AptitudeRemarkable_Cooking</li>
 			<li>AptitudeTerrible_Plants</li>
 			<li>AptitudeTerrible_Animals</li>
@@ -97,7 +97,7 @@
 		</genes>
 		<modExtensions>
 			<li Class="BigAndSmall.XenotypeExtension">
-				<setRace>PMM_Race_IgnisMomo</setRace>
+				<setRace>PMM_Race_IgnisMamono</setRace>
 				<forceRace>true</forceRace>
 			</li>
 		</modExtensions>
@@ -119,7 +119,7 @@
 		<chanceToUseNameMaker>1</chanceToUseNameMaker>
 		<genes>
 			<li>PMM_Skin_SylphGreen</li>
-			<li>ProjectMomo_Momo</li>
+			<li>ProjectMamono_Mamono</li>
 			<li>Mood_Optimist</li>
 			<li>KindInstinct</li>
 			<li>LowSleep</li>
@@ -133,7 +133,7 @@
 		</genes>
 		<modExtensions>
 			<li Class="BigAndSmall.XenotypeExtension">
-				<setRace>PMM_Race_SylphMomo</setRace>
+				<setRace>PMM_Race_SylphMamono</setRace>
 				<forceRace>true</forceRace>
 			</li>
 		</modExtensions>
@@ -155,7 +155,7 @@
 		<chanceToUseNameMaker>1</chanceToUseNameMaker>
 		<genes>
 			<li>PMM_Skin_UndineBlue</li>
-			<li>ProjectMomo_Momo</li>
+			<li>ProjectMamono_Mamono</li>
 			<li>Mood_Sanguine</li>
 			<li>KindInstinct</li>
 			<li>AptitudeStrong_Plants</li>
@@ -167,7 +167,7 @@
 		</genes>
 		<modExtensions>
 			<li Class="BigAndSmall.XenotypeExtension">
-				<setRace>PMM_Race_UndineMomo</setRace>
+				<setRace>PMM_Race_UndineMamono</setRace>
 				<forceRace>true</forceRace>
 			</li>
 		</modExtensions>
@@ -191,7 +191,7 @@
 		<chanceToUseNameMaker>1</chanceToUseNameMaker>
 		<genes>
 			<li>PMM_Skin_DoromeClay</li>
-			<li>ProjectMomo_Momo</li>
+			<li>ProjectMamono_Mamono</li>
 			<li>PMM_Gene_DoromeMudMerge</li>
 			<li>Robust</li>
 			<li>MoveSpeed_Slow</li>
@@ -200,7 +200,7 @@
 		</genes>
 		<modExtensions>
 			<li Class="BigAndSmall.XenotypeExtension">
-				<setRace>PMM_Race_DoromeMomo</setRace>
+				<setRace>PMM_Race_DoromeMamono</setRace>
 				<forceRace>true</forceRace>
 			</li>
 		</modExtensions>
@@ -225,7 +225,7 @@
 		<chanceToUseNameMaker>1</chanceToUseNameMaker>
 		<genes>
 			<li>PMM_Skin_DryadBark</li>
-			<li>ProjectMomo_Momo</li>
+			<li>ProjectMamono_Mamono</li>
 			<li>AptitudeRemarkable_Plants</li>
 			<li>KindInstinct</li>
 			<li>Mood_Sanguine</li>
@@ -236,7 +236,7 @@
 		</genes>
 		<modExtensions>
 			<li Class="BigAndSmall.XenotypeExtension">
-				<setRace>PMM_Race_DryadMomo</setRace>
+				<setRace>PMM_Race_DryadMamono</setRace>
 				<forceRace>true</forceRace>
 			</li>
 		</modExtensions>
@@ -262,7 +262,7 @@
 		<chanceToUseNameMaker>1</chanceToUseNameMaker>
 		<genes>
 			<li>PMM_Skin_ApsaraCream</li>
-			<li>ProjectMomo_Momo</li>
+			<li>ProjectMamono_Mamono</li>
 			<li>Mood_Optimist</li>
 			<li>KindInstinct</li>
 			<li>AptitudeStrong_Social</li>
@@ -271,7 +271,7 @@
 		</genes>
 		<modExtensions>
 			<li Class="BigAndSmall.XenotypeExtension">
-				<setRace>PMM_Race_ApsaraMomo</setRace>
+				<setRace>PMM_Race_ApsaraMamono</setRace>
 				<forceRace>true</forceRace>
 			</li>
 		</modExtensions>
@@ -281,7 +281,7 @@
 	     wishes of whoever sets her free. Eighth elemental. Genes: the base-game
 	     Genie xenotype, minus Hair_BaldOnly (no hair), ElongatedFingers (long
 	     fingers) and Beard_NoBeardOnly (beardless) per user rulings 2026-09-01 -
-	     plus the shared elemental block (momo + skin) and the wish-granting
+	     plus the shared elemental block (mamono + skin) and the wish-granting
 	     ability gene. combatPowerFactor 1.0: delicate, and a wish-granter rather
 	     than a fighter. The base-game genie icon finally goes to an actual genie
 	     (sylph/apsara placeholders are theirs). -->
@@ -299,7 +299,7 @@
 		<chanceToUseNameMaker>1</chanceToUseNameMaker>
 		<genes>
 			<li>PMM_Skin_GenieTan</li>
-			<li>ProjectMomo_Momo</li>
+			<li>ProjectMamono_Mamono</li>
 			<li>PMM_Gene_GenieWish</li>
 			<li>Body_Thin</li>
 			<li>AptitudeRemarkable_Intellectual</li>
@@ -313,7 +313,7 @@
 		</genes>
 		<modExtensions>
 			<li Class="BigAndSmall.XenotypeExtension">
-				<setRace>PMM_Race_GenieMomo</setRace>
+				<setRace>PMM_Race_GenieMamono</setRace>
 				<forceRace>true</forceRace>
 			</li>
 		</modExtensions>

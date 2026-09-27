@@ -9,7 +9,7 @@
 		weaponTags/weaponMoney/apparelTags/apparelMoney/apparelRequired are set
 		(same approach as the naked, unarmed vanilla WildMan pawn kind).
 
-		fixedGender Female: elementals are always women (the wiki lore; the Momo gene
+		fixedGender Female: elementals are always women (the wiki lore; the Mamono gene
 		enforces it anyway, but pin it like the nureonago for clean generation).
 
 		Backstory filters: each kind gets the shared PMM_ElementalSpawn category (the
@@ -22,7 +22,7 @@
 	<PawnKindDef>
 		<defName>PMM_Elemental_Gnome</defName>
 		<label>gnome</label>
-		<race>PMM_Race_GnomeMomo</race>
+		<race>PMM_Race_GnomeMamono</race>
 		<fixedGender>Female</fixedGender>
 		<maxGenerationAge>60</maxGenerationAge>
 		<chemicalAddictionChance>0</chemicalAddictionChance>
@@ -49,7 +49,7 @@
 	<PawnKindDef>
 		<defName>PMM_Elemental_Ignis</defName>
 		<label>ignis</label>
-		<race>PMM_Race_IgnisMomo</race>
+		<race>PMM_Race_IgnisMamono</race>
 		<fixedGender>Female</fixedGender>
 		<maxGenerationAge>60</maxGenerationAge>
 		<chemicalAddictionChance>0</chemicalAddictionChance>
@@ -76,7 +76,7 @@
 	<PawnKindDef>
 		<defName>PMM_Elemental_Sylph</defName>
 		<label>sylph</label>
-		<race>PMM_Race_SylphMomo</race>
+		<race>PMM_Race_SylphMamono</race>
 		<fixedGender>Female</fixedGender>
 		<maxGenerationAge>60</maxGenerationAge>
 		<chemicalAddictionChance>0</chemicalAddictionChance>
@@ -108,7 +108,7 @@
 	<PawnKindDef>
 		<defName>PMM_Elemental_Genie</defName>
 		<label>genie</label>
-		<race>PMM_Race_GenieMomo</race>
+		<race>PMM_Race_GenieMamono</race>
 		<fixedGender>Female</fixedGender>
 		<maxGenerationAge>60</maxGenerationAge>
 		<chemicalAddictionChance>0</chemicalAddictionChance>
@@ -140,7 +140,7 @@
 	<PawnKindDef>
 		<defName>PMM_Elemental_Undine</defName>
 		<label>undine</label>
-		<race>PMM_Race_UndineMomo</race>
+		<race>PMM_Race_UndineMamono</race>
 		<fixedGender>Female</fixedGender>
 		<maxGenerationAge>60</maxGenerationAge>
 		<chemicalAddictionChance>0</chemicalAddictionChance>
@@ -178,7 +178,7 @@
 	<PawnKindDef>
 		<defName>PMM_Elemental_Dorome</defName>
 		<label>dorome</label>
-		<race>PMM_Race_DoromeMomo</race>
+		<race>PMM_Race_DoromeMamono</race>
 		<fixedGender>Female</fixedGender>
 		<maxGenerationAge>60</maxGenerationAge>
 		<chemicalAddictionChance>0</chemicalAddictionChance>
@@ -206,7 +206,7 @@
 	<PawnKindDef>
 		<defName>PMM_Elemental_Dryad</defName>
 		<label>dryad</label>
-		<race>PMM_Race_DryadMomo</race>
+		<race>PMM_Race_DryadMamono</race>
 		<fixedGender>Female</fixedGender>
 		<maxGenerationAge>60</maxGenerationAge>
 		<chemicalAddictionChance>0</chemicalAddictionChance>
@@ -239,7 +239,7 @@
 	<PawnKindDef>
 		<defName>PMM_Elemental_Apsara</defName>
 		<label>apsara</label>
-		<race>PMM_Race_ApsaraMomo</race>
+		<race>PMM_Race_ApsaraMamono</race>
 		<fixedGender>Female</fixedGender>
 		<maxGenerationAge>60</maxGenerationAge>
 		<chemicalAddictionChance>0</chemicalAddictionChance>

@@ -19,7 +19,7 @@ namespace PMM_Elementals
 
     /// <summary>
     /// Def references resolved at startup. The eight wild pawn kinds and the eight custom
-    /// races — everything the physiology patches need without a string lookup at call
+    /// races - everything the physiology patches need without a string lookup at call
     /// time. Backstory defs are fetched by name per kind (slime pattern) since they are
     /// looked up once per pawn generation, not per tick.
     ///
@@ -40,14 +40,14 @@ namespace PMM_Elementals
         public static PawnKindDef PMM_Elemental_Apsara;
         public static PawnKindDef PMM_Elemental_Genie;
 
-        public static ThingDef PMM_Race_GnomeMomo;
-        public static ThingDef PMM_Race_IgnisMomo;
-        public static ThingDef PMM_Race_SylphMomo;
-        public static ThingDef PMM_Race_UndineMomo;
-        public static ThingDef PMM_Race_DoromeMomo;
-        public static ThingDef PMM_Race_DryadMomo;
-        public static ThingDef PMM_Race_ApsaraMomo;
-        public static ThingDef PMM_Race_GenieMomo;
+        public static ThingDef PMM_Race_GnomeMamono;
+        public static ThingDef PMM_Race_IgnisMamono;
+        public static ThingDef PMM_Race_SylphMamono;
+        public static ThingDef PMM_Race_UndineMamono;
+        public static ThingDef PMM_Race_DoromeMamono;
+        public static ThingDef PMM_Race_DryadMamono;
+        public static ThingDef PMM_Race_ApsaraMamono;
+        public static ThingDef PMM_Race_GenieMamono;
 
         // Dorome powers (filth + tamed-only mud-merge ability).
         public static ThingDef PMM_Filth_Mud;
@@ -62,31 +62,31 @@ namespace PMM_Elementals
 
         // Phase-3 powers. Gnome living stone, sylph caprice and dryad photosynthesis need
         // no HediffDef of their own any more: their HediffComps sit on the race trackers
-        // (see Race_ElementalMomo.xml).
+        // (see Race_ElementalMamono.xml).
         public static HediffDef PMM_Hediff_UndineWetSpeed;
         public static ThoughtDef PMM_Thought_SylphCapriceFoul;
         public static ThoughtDef PMM_Thought_SylphCapriceGiddy;
         // Apsara charm (the aura comp itself sits on her race tracker) + its thought.
         public static HediffDef PMM_Hediff_ApsaraCharm;
         public static ThoughtDef PMM_Thought_ApsaraCharm;
-        // Resolved from Project Momo core (cross-mod def; assigned by name, not DefOf).
-        public static HediffDef ProjectMomo_TeaseDamage;
-        public static NeedDef ProjectMomo_Mana;
-        public static PawnRelationDef ProjectMomo_Tsugai;
+        // Resolved from Project Mamono core (cross-mod def; assigned by name, not DefOf).
+        public static HediffDef ProjectMamono_TeaseDamage;
+        public static NeedDef ProjectMamono_Mana;
+        public static PawnRelationDef ProjectMamono_Tsugai;
 
         static ElementalDefOf()
         {
             DefOfHelper.EnsureInitializedInCtor(typeof(ElementalDefOf));
-            ProjectMomo_TeaseDamage = DefDatabase<HediffDef>.GetNamedSilentFail("ProjectMomo_TeaseDamage");
-            ProjectMomo_Mana = DefDatabase<NeedDef>.GetNamedSilentFail("ProjectMomo_Mana");
-            ProjectMomo_Tsugai = DefDatabase<PawnRelationDef>.GetNamedSilentFail("ProjectMomo_Tsugai");
+            ProjectMamono_TeaseDamage = DefDatabase<HediffDef>.GetNamedSilentFail("ProjectMamono_TeaseDamage");
+            ProjectMamono_Mana = DefDatabase<NeedDef>.GetNamedSilentFail("ProjectMamono_Mana");
+            ProjectMamono_Tsugai = DefDatabase<PawnRelationDef>.GetNamedSilentFail("ProjectMamono_Tsugai");
         }
     }
 
     /// <summary>
     /// The eight elemental xenotypes, keyed by the same defNames as the kinds above.
     /// Split out of ElementalDefOf because a pawnkind and its xenotype share one defName
-    /// and [DefOf] binds by field name — see the comment there. Nothing reads these yet;
+    /// and [DefOf] binds by field name - see the comment there. Nothing reads these yet;
     /// they exist so xenotype work (transformation, checks) has a resolved reference
     /// instead of a string lookup.
     /// </summary>

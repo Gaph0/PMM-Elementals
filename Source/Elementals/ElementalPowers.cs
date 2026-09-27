@@ -10,12 +10,12 @@ namespace PMM_Elementals
     // Phase-3 signature powers.
     //
     // ARCHITECTURE NOTE (the phase-3a bug): a Pawn's RACE-def <comps> are never
-    // instantiated — ThingWithComps.InitializeComps is called for HediffWithComps
+    // instantiated - ThingWithComps.InitializeComps is called for HediffWithComps
     // and WorldObject, never for a Pawn's race def, and Pawn never calls it for its
-    // own race comps. So race <comps> on PMM_Race_*Momo were inert (no gnome healing,
+    // own race comps. So race <comps> on PMM_Race_*Mamono were inert (no gnome healing,
     // no undine filth, no ignis aura). Two reliable mechanisms are used instead:
     //   * Hediff comps on a hidden marker hediff (hediffs on a pawn DO get comps and
-    //     DO tick — the slime mod's jelly-ooze uses exactly this), driven per-xenotype;
+    //     DO tick - the slime mod's jelly-ooze uses exactly this), driven per-xenotype;
     //   * Harmony patches keyed on the pawn's xenotype (the phase-2 elementals pattern).
     // =====================================================================
 
@@ -33,10 +33,10 @@ namespace PMM_Elementals
     }
 
     // =====================================================================
-    // IGNIS — flame aura. When an ignis (wild or colony) lands a melee hit:
-    //   * HUMANS (non-momo) → extra tease, never fire (a Momo's melee on a human
-    //     already deals tease instead of physical harm — core TeaseDamagePatch).
-    //   * everything else (momos, animals, insects, mechanoids) → ignited.
+    // IGNIS - flame aura. When an ignis (wild or colony) lands a melee hit:
+    //   * HUMANS (non-mamono) → extra tease, never fire (a Mamono's melee on a human
+    //     already deals tease instead of physical harm - core TeaseDamagePatch).
+    //   * everything else (mamonos, animals, insects, mechanoids) → ignited.
     // =====================================================================
 
     [HarmonyPatch(typeof(Verb_MeleeAttackDamage), "ApplyMeleeDamageToTarget")]
@@ -44,23 +44,23 @@ namespace PMM_Elementals
     {
         private const float TeasePerHit = 0.03f;
         private const float FireSize = 0.35f;
-        private static GeneDef momoGene;
+        private static GeneDef mamonoGene;
 
-        private static bool IsMomoCarrier(Pawn pawn)
+        private static bool IsMamonoCarrier(Pawn pawn)
         {
             if (pawn?.genes == null)
             {
                 return false;
             }
-            if (momoGene == null)
+            if (mamonoGene == null)
             {
-                momoGene = DefDatabase<GeneDef>.GetNamedSilentFail("ProjectMomo_Momo");
+                mamonoGene = DefDatabase<GeneDef>.GetNamedSilentFail("ProjectMamono_Mamono");
             }
-            if (momoGene == null)
+            if (mamonoGene == null)
             {
                 return false;
             }
-            Gene g = pawn.genes.GetGene(momoGene);
+            Gene g = pawn.genes.GetGene(mamonoGene);
             return g != null && g.Active;
         }
 
@@ -77,35 +77,35 @@ namespace PMM_Elementals
                 return;
             }
 
-            if (victim.RaceProps != null && victim.RaceProps.Humanlike && !IsMomoCarrier(victim))
+            if (victim.RaceProps != null && victim.RaceProps.Humanlike && !IsMamonoCarrier(victim))
             {
                 BodyPartRecord brain = victim.health.hediffSet.GetBrain();
                 if (brain == null)
                 {
                     return;
                 }
-                Hediff tease = victim.health.hediffSet.GetFirstHediffOfDef(ElementalDefOf.ProjectMomo_TeaseDamage);
+                Hediff tease = victim.health.hediffSet.GetFirstHediffOfDef(ElementalDefOf.ProjectMamono_TeaseDamage);
                 if (tease != null)
                 {
                     tease.Severity = Mathf.Clamp(tease.Severity + TeasePerHit, tease.def.minSeverity, tease.def.maxSeverity);
                 }
                 else
                 {
-                    tease = HediffMaker.MakeHediff(ElementalDefOf.ProjectMomo_TeaseDamage, victim, brain);
+                    tease = HediffMaker.MakeHediff(ElementalDefOf.ProjectMamono_TeaseDamage, victim, brain);
                     tease.Severity = Mathf.Clamp(TeasePerHit, tease.def.minSeverity, tease.def.maxSeverity);
                     victim.health.AddHediff(tease, brain);
                 }
             }
             else
             {
-                // Momos, animals, insects, mechanoids: will the flames to burn.
+                // Mamonos, animals, insects, mechanoids: will the flames to burn.
                 victim.TryAttachFire(FireSize, attacker);
             }
         }
     }
 
     // =====================================================================
-    // GNOME — living stone. Hidden marker hediff carries a HediffComp that, on a rare
+    // GNOME - living stone. Hidden marker hediff carries a HediffComp that, on a rare
     // interval, shaves severity off her worst injury while on rough ground / under mountain.
     // =====================================================================
 
@@ -157,7 +157,7 @@ namespace PMM_Elementals
             {
                 return false;
             }
-            // Rough stone (Granite/Slate/etc. — the rough-rock a mountain map bares, which the
+            // Rough stone (Granite/Slate/etc. - the rough-rock a mountain map bares, which the
             // smooth-floor designator detects via SmoothableStone) OR rough diggable ground
             // (gravel/soil/sand). Smoothed and built floors carry neither affordance.
             return terrain.affordances.Contains(TerrainAffordanceDefOf.SmoothableStone) ||
@@ -183,7 +183,7 @@ namespace PMM_Elementals
     }
 
     // =====================================================================
-    // SYLPH — caprice. Hidden marker hediff carries a HediffComp that re-rolls a whim
+    // SYLPH - caprice. Hidden marker hediff carries a HediffComp that re-rolls a whim
     // each ~24 h and applies a 1-day memory thought (foul / giddy / calm).
     // =====================================================================
 
@@ -274,7 +274,7 @@ namespace PMM_Elementals
     }
 
     // =====================================================================
-    // UNDINE — wet-weather speed + water filth + slower filth rate.
+    // UNDINE - wet-weather speed + water filth + slower filth rate.
     // =====================================================================
 
     public class MapComponent_UndineWetSpeed : MapComponent

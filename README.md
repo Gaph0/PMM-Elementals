@@ -1,8 +1,8 @@
-# Project Momo Elementals
+# Project Mamono Elementals
 
-RimWorld 1.6 mod adding **wild elementals** for Project Momo: spirit-folk born of
+RimWorld 1.6 mod adding **wild elementals** for Project Mamono: spirit-folk born of
 earth, fire, wind and water who wander the wild places of the rim. They spawn only in
-the wild — like wild men — and like wild men they can be tamed or captured and
+the wild - like wild men - and like wild men they can be tamed or captured and
 convinced to join.
 
 Eight elementals ship today. Seven wander in through their own gated event. The genie
@@ -15,7 +15,7 @@ is found instead.
 - **Odyssey** expansion (required: the Ignis gate knows the `LavaField` biome)
 - **Harmony** (the spawn-gate and wild-man code is a Harmony-patched assembly)
 - **Big and Small - Framework** (the elemental races use the Big & Small race pattern)
-- **Project Momo** (elemental xenotypes carry the Momo gene)
+- **Project Mamono** (elemental xenotypes carry the Mamono gene)
 
 ## The eight elementals
 
@@ -28,11 +28,11 @@ is found instead.
 | **Dorome** | Clay | Tiles with caves, or swamps with 1000 mm or more rainfall |
 | **Dryad** | Wood | Forest biomes, while the outdoor temperature sits in the tree growth range |
 | **Apsara** | Water | Coastal tiles, river tiles, or the Lake biome |
-| **Genie** | — | Found, not wandering: a lamp drops in desert biomes, and cleaning it frees her |
+| **Genie** | - | Found, not wandering: a lamp drops in desert biomes, and cleaning it frees her |
 
 Each wander-in elemental arrives factionless, pinned 100% to her xenotype, and is
 tamed through the vanilla wild-man flow (Animals → Tame). Every xenotype carries the
-Momo gene, a full thematic gene kit, and her own skin colour gene.
+Mamono gene, a full thematic gene kit, and her own skin colour gene.
 
 Signature powers: the ignis scorches what stands near her. The gnome heals on soil and
 bare rock. The sylph swings between giddy and foul moods. The undine moves faster in
@@ -45,7 +45,7 @@ on sunlight and works plants. The apsara's dance of love lifts everyone near her
 |---|---|
 | `About/About.xml` | Mod metadata and dependencies |
 | `Defs/XenotypeDefs/Xenotype_Elemental.xml` | The eight elemental xenotypes |
-| `Defs/ThingDefs/Race_ElementalMomo.xml` | The eight elemental races (Human-derived) |
+| `Defs/ThingDefs/Race_ElementalMamono.xml` | The eight elemental races (Human-derived) |
 | `Defs/ThingDefs/Item_GenieLamp.xml` | The Old Dusty Lamp |
 | `Defs/ThingDefs/Filth_Mud.xml` | The dorome's mud filth |
 | `Defs/GeneDefs/Genes_ElementalSkin.xml` | The per-element skin colour genes |
@@ -61,9 +61,9 @@ on sunlight and works plants. The apsara's dance of love lifts everyone near her
 
 ## Build & release
 
-- `./build.sh` — runs `dotnet build` on `PMM.Elementals.csproj`. The project reference
-  builds Project Momo first.
-- `./release.sh vX.Y.Z "notes"` — builds, tags, zips the Workshop layout and creates
+- `./build.sh` - runs `dotnet build` on `PMM.Elementals.csproj`. The project reference
+  builds Project Mamono first.
+- `./release.sh vX.Y.Z "notes"` - builds, tags, zips the Workshop layout and creates
   a GitHub release on `Gaph0/PMM---Elementals`.
 
 Lore reference: the Monster Girl Encyclopedia wiki snapshots in the `MGEWiki` folder of

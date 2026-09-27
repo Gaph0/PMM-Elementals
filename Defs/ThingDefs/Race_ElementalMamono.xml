@@ -2,7 +2,7 @@
 <Defs>
 
 	<!--
-		Elemental momo races. Inherit everything from Human via XML deep merge (body,
+		Elemental mamono races. Inherit everything from Human via XML deep merge (body,
 		tools, think tree, stat bases, ...), so elementals remain fully humanlike.
 
 		D2 locked: custom races, one per element. They exist for identity (the race
@@ -24,7 +24,7 @@
 		while SM_BodySizeMultiplier is the stat B&S's scaler reads to DRAW a humanlike at
 		that size - without the stat, an 0.8 elemental still rendered at 1.0.
 	-->
-	<ThingDef Name="PMM_ElementalMomoRaceBase" ParentName="Human" Abstract="True">
+	<ThingDef Name="PMM_ElementalMamonoRaceBase" ParentName="Human" Abstract="True">
 		<!-- Slightly smaller than a baseline human (1.0): lower carrying capacity and
 		     butcher yields, better melee dodge. Inherited by all eight elementals.
 		     Body size is a RaceProperties field in 1.6 (baseBodySize), NOT a statBases
@@ -52,86 +52,86 @@
 		</race>
 	</ThingDef>
 
-	<!-- Gnome momo: an earth elemental in a woman's form. Living-stone healing is a
+	<!-- Gnome mamono: an earth elemental in a woman's form. Living-stone healing is a
 	     HediffComp on her race tracker below - race <comps> never instantiate on a
 	     pawn, but a hediff's comps do. -->
-	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
-		<defName>PMM_Race_GnomeMomo</defName>
-		<label>gnome momo</label>
-		<description>An earth elemental momo. Her full, quiet body is the soil given a woman's form - patient, grounding, and slow to anger.</description>
+	<ThingDef ParentName="PMM_ElementalMamonoRaceBase">
+		<defName>PMM_Race_GnomeMamono</defName>
+		<label>gnome mamono</label>
+		<description>An earth elemental mamono. Her full, quiet body is the soil given a woman's form - patient, grounding, and slow to anger.</description>
 		<modExtensions>
 			<li Class="BigAndSmall.RaceExtension">
-				<raceHediff>PMM_RaceTracker_GnomeMomo</raceHediff>
+				<raceHediff>PMM_RaceTracker_GnomeMamono</raceHediff>
 			</li>
 		</modExtensions>
 	</ThingDef>
 
-	<!-- Ignis momo: a fire elemental in a woman's form. The flame aura is a melee patch. -->
-	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
-		<defName>PMM_Race_IgnisMomo</defName>
-		<label>ignis momo</label>
-		<description>A fire elemental momo. Flames lick harmlessly along her skin, burning only when she wills it - a raging fire given a woman's form.</description>
+	<!-- Ignis mamono: a fire elemental in a woman's form. The flame aura is a melee patch. -->
+	<ThingDef ParentName="PMM_ElementalMamonoRaceBase">
+		<defName>PMM_Race_IgnisMamono</defName>
+		<label>ignis mamono</label>
+		<description>A fire elemental mamono. Flames lick harmlessly along her skin, burning only when she wills it - a raging fire given a woman's form.</description>
 		<modExtensions>
 			<li Class="BigAndSmall.RaceExtension">
-				<raceHediff>PMM_RaceTracker_IgnisMomo</raceHediff>
+				<raceHediff>PMM_RaceTracker_IgnisMamono</raceHediff>
 			</li>
 		</modExtensions>
 	</ThingDef>
 
-	<!-- Sylph momo: a wind elemental in a woman's form. Caprice is a HediffComp on her race tracker below. -->
-	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
-		<defName>PMM_Race_SylphMomo</defName>
-		<label>sylph momo</label>
-		<description>A wind elemental momo. The wind is always swirling inside her - capricious, free-spirited, and impossible to pin down.</description>
+	<!-- Sylph mamono: a wind elemental in a woman's form. Caprice is a HediffComp on her race tracker below. -->
+	<ThingDef ParentName="PMM_ElementalMamonoRaceBase">
+		<defName>PMM_Race_SylphMamono</defName>
+		<label>sylph mamono</label>
+		<description>A wind elemental mamono. The wind is always swirling inside her - capricious, free-spirited, and impossible to pin down.</description>
 		<modExtensions>
 			<li Class="BigAndSmall.RaceExtension">
-				<raceHediff>PMM_RaceTracker_SylphMomo</raceHediff>
+				<raceHediff>PMM_RaceTracker_SylphMamono</raceHediff>
 			</li>
 		</modExtensions>
 	</ThingDef>
 
-	<!-- Undine momo: a water elemental in a woman's form. Wet-speed and water filth are
+	<!-- Undine mamono: a water elemental in a woman's form. Wet-speed and water filth are
 	     a map component + filth patch; the CleaningSpeed stat offset below works (it is a
 	     race stat, not a comp). -->
-	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
-		<defName>PMM_Race_UndineMomo</defName>
-		<label>undine momo</label>
-		<description>A water elemental momo. Her translucent body is water given a woman's form - pure, gentle, and quietly devoted.</description>
+	<ThingDef ParentName="PMM_ElementalMamonoRaceBase">
+		<defName>PMM_Race_UndineMamono</defName>
+		<label>undine mamono</label>
+		<description>A water elemental mamono. Her translucent body is water given a woman's form - pure, gentle, and quietly devoted.</description>
 		<!-- Tidy water-keeper: cleans noticeably faster. -->
 		<statBases>
 			<CleaningSpeed>1.5</CleaningSpeed>
 		</statBases>
 		<modExtensions>
 			<li Class="BigAndSmall.RaceExtension">
-				<raceHediff>PMM_RaceTracker_UndineMomo</raceHediff>
+				<raceHediff>PMM_RaceTracker_UndineMamono</raceHediff>
 			</li>
 		</modExtensions>
 	</ThingDef>
 
-	<!-- Dorome momo: a clay elemental in a woman's form. Mud filth, the tamed-only
+	<!-- Dorome mamono: a clay elemental in a woman's form. Mud filth, the tamed-only
 	     mud-merge ability and the clay-grey hair are all patches (see DoromePowers.cs) -
 	     nothing here needs race comps. Human butcher yields (D2 parity). -->
-	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
-		<defName>PMM_Race_DoromeMomo</defName>
-		<label>dorome momo</label>
-		<description>A clay elemental momo. Her soft, clay-grey body is wet earth given a woman's form - slow, simple, and endlessly gentle.</description>
+	<ThingDef ParentName="PMM_ElementalMamonoRaceBase">
+		<defName>PMM_Race_DoromeMamono</defName>
+		<label>dorome mamono</label>
+		<description>A clay elemental mamono. Her soft, clay-grey body is wet earth given a woman's form - slow, simple, and endlessly gentle.</description>
 		<modExtensions>
 			<li Class="BigAndSmall.RaceExtension">
-				<raceHediff>PMM_RaceTracker_DoromeMomo</raceHediff>
+				<raceHediff>PMM_RaceTracker_DoromeMamono</raceHediff>
 			</li>
 		</modExtensions>
 	</ThingDef>
 
-	<!-- Dryad momo: a tree elemental in a woman's form. She IS her tree, so her body is
+	<!-- Dryad mamono: a tree elemental in a woman's form. She IS her tree, so her body is
 	     living wood: butchering yields wood (meatDef) and no leather (LeatherAmount 0),
 	     and her comfortable temperature range is the vanilla tree growth range 0-58 C
 	     (requirement 3; the Human parent sets 16/26). Her green thumb (locked D16) is a
 	     pawn-side stat pair: she works plants faster and her own harvests yield more.
 	     Photosynthesis is a HediffComp on her race tracker below. -->
-	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
-		<defName>PMM_Race_DryadMomo</defName>
-		<label>dryad momo</label>
-		<description>A tree elemental momo. Her warm body is living wood given a woman's form - mild, gentle, and deeply rooted in the forest she tends.</description>
+	<ThingDef ParentName="PMM_ElementalMamonoRaceBase">
+		<defName>PMM_Race_DryadMamono</defName>
+		<label>dryad mamono</label>
+		<description>A tree elemental mamono. Her warm body is living wood given a woman's form - mild, gentle, and deeply rooted in the forest she tends.</description>
 		<race>
 			<meatDef>WoodLog</meatDef>
 		</race>
@@ -144,41 +144,41 @@
 		</statBases>
 		<modExtensions>
 			<li Class="BigAndSmall.RaceExtension">
-				<raceHediff>PMM_RaceTracker_DryadMomo</raceHediff>
+				<raceHediff>PMM_RaceTracker_DryadMamono</raceHediff>
 			</li>
 		</modExtensions>
 	</ThingDef>
 
-	<!-- Apsara momo: a joy elemental in a woman's form. The allure aura is a HediffComp
+	<!-- Apsara mamono: a joy elemental in a woman's form. The allure aura is a HediffComp
 	     on her race tracker, and the party/romance effects are patches (see
 	     ApsaraPowers.cs) - nothing here needs race comps. Human butcher yields (D2 parity). -->
-	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
-		<defName>PMM_Race_ApsaraMomo</defName>
-		<label>apsara momo</label>
-		<description>A joy elemental momo. Her body, clad in liquid like sweet milk, is the ocean of love given a woman's form - cheerful, lustful, and forever mid-dance.</description>
+	<ThingDef ParentName="PMM_ElementalMamonoRaceBase">
+		<defName>PMM_Race_ApsaraMamono</defName>
+		<label>apsara mamono</label>
+		<description>A joy elemental mamono. Her body, clad in liquid like sweet milk, is the ocean of love given a woman's form - cheerful, lustful, and forever mid-dance.</description>
 		<modExtensions>
 			<li Class="BigAndSmall.RaceExtension">
-				<raceHediff>PMM_RaceTracker_ApsaraMomo</raceHediff>
+				<raceHediff>PMM_RaceTracker_ApsaraMamono</raceHediff>
 			</li>
 		</modExtensions>
 	</ThingDef>
 
-	<!-- Genie momo: an elemental of the lamp in a woman's form. The wish is a
+	<!-- Genie mamono: an elemental of the lamp in a woman's form. The wish is a
 	     gene-granted ability and the lamp bond a marker hediff (see GeniePowers.cs) -
 	     nothing here needs race comps. Human butcher yields (D2 parity). -->
-	<ThingDef ParentName="PMM_ElementalMomoRaceBase">
-		<defName>PMM_Race_GenieMomo</defName>
-		<label>genie momo</label>
-		<description>A genie momo. Once bound to a magic lamp, her dusky body is wish-magic given a woman's form - cool-headed, precise, and bound to serve the one who set her free.</description>
+	<ThingDef ParentName="PMM_ElementalMamonoRaceBase">
+		<defName>PMM_Race_GenieMamono</defName>
+		<label>genie mamono</label>
+		<description>A genie mamono. Once bound to a magic lamp, her dusky body is wish-magic given a woman's form - cool-headed, precise, and bound to serve the one who set her free.</description>
 		<modExtensions>
 			<li Class="BigAndSmall.RaceExtension">
-				<raceHediff>PMM_RaceTracker_GenieMomo</raceHediff>
+				<raceHediff>PMM_RaceTracker_GenieMamono</raceHediff>
 			</li>
 		</modExtensions>
 	</ThingDef>
 
 	<!--
-		The eight elemental momo trackers. One per element rather than one shared, so a
+		The eight elemental mamono trackers. One per element rather than one shared, so a
 		per-element armour stage, romance tag or size tweak later has an obvious home.
 		The abstract base holds the part every element shares (the CompProperties_Race
 		swap flag), the same trick the race defs use.
@@ -202,9 +202,9 @@
 	</HediffDef>
 
 	<HediffDef ParentName="PMM_ElementalTrackerBase">
-		<defName>PMM_RaceTracker_GnomeMomo</defName>
-		<label>gnome momo</label>
-		<description>An earth elemental momo: soil and stone in a woman's form.</description>
+		<defName>PMM_RaceTracker_GnomeMamono</defName>
+		<label>gnome mamono</label>
+		<description>An earth elemental mamono: soil and stone in a woman's form.</description>
 		<!-- Living stone: knits her wounds on rough ground or beneath the mountain. -->
 		<comps>
 			<li Class="PMM_Elementals.HediffCompProperties_LivingStone"/>
@@ -212,15 +212,15 @@
 	</HediffDef>
 
 	<HediffDef ParentName="PMM_ElementalTrackerBase">
-		<defName>PMM_RaceTracker_IgnisMomo</defName>
-		<label>ignis momo</label>
-		<description>A fire elemental momo: flame in a woman's form.</description>
+		<defName>PMM_RaceTracker_IgnisMamono</defName>
+		<label>ignis mamono</label>
+		<description>A fire elemental mamono: flame in a woman's form.</description>
 	</HediffDef>
 
 	<HediffDef ParentName="PMM_ElementalTrackerBase">
-		<defName>PMM_RaceTracker_SylphMomo</defName>
-		<label>sylph momo</label>
-		<description>A wind elemental momo: air in a woman's form.</description>
+		<defName>PMM_RaceTracker_SylphMamono</defName>
+		<label>sylph mamono</label>
+		<description>A wind elemental mamono: air in a woman's form.</description>
 		<!-- Caprice: re-rolls her daily whim. -->
 		<comps>
 			<li Class="PMM_Elementals.HediffCompProperties_Caprice"/>
@@ -228,21 +228,21 @@
 	</HediffDef>
 
 	<HediffDef ParentName="PMM_ElementalTrackerBase">
-		<defName>PMM_RaceTracker_UndineMomo</defName>
-		<label>undine momo</label>
-		<description>A water elemental momo: water in a woman's form.</description>
+		<defName>PMM_RaceTracker_UndineMamono</defName>
+		<label>undine mamono</label>
+		<description>A water elemental mamono: water in a woman's form.</description>
 	</HediffDef>
 
 	<HediffDef ParentName="PMM_ElementalTrackerBase">
-		<defName>PMM_RaceTracker_DoromeMomo</defName>
-		<label>dorome momo</label>
-		<description>A clay elemental momo: wet earth in a woman's form.</description>
+		<defName>PMM_RaceTracker_DoromeMamono</defName>
+		<label>dorome mamono</label>
+		<description>A clay elemental mamono: wet earth in a woman's form.</description>
 	</HediffDef>
 
 	<HediffDef ParentName="PMM_ElementalTrackerBase">
-		<defName>PMM_RaceTracker_DryadMomo</defName>
-		<label>dryad momo</label>
-		<description>A tree elemental momo: living wood in a woman's form.</description>
+		<defName>PMM_RaceTracker_DryadMamono</defName>
+		<label>dryad mamono</label>
+		<description>A tree elemental mamono: living wood in a woman's form.</description>
 		<!-- Photosynthesis: food, rest and mana from real sunlight. -->
 		<comps>
 			<li Class="PMM_Elementals.HediffCompProperties_Photosynthesis"/>
@@ -250,9 +250,9 @@
 	</HediffDef>
 
 	<HediffDef ParentName="PMM_ElementalTrackerBase">
-		<defName>PMM_RaceTracker_ApsaraMomo</defName>
-		<label>apsara momo</label>
-		<description>A joy elemental momo: the ocean of love in a woman's form. Her dance of love saturates the air, lifting spirits and kindling desire in everyone on the map.</description>
+		<defName>PMM_RaceTracker_ApsaraMamono</defName>
+		<label>apsara mamono</label>
+		<description>A joy elemental mamono: the ocean of love in a woman's form. Her dance of love saturates the air, lifting spirits and kindling desire in everyone on the map.</description>
 		<!-- Allure aura: refreshes the charm on every non-hostile humanlike every 600 ticks. -->
 		<comps>
 			<li Class="PMM_Elementals.HediffCompProperties_ApsaraAura"/>
@@ -260,9 +260,9 @@
 	</HediffDef>
 
 	<HediffDef ParentName="PMM_ElementalTrackerBase">
-		<defName>PMM_RaceTracker_GenieMomo</defName>
-		<label>genie momo</label>
-		<description>A genie momo: wish-magic in a woman's form.</description>
+		<defName>PMM_RaceTracker_GenieMamono</defName>
+		<label>genie mamono</label>
+		<description>A genie mamono: wish-magic in a woman's form.</description>
 	</HediffDef>
 
 </Defs>

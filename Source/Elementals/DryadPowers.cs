@@ -5,14 +5,14 @@ using Verse;
 namespace PMM_Elementals
 {
     // =====================================================================
-    // DRYAD — photosynthesis (locked D15). A hidden marker hediff (granted by
+    // DRYAD - photosynthesis (locked D15). A hidden marker hediff (granted by
     // Patch_GrantElementalMarkers, the gnome/sylph pattern) carries this ticking
     // HediffComp, which refills her food, rest and mana while she stands unroofed in
     // real sunlight. Race comps never instantiate on a pawn (the phase-3a architecture
-    // note), so the power lives on a hediff — the slime mod's jelly-ooze mechanism.
+    // note), so the power lives on a hediff - the slime mod's jelly-ooze mechanism.
     //
     // Her green thumb (locked D16) is NOT here: PlantWorkSpeed 1.4 / PlantHarvestYield
-    // 1.25 are pawn-side stat bases on PMM_Race_DryadMomo — pure XML, no C# surface.
+    // 1.25 are pawn-side stat bases on PMM_Race_DryadMamono - pure XML, no C# surface.
     // =====================================================================
 
     public class HediffCompProperties_Photosynthesis : HediffCompProperties
@@ -54,7 +54,7 @@ namespace PMM_Elementals
 
         /// <summary>
         /// Real sky light only: spawned, unroofed, and the sky bright enough. Roofed
-        /// cells, night, eclipses and volcanic winter all starve her — a dryad kept in
+        /// cells, night, eclipses and volcanic winter all starve her - a dryad kept in
         /// the dark must eat, sleep and feed on mana like anyone else. Sun lamps do not
         /// count: they feed the GlowGrid, not CurSkyGlow.
         /// </summary>
@@ -83,12 +83,12 @@ namespace PMM_Elementals
                 pawn.needs.rest.CurLevel = Mathf.Min(1f, pawn.needs.rest.CurLevel + Props.restPerPulse);
             }
             // Cross-mod def (PMM.Core's mana need), resolved by name in ElementalDefOf
-            // like ProjectMomo_TeaseDamage. Wild dryads photosynthesise too: their mana
+            // like ProjectMamono_TeaseDamage. Wild dryads photosynthesise too: their mana
             // drain is already reduced by PMM.Core's WildManaDrainFactor, and the sunlit
             // refill stacks on top.
-            if (ElementalDefOf.ProjectMomo_Mana != null)
+            if (ElementalDefOf.ProjectMamono_Mana != null)
             {
-                Need mana = pawn.needs.TryGetNeed(ElementalDefOf.ProjectMomo_Mana);
+                Need mana = pawn.needs.TryGetNeed(ElementalDefOf.ProjectMamono_Mana);
                 if (mana != null)
                 {
                     mana.CurLevel = Mathf.Min(1f, mana.CurLevel + Props.manaPerPulse);

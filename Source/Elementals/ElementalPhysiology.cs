@@ -146,14 +146,14 @@ namespace PMM_Elementals
         {
             switch (xenotypeDefName)
             {
-                case "PMM_Elemental_Gnome": return ElementalDefOf.PMM_Race_GnomeMomo;
-                case "PMM_Elemental_Ignis": return ElementalDefOf.PMM_Race_IgnisMomo;
-                case "PMM_Elemental_Sylph": return ElementalDefOf.PMM_Race_SylphMomo;
-                case "PMM_Elemental_Undine": return ElementalDefOf.PMM_Race_UndineMomo;
-                case "PMM_Elemental_Dorome": return ElementalDefOf.PMM_Race_DoromeMomo;
-                case "PMM_Elemental_Dryad": return ElementalDefOf.PMM_Race_DryadMomo;
-                case "PMM_Elemental_Apsara": return ElementalDefOf.PMM_Race_ApsaraMomo;
-                case "PMM_Elemental_Genie": return ElementalDefOf.PMM_Race_GenieMomo;
+                case "PMM_Elemental_Gnome": return ElementalDefOf.PMM_Race_GnomeMamono;
+                case "PMM_Elemental_Ignis": return ElementalDefOf.PMM_Race_IgnisMamono;
+                case "PMM_Elemental_Sylph": return ElementalDefOf.PMM_Race_SylphMamono;
+                case "PMM_Elemental_Undine": return ElementalDefOf.PMM_Race_UndineMamono;
+                case "PMM_Elemental_Dorome": return ElementalDefOf.PMM_Race_DoromeMamono;
+                case "PMM_Elemental_Dryad": return ElementalDefOf.PMM_Race_DryadMamono;
+                case "PMM_Elemental_Apsara": return ElementalDefOf.PMM_Race_ApsaraMamono;
+                case "PMM_Elemental_Genie": return ElementalDefOf.PMM_Race_GenieMamono;
                 default: return null;
             }
         }

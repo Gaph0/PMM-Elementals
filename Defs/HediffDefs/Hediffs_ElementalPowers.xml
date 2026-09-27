@@ -7,7 +7,7 @@
 		mod's jelly-ooze uses the same mechanism.
 
 		The gnome, sylph and dryad powers no longer need a hediff of their own: their
-		HediffComps now sit on those three race trackers (Race_ElementalMomo.xml), which
+		HediffComps now sit on those three race trackers (Race_ElementalMamono.xml), which
 		removes a Health-tab row per pawn and lets a transformed woman inherit the power.
 		Only the undine one remains here, because it is added and removed with the
 		weather and a race tracker is permanent. The apsara and genie state hediffs live

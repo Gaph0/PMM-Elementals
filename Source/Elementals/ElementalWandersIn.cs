@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using ProjectMomo;
+using ProjectMamono;
 using RimWorld;
 using Verse;
 
@@ -168,7 +168,7 @@ namespace PMM_Elementals
 
         /// <summary>
         /// Shared water gate for the water elementals (undine, apsara): the world tile
-        /// must touch water — coastal tiles bordering an ocean, tiles on a river, or the
+        /// must touch water - coastal tiles bordering an ocean, tiles on a river, or the
         /// Lake biome. Extracted from the undine worker so both water elementals share it.
         /// <paramref name="caller"/> names the elemental in the debug log lines.
         /// </summary>

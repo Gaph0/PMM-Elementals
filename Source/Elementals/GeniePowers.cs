@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using HarmonyLib;
-using ProjectMomo;
+using ProjectMamono;
 using RimWorld;
 using UnityEngine;
 using Verse;
@@ -9,18 +9,18 @@ using Verse.AI;
 namespace PMM_Elementals
 {
     // =====================================================================
-    // GENIE — the lamp elemental (eighth elemental).
+    // GENIE - the lamp elemental (eighth elemental).
     //
-    // Flow (no wander-in for her — she enters through her lamp):
+    // Flow (no wander-in for her - she enters through her lamp):
     //   1. IncidentWorker_GenieLampFound drops an Old Dusty Lamp item on the
-    //      map — Desert, AridShrubland and ExtremeDesert biomes only.
+    //      map - Desert, AridShrubland and ExtremeDesert biomes only.
     //   2. A colonist right-clicks the lamp → "Clean the lamp" (the vanilla
     //      CompUsable + UseItem job, useLabel in XML). CompUseEffect_GenieLamp
     //      fires at the end of the cleaning: the genie swirls out of the smoke
     //      and a ChoiceLetter_GenieOffer asks the player to welcome her or send
     //      her away. Accept → she joins the colony; reject → she vanishes.
     //   3. THE BOND IS THE TSUGAI BOND (user ruling 2026-09-01): the genie has
-    //      no master of her own — only a man she forms a core-mod tsugai bond
+    //      no master of her own - only a man she forms a core-mod tsugai bond
     //      with can receive her wishes. If the lamp cleaner passes
     //      TsugaiFormation.CanBond (adult, male, unattached-or-Protagonist), the
     //      letter promises the bond and Accept forms a full voluntary tsugai
@@ -29,7 +29,7 @@ namespace PMM_Elementals
     //      resolves her master live from the tsugai relation, so it follows
     //      re-bonds and locks again when her husband dies.
     //   4. The wish: PMM_Ability_GenieWish, granted by PMM_Gene_GenieWish (the
-    //      Dorome mud-merge pattern — a gene-granted ability, the vanilla
+    //      Dorome mud-merge pattern - a gene-granted ability, the vanilla
     //      ability system runs the one-year cooldownTicksRange). Targets pawns
     //      but only ever applies to her bonded husband, granting in priority
     //      order: regrow the biggest missing limb → erase a permanent scar →
@@ -38,7 +38,7 @@ namespace PMM_Elementals
     // =====================================================================
 
     // =====================================================================
-    // 1. LAMP ARRIVAL — desert-biome-gated incident that drops the lamp item.
+    // 1. LAMP ARRIVAL - desert-biome-gated incident that drops the lamp item.
     //    Same "all gating lives in C#" ruling as the four wander-ins: the def
     //    sets no allowedBiomes, the worker checks the world tile's biome.
     // =====================================================================
@@ -94,7 +94,7 @@ namespace PMM_Elementals
     }
 
     // =====================================================================
-    // 2. CLEAN THE LAMP — the use-effect that frees the genie.
+    // 2. CLEAN THE LAMP - the use-effect that frees the genie.
     // =====================================================================
 
     /// <summary>
@@ -127,8 +127,8 @@ namespace PMM_Elementals
             }
 
             // The tsugai gate: only a bondable man (adult, male, humanlike,
-            // non-momo, unattached or a Protagonist) can become her master.
-            // A woman — or another momo's husband — frees her unbound.
+            // non-mamono, unattached or a Protagonist) can become her master.
+            // A woman - or another mamono's husband - frees her unbound.
             bool bondable = TsugaiFormation.CanBond(genie, usedBy);
 
             ChoiceLetter_GenieOffer letter =
@@ -145,10 +145,10 @@ namespace PMM_Elementals
     }
 
     // =====================================================================
-    // 3. GENIE SPAWNING — generation + tsugai resolution. Mirrors the wander-in
+    // 3. GENIE SPAWNING - generation + tsugai resolution. Mirrors the wander-in
     //    spawn flow (factionless, wild-man-marked so she wanders harmlessly
     //    while the offer letter waits) but she steps out of the lamp, not the
-    //    map edge. Her master is never stored here — BondedMaster reads the
+    //    map edge. Her master is never stored here - BondedMaster reads the
     //    core mod's tsugai relation live.
     // =====================================================================
 
@@ -156,7 +156,7 @@ namespace PMM_Elementals
     {
         /// <summary>
         /// Generate the genie and spawn her at (or beside) the lamp. She is
-        /// always UNBOUND here — the tsugai bond with an eligible cleaner forms
+        /// always UNBOUND here - the tsugai bond with an eligible cleaner forms
         /// only when the player accepts the offer letter, so rejecting her never
         /// strands a bond on a destroyed pawn. Returns null if no walkable cell
         /// could be found.
@@ -206,7 +206,7 @@ namespace PMM_Elementals
             GenSpawn.Spawn(pawn, spawnCell, map);
 
             // Wander idly by the lamp until the player answers the offer (the
-            // wild-man mark, same as the wander-ins — never marches off the map).
+            // wild-man mark, same as the wander-ins - never marches off the map).
             if (pawn.mindState != null)
             {
                 pawn.mindState.WildManEverReachedOutside = true;
@@ -218,21 +218,21 @@ namespace PMM_Elementals
 
         /// <summary>
         /// The genie's master: her living tsugai husband, resolved straight from
-        /// the core mod's relation. Null while she is unbound — the wish gates
+        /// the core mod's relation. Null while she is unbound - the wish gates
         /// on this, so it unlocks when she bonds and locks again when he dies.
         /// </summary>
         public static Pawn BondedMaster(Pawn genie)
         {
-            if (genie?.relations == null || ElementalDefOf.ProjectMomo_Tsugai == null)
+            if (genie?.relations == null || ElementalDefOf.ProjectMamono_Tsugai == null)
             {
                 return null;
             }
             return genie.relations.GetFirstDirectRelationPawn(
-                ElementalDefOf.ProjectMomo_Tsugai, p => p != null && !p.Dead);
+                ElementalDefOf.ProjectMamono_Tsugai, p => p != null && !p.Dead);
         }
 
         /// <summary>True once her freedom timer (PMM_Hediff_GenieFreedom) has run
-        /// out — the moment she stops wandering and heads for the map edge.</summary>
+        /// out - the moment she stops wandering and heads for the map edge.</summary>
         public static bool FreedomSpent(Pawn genie)
         {
             if (genie?.health?.hediffSet == null || ElementalDefOf.PMM_Hediff_GenieFreedom == null)
@@ -245,7 +245,7 @@ namespace PMM_Elementals
     }
 
     // =====================================================================
-    // 4. JOIN OFFER — the accept/reject letter. Vanilla's ChoiceLetter_AcceptJoiner
+    // 4. JOIN OFFER - the accept/reject letter. Vanilla's ChoiceLetter_AcceptJoiner
     //    runs on quest signal plumbing, so this is a self-contained subclass
     //    whose DiaOptions act directly. Scribed refs keep it save-safe.
     // =====================================================================
@@ -292,7 +292,7 @@ namespace PMM_Elementals
         /// <summary>
         /// Welcome her: she joins the colony, and if her rescuer is still
         /// bondable she seals the promised tsugai bond with him (re-checked now
-        /// — he may have died or bonded someone else while the letter waited).
+        /// - he may have died or bonded someone else while the letter waited).
         /// A no-op if she somehow already joined.
         /// </summary>
         private void Accept()
@@ -301,13 +301,13 @@ namespace PMM_Elementals
             {
                 return;
             }
-            // The vanilla recruit path flips a wild pawn to colonist cleanly —
+            // The vanilla recruit path flips a wild pawn to colonist cleanly -
             // the core mod's ExecuteJoin learned that a plain SetFaction can
             // leave a wild/ex-guest pawn in a broken guest state.
             RecruitUtility.Recruit(genie, Faction.OfPlayer);
 
             // Recruit FIRST: TryBond's wild-bond outcome auto-tames a factionless
-            // wild momo at 100%, which would fight this letter. As a colonist the
+            // wild mamono at 100%, which would fight this letter. As a colonist the
             // outcome early-returns and only the bond (relation, hediffs, essence,
             // thoughts) forms.
             if (master != null && TsugaiFormation.CanBond(genie, master))
@@ -315,7 +315,7 @@ namespace PMM_Elementals
                 TsugaiFormation.TryBond(genie, master, voluntary: true);
             }
 
-            // She is staying — her freedom is spent. Drop the countdown so the
+            // She is staying - her freedom is spent. Drop the countdown so the
             // colony genie never shows "leaves in …" again (the exit job giver
             // also faction-checks, so this is belt-and-braces).
             if (ElementalDefOf.PMM_Hediff_GenieFreedom != null)
@@ -367,7 +367,7 @@ namespace PMM_Elementals
     //    down her few hours of freedom; while it runs, her think-tree branch
     //    (PMM_ElementalWildBehavior) gives her the wild-man wander. When it runs
     //    out, ThinkNode_ConditionalGenieFreedomSpent opens the vanilla
-    //    JobGiver_ExitMapBest and she walks off to enjoy it — unless the player
+    //    JobGiver_ExitMapBest and she walks off to enjoy it - unless the player
     //    welcomed her first (Accept drops the hediff; the node also ignores
     //    player-faction genies).
     // =====================================================================
@@ -394,7 +394,7 @@ namespace PMM_Elementals
 
         public bool Spent => leaveTick >= 0 && Find.TickManager.TicksGame >= leaveTick;
 
-        /// <summary>"(leaves in 3 h)" in the health tab — hidden once she belongs
+        /// <summary>"(leaves in 3 h)" in the health tab - hidden once she belongs
         /// to the colony, where the countdown no longer applies.</summary>
         public override string CompLabelInBracketsExtra
         {
@@ -441,7 +441,7 @@ namespace PMM_Elementals
     /// <summary>
     /// Let the player know when an unclaimed genie finally wanders off. Postfix
     /// on the pawn exit path (the end of JobGiver_ExitMapBest's job): only for
-    /// still-factionless genies — a colonist leaving in a caravan stays quiet.
+    /// still-factionless genies - a colonist leaving in a caravan stays quiet.
     /// </summary>
     [HarmonyPatch(typeof(Pawn), nameof(Pawn.ExitMap), new[] { typeof(bool), typeof(Rot4) })]
     public static class Patch_GenieDepartureMessage
@@ -462,11 +462,11 @@ namespace PMM_Elementals
     }
 
     // =====================================================================
-    // 6. LAMP BOND (LEGACY) — superseded by the tsugai bond (user ruling
+    // 6. LAMP BOND (LEGACY) - superseded by the tsugai bond (user ruling
     //    2026-09-01): the hediff is no longer granted to anyone, and the wish
     //    reads the tsugai relation instead. The def and comp stay so saves from
     //    the first build still load; those stale copies are inert (a dead
-    //    master reference at worst) — remove them with dev tools if they offend.
+    //    master reference at worst) - remove them with dev tools if they offend.
     //    (They are NOT auto-stripped: vanilla's HealthTickInterval walks the
     //    hediff list with a foreach enumerator, so a comp removing its own
     //    hediff mid-tick would throw collection-modified.)
@@ -479,7 +479,7 @@ namespace PMM_Elementals
 
     public class HediffComp_GenieBond : HediffComp
     {
-        /// <summary>The lamp cleaner (legacy — no longer read by the wish).</summary>
+        /// <summary>The lamp cleaner (legacy - no longer read by the wish).</summary>
         public Pawn master;
 
         /// <summary>Shows "(master: NAME)" in the health tab so the bond is discoverable.</summary>
@@ -494,7 +494,7 @@ namespace PMM_Elementals
     }
 
     // =====================================================================
-    // 7. THE WISH — gene-granted ability, one-year cooldown, 95% mana drained
+    // 7. THE WISH - gene-granted ability, one-year cooldown, 95% mana drained
     //    to zero. Grants in priority order: missing limb → scar → biggest
     //    temporary negative memory.
     // =====================================================================
@@ -506,7 +506,7 @@ namespace PMM_Elementals
 
     public class CompAbilityEffect_GenieWish : CompAbilityEffect
     {
-        /// <summary>The wish needs nearly all her mana — 95% of the mana need.</summary>
+        /// <summary>The wish needs nearly all her mana - 95% of the mana need.</summary>
         private const float ManaRequired = 0.95f;
 
         public new CompProperties_AbilityGenieWish Props => (CompProperties_AbilityGenieWish)props;
@@ -524,7 +524,7 @@ namespace PMM_Elementals
                 reason = "PMM_GenieWish_NoBond".Translate(caster.Named("PAWN"));
                 return true;
             }
-            Need mana = caster?.needs?.TryGetNeed(ElementalDefOf.ProjectMomo_Mana);
+            Need mana = caster?.needs?.TryGetNeed(ElementalDefOf.ProjectMamono_Mana);
             if (mana == null || mana.CurLevel < ManaRequired)
             {
                 reason = "PMM_GenieWish_NoMana".Translate(caster.Named("PAWN"));
@@ -582,7 +582,7 @@ namespace PMM_Elementals
                 return;
             }
             // The wish costs everything she has: mana fully drained.
-            Need mana = caster.needs?.TryGetNeed(ElementalDefOf.ProjectMomo_Mana);
+            Need mana = caster.needs?.TryGetNeed(ElementalDefOf.ProjectMamono_Mana);
             if (mana != null)
             {
                 mana.CurLevel = 0f;

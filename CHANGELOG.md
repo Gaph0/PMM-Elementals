@@ -2,6 +2,9 @@
 
 ## Player-facing
 
+- 2026-09-27: Changed every internal name to Mamono, so saves from earlier versions no longer load.
+- 2026-09-27: Changed the mod name to Project Mamono Elementals.
+- 2026-09-27: Changed the word momo to mamono in the mod's labels and descriptions.
 - 2026-09-22: Changed the ignis to carry the family's fiery momo gene instead of the vanilla fire resistance and heat tolerance genes. She is still fully immune to fire, heat and lava, and a man she bonds with inherits a lesser fire ward.
 - 2026-09-22: Changed the elementals to look smaller than they really are, so the size difference is easy to see. Their carry weight, butchery and dodge are unchanged.
 - 2026-09-20: Changed the notes about a refused wander-in to appear only in development mode.
@@ -41,6 +44,9 @@
 
 ## Internal
 
+- 2026-09-27: Changed the mod folder and project names to Mamono.
+- 2026-09-27: Changed the defNames, class names, scribe labels and file names to Mamono.
+- 2026-09-27: Changed the README to say mamono.
 - 2026-09-24: Changed the em dashes in this mod's text to plain hyphens.
 
 - 2026-09-20: Changed the wander-in and genie-lamp messages to go through core's `PMMLog`, so they only appear in development mode.

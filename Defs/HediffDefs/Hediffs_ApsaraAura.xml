@@ -4,7 +4,7 @@
 	<!--
 		Only one apsara hediff is left: the charm she puts on OTHER pawns. Her allure aura
 		needs no hediff of its own - HediffComp_ApsaraAura sits on her race tracker
-		(Race_ElementalMomo.xml) and sweeps the map (D-A1: map-wide, no radius) every 600
+		(Race_ElementalMamono.xml) and sweeps the map (D-A1: map-wide, no radius) every 600
 		ticks, refreshing the charm hediff on every non-hostile humanlike and topping up
 		their joy need. Its old marker hediff, and the 0.01-1 severity nothing ever read,
 		are gone.

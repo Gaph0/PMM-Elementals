@@ -6,12 +6,12 @@ using Verse;
 namespace PMM_Elementals
 {
     // =====================================================================
-    // APSARA — joy elemental. Four mechanics, all locked D-A1–D-A6:
+    // APSARA - joy elemental. Four mechanics, all locked D-A1–D-A6:
     //
     //   1. Allure aura (this file's HediffComp_ApsaraAura, on her race tracker):
     //      map-wide (D-A1), every 600 ticks refreshes the PMM_Hediff_ApsaraCharm
     //      exposure hediff on every non-hostile humanlike and tops up their joy need
-    //      (D-A3). The charm's LOVIN' effect is pure XML — vanilla
+    //      (D-A3). The charm's LOVIN' effect is pure XML - vanilla
     //      HediffComp_GiveLovinMTBFactor (D-A2 0.6) scales the post-lovin' cooldown in
     //      JobDriver_Lovin.GenerateRandomMinTicksToNextLovin, and its HediffComp_Disappears
     //      fades it ~6h off-aura (PleasurePulse pattern). No code needed for either.
@@ -44,9 +44,9 @@ namespace PMM_Elementals
 
     /// <summary>
     /// Ticks on the apsara's race tracker. Every interval, sweeps the map
-    /// (D-A1: map-wide — no radius check) and, for every non-hostile humanlike on the
+    /// (D-A1: map-wide - no radius check) and, for every non-hostile humanlike on the
     /// same map, refreshes the charm hediff and tops up the joy need. A pawn who leaves
-    /// the aura keeps its charm until the hediff's own HediffComp_Disappears fades it —
+    /// the aura keeps its charm until the hediff's own HediffComp_Disappears fades it -
     /// PleasurePulse semantics, no removal pass. Multiple apsaras refresh the same charm
     /// idempotently, so the aura never stacks.
     /// </summary>
@@ -97,7 +97,7 @@ namespace PMM_Elementals
         }
 
         /// <summary>Ensure the pawn carries the charm; add it fresh if absent (which also
-        /// restarts its Disappears timer). If present, do nothing — the aura pulse keeps it
+        /// restarts its Disappears timer). If present, do nothing - the aura pulse keeps it
         /// alive by re-adding only on expiry, and the comp's refresh is idempotent.</summary>
         private static void RefreshCharm(Pawn p)
         {
@@ -222,7 +222,7 @@ namespace PMM_Elementals
         public static void Postfix(VoluntarilyJoinableLordsStarter __instance)
         {
             // Only the map-level random-gathering tick; fires every 5000 ticks (the caller's
-            // cadence), so this postfix is already throttled — no extra timing needed.
+            // cadence), so this postfix is already throttled - no extra timing needed.
             Map map = MapRef(__instance);
             if (map?.GetComponent<MapComponent_ApsaraPresence>()?.HasApsara != true)
             {
@@ -239,7 +239,7 @@ namespace PMM_Elementals
     // 4. Romance compatibility (D-A5). Both romance-attempt frequency and success chance
     //    flow through Pawn_RelationsTracker.SecondaryRomanceChanceFactor, which returns 0
     //    for orientation/relation mismatches. A multiplicative ×1.25 raises both while an
-    //    apsara is on the map — and because it's multiplicative, zero stays zero (she
+    //    apsara is on the map - and because it's multiplicative, zero stays zero (she
     //    amplifies existing compatibility; she doesn't pair the unwilling). There is no
     //    vanilla stat/hediff lever for romance (unlike lovin'), so this postfix is the
     //    minimal clean route.

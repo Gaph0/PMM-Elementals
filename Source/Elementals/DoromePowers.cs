@@ -6,12 +6,12 @@ using Verse;
 namespace PMM_Elementals
 {
     // =====================================================================
-    // DOROME — clay-elemental powers (§11, locked D9–D13).
+    // DOROME - clay-elemental powers (§11, locked D9–D13).
     //   * Mud filth: she sheds custom PMM_Filth_Mud instead of vanilla terrain
     //     filth and trash (verbatim slime/undine filth-patch pattern, D10).
     //   * Mud-merge teleport: TAMED-ONLY (D11). A gene-granted ability targets
     //     any revealed natural tile on the map; the vanilla ability system runs
-    //     the 6 h cooldown from cooldownTicksRange — no custom cooldown state,
+    //     the 6 h cooldown from cooldownTicksRange - no custom cooldown state,
     //     no wild surface, no marker hediff.
     //   * Clay-grey hair: her hair renders in her rolled skin shade (§11.4b),
     //     the slime Patch_SlimeHairColor pattern.
@@ -20,10 +20,10 @@ namespace PMM_Elementals
     /// <summary>
     /// Doromes ooze mud, never dirt or trash. A full replacement for the vanilla
     /// ambient-filth branch: keeps the FilthRate gate, then always drops
-    /// <see cref="ElementalDefOf.PMM_Filth_Mud"/> — vanilla would drop the terrain
+    /// <see cref="ElementalDefOf.PMM_Filth_Mud"/> - vanilla would drop the terrain
     /// filth 66 % of the time and <c>Filth_Trash</c> the other 34 %. Runs as a
     /// prefix that skips the original for dorome pawns only. Full vanilla rate
-    /// (D10 — no ×0.33 mercy; slimes shed at full rate and so does wet clay).
+    /// (D10 - no ×0.33 mercy; slimes shed at full rate and so does wet clay).
     /// </summary>
     [HarmonyPatch(typeof(Pawn_FilthTracker), nameof(Pawn_FilthTracker.Notify_EnteredNewCell))]
     public static class Patch_DoromeMudFilth
@@ -67,7 +67,7 @@ namespace PMM_Elementals
     {
         /// <summary>
         /// The natural-tile rule (locked D12): standable, not a constructed floor,
-        /// not deep water, and revealed (no fog — the player must be able to see
+        /// not deep water, and revealed (no fog - the player must be able to see
         /// where she surfaces). Any roof is fine: caves are home. Shallow water and
         /// marsh pass: a wetland native does not fear a soak.
         /// </summary>
@@ -100,7 +100,7 @@ namespace PMM_Elementals
         /// <summary>
         /// Melt her into the ground and have her emerge at the target cell: stops her
         /// current job, despawns and respawns, then splashes a little mud and a puff
-        /// of dust at BOTH ends — she wells out of the earth, not a clean blink.
+        /// of dust at BOTH ends - she wells out of the earth, not a clean blink.
         /// </summary>
         public static void Teleport(Pawn pawn, IntVec3 target)
         {
@@ -173,7 +173,7 @@ namespace PMM_Elementals
     // =====================================================================
     // Clay-grey hair (§11.4b): a dorome's hair IS more wet clay, the exact same
     // shade as her body. A postfix on the render node's colour lookup means it
-    // holds no matter how she was spawned or restyled — the slime
+    // holds no matter how she was spawned or restyled - the slime
     // Patch_SlimeHairColor pattern, keyed on the dorome xenotype.
     // =====================================================================
 
