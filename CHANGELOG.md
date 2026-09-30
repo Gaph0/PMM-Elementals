@@ -2,6 +2,8 @@
 
 ## Player-facing
 
+- 2026-10-01: Changed the preview image on the mod page.
+
 - 2026-09-27: Changed every internal name to Mamono, so saves from earlier versions no longer load.
 - 2026-09-27: Changed the mod name to Project Mamono Elementals.
 - 2026-09-27: Changed the word momo to mamono in the mod's labels and descriptions.
