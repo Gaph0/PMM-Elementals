@@ -7,11 +7,13 @@
 	</supportedVersions>
 	<packageId>PMM.Elementals</packageId>
 	<description>
-Adds wild elementals for Project Mamono: spirit-folk born of earth, fire, wind and water who wander the wild places of the rim.
+Adds eight wild elementals to RimWorld 1.6, for Project Mamono.
 
-Elementals only appear in the wild, wandering onto your map like wild men - and like wild men, they can be tamed or captured and convinced to join. Each seeks out her own element: gnomes surface from caves, ignis walk out of scorching deserts and lava fields, sylphs ride the mountain winds, and undines rise where rivers meet the sea.
+The eight species are the gnome, ignis, sylph, undine, dorome, dryad, apsara and genie, of earth, fire, wind, water, clay, wood and joy. Each one arrives only on land that suits her: caves, deserts and lava fields, high mountains, rivers and coasts, wetlands, or forests.
 
-Requires the Biotech and Odyssey expansions, Harmony, Big and Small - Framework, and Project Mamono.
+Elementals arrive in the wild, walking onto your map like wild men. You tame one, or capture her and convince her to join. Each has a power of her own: the gnome heals on bare ground, the sylph's mood turns with the wind, the undine is quick in the rain, the dorome swims through the earth, the dryad lives on sunlight, the apsara charms everyone near her, and the ignis sets desire alight with her blows. The genie is not found wandering: a lamp is found in the desert, and the colonist who cleans it frees her and earns one wish a year.
+
+Requires Harmony, Biotech, Odyssey, Project Mamono, and Big and Small - Framework.
 	</description>
 	<modDependencies>
 		<li>
@@ -45,6 +47,5 @@ Requires the Biotech and Odyssey expansions, Harmony, Big and Small - Framework,
 		<li>Ludeon.RimWorld.Odyssey</li>
 		<li>PMM.Core</li>
 		<li>RedMattis.BetterPrerequisites</li>
-		<li>VanillaExpanded.VPsycastsE</li>
 	</loadAfter>
 </ModMetaData>
