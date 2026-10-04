@@ -93,4 +93,4 @@ Thanks to:
 - Tynan Sylvester and the Ludeon Studios team - RimWorld, and the Biotech and Odyssey expansions.
 - Big and Small - Framework - the elemental races and the race pattern.
 - Harmony - the patches under everything.
-- The Monster Girl Encyclopedia wiki - the creatures and the lore this mod is built from.
+- Kenkou Cross - the Monster Girl Encyclopedia, where these creatures come from.
