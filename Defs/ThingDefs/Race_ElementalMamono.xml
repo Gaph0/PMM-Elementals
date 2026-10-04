@@ -7,10 +7,23 @@
 
 		D2 locked: custom races, one per element. They exist for identity (the race
 		label on the info card), future comps (the phase-3 Ignis flame aura / Gnome
-		living-stone hooks go on these races) and slime-family parity. v1 keeps HUMAN
-		butcher yields: no specificMeatDef, leather untouched - so no C# race setup is
-		needed (the slime NullLeather/specificMeatDef dance was jelly-specific).
-		Elemental-flavoured butcher drops (motes/cores) are a phase-3 option.
+		living-stone hooks go on these races) and slime-family parity. Leather stays
+		untouched, so no C# race setup is needed (the slime NullLeather dance was
+		jelly-specific). Elemental-flavoured butcher drops (motes/cores) are a phase-3
+		option.
+
+		Meat (2026-10-04): the seven that butcher into meat used to drop their own
+		generated meat, one near-identical def per race. The base below now names the
+		family's one PMM_MamonoMeat (the def lives in the core mod), and only the dryad
+		overrides it, with WoodLog.
+
+		Why specificMeatDef and not a plain <meatDef>: the meat generator skips only races
+		that name a specificMeatDef or a useMeatFrom, and it runs before the XML pass that
+		resolves a plain <meatDef> - so a plain <meatDef> does win, but the race still gets
+		its own unused "gnome mamono meat" def created and registered at every startup.
+		Removing those dead defs is what this change is for. The dryad moved from
+		<meatDef> to <specificMeatDef> for the same reason; her yield was already wood,
+		and still is.
 
 		Abstract base below is the only valid ParentName target for the concrete races
 		(a concrete def cannot be a ParentName - the slime race file documents that
@@ -49,6 +62,9 @@
 		</statBases>
 		<race>
 			<baseBodySize>0.8</baseBodySize>
+			<!-- Every elemental butchers into the family's one mamono meat; the dryad
+			     overrides this with her own wood. -->
+			<specificMeatDef>PMM_MamonoMeat</specificMeatDef>
 		</race>
 	</ThingDef>
 
@@ -123,7 +139,7 @@
 	</ThingDef>
 
 	<!-- Dryad mamono: a tree elemental in a woman's form. She IS her tree, so her body is
-	     living wood: butchering yields wood (meatDef) and no leather (LeatherAmount 0),
+	     living wood: butchering yields wood (specificMeatDef) and no leather (LeatherAmount 0),
 	     and her comfortable temperature range is the vanilla tree growth range 0-58 C
 	     (requirement 3; the Human parent sets 16/26). Her green thumb (locked D16) is a
 	     pawn-side stat pair: she works plants faster and her own harvests yield more.
@@ -133,7 +149,10 @@
 		<label>dryad mamono</label>
 		<description>A tree elemental mamono. Her warm body is living wood given a woman's form - mild, gentle, and deeply rooted in the forest she tends.</description>
 		<race>
-			<meatDef>WoodLog</meatDef>
+			<!-- Overrides the base with her own wood. SpecificMeatDef rather than a plain
+			     <meatDef>: she butchered into wood either way, but only this stops the
+			     game from also creating an unused per-race meat def for her. -->
+			<specificMeatDef>WoodLog</specificMeatDef>
 		</race>
 		<statBases>
 			<ComfyTemperatureMin>0</ComfyTemperatureMin>

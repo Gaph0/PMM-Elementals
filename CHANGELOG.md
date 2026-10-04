@@ -2,6 +2,7 @@
 
 ## Player-facing
 
+- 2026-10-04: Changed the elemental mamonos to give mamono meat when butchered. The dryad keeps giving wood.
 - 2026-10-01: Changed the preview image on the mod page.
 
 - 2026-09-27: Changed every internal name to Mamono, so saves from earlier versions no longer load.
@@ -46,6 +47,7 @@
 
 ## Internal
 
+- 2026-10-04: Changed the dryad's wood from a plain meatDef to specificMeatDef.
 - 2026-09-27: Changed the mod folder and project names to Mamono.
 - 2026-09-27: Changed the defNames, class names, scribe labels and file names to Mamono.
 - 2026-09-27: Changed the README to say mamono.
